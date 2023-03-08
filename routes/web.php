@@ -28,3 +28,13 @@ Route::get('/toko', ShopComponent::class);
 Route::get('/keranjang', CartComponent::class);
 
 Route::get('/checkout', CheckoutComponent::class);
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
