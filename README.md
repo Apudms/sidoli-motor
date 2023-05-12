@@ -1,6 +1,25 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<p align="center">
+  <a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a>
+
+  <img src="/art/logo.svg" alt="Logo Laravel Jetstream">
+
+  ![Laravel Livewire](https://avatars.githubusercontent.com/u/51960834?s=100)
+</p>
 
 <p align="center">Ecommerce by <a href="">Pudtorials</p>
+
+## Tech Stack
+- Laravel 8
+- Laravel Jetstream
+- Livewire
+- MySQL
+
+## Fitur
+- Integration with the Tailwind CSS framework
+- Authentication portions of Jetstream are powered by Laravel Fortify
+- Two-factor authentication support
+- The page should automatically update without a page reload
+- Import Data Contact And Company With Excel
 
 ## Development
 Clone the repo and install dependencies:
