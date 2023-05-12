@@ -1,10 +1,8 @@
-<p align="center">
-  <a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a>
+![Laravel Livewire](https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg)
 
-  <img src="/art/logo.svg" alt="Logo Laravel Jetstream">
+![Laravel Livewire](https://github.com/laravel/jetstream/blob/3.x/art/logo.svg)
 
-  ![Laravel Livewire](https://avatars.githubusercontent.com/u/51960834?s=100)
-</p>
+![Laravel Livewire](https://avatars.githubusercontent.com/u/51960834?s=100)
 
 <p align="center">Ecommerce by <a href="">Pudtorials</p>
 
