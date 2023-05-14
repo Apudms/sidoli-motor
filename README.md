@@ -39,7 +39,6 @@
 - Authentication portions of Jetstream are powered by Laravel Fortify
 - Two-factor authentication support
 - The page should automatically update without a page reload
-- Import Data Contact And Company With Excel
 <br/>
 
 # 🧑‍💻 Setup
