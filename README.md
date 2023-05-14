@@ -29,7 +29,7 @@
 </p>
 
 <p align="center">
-  <a href="https://www.mysql.com/" target="_blank"><img src="https://labs.mysql.com/common/logos/mysql-logo.svg?v2" width="200"></a>
+  <a href="https://www.mysql.com/" target="_blank"><img src="https://labs.mysql.com/common/logos/mysql-logo.svg?v2" width="100"></a>
 </p>
 <br/>
 
