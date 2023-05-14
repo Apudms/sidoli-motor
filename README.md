@@ -1,3 +1,10 @@
+![](https://i.imgur.com/waxVImv.png)
+
+<p align="center">Ecommerce by <a href="">Pudtorials</p>
+
+![](https://i.imgur.com/waxVImv.png)
+
+## Tech Stack
 <p align="center">
   <a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a>
 </p>
@@ -11,7 +18,7 @@
 </p>
 
 <p align="center">
-  <a href="https://tailwindcss.com" target="_blank">
+  <a href="https://tailwindcss.com/" target="_blank">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailwindlabs/tailwindcss/HEAD/.github/logo-dark.svg">
       <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailwindlabs/tailwindcss/HEAD/.github/logo-light.svg">
@@ -20,13 +27,9 @@
   </a>
 </p>
 
-<p align="center">Ecommerce by <a href="">Pudtorials</p>
-
-## Tech Stack
-- Laravel 8
-- Laravel Jetstream
-- Livewire
-- MySQL
+<p align="center">
+  <a href="https://www.mysql.com/" target="_blank"><img src="https://i.imgur.com/waxVImv.png" width="400"></a>
+</p>
 
 ## Fitur
 - Integration with the Tailwind CSS framework
