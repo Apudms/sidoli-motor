@@ -30,29 +30,32 @@
 <p align="center">
   <a href="https://www.mysql.com/" target="_blank"><img src="https://labs.mysql.com/common/logos/mysql-logo.svg?v2" width="200"></a>
 </p>
+<br/>
 
-## Fitur
+# 🔥 Features
+
 - Integration with the Tailwind CSS framework
 - Authentication portions of Jetstream are powered by Laravel Fortify
 - Two-factor authentication support
 - The page should automatically update without a page reload
 - Import Data Contact And Company With Excel
+<br/>
 
-## Development
+# 🧑‍💻 Setup
+
 Clone the repo and install dependencies:
 ```bash
-git clone git@github.com:Apudms/sidoli-motor.git
-npm install
-```
-
-Run the project:
-```shell
+git clone https://github.com/paulpierre/RasaGPT.git
+cd sidoli-motor
+cp .env-example .env
 php artisan migrate
 php artisan serve
-```
-## Settings .env
-Setting file .env
 
-## Api Documentation
+# Edit your .env file and all the credentials
+
+```
+<br/>
+
+# 📖 API documentation
 Documentation using Postman:
 <a href="">Ecommerce Documentation V 1.0.0</a>
