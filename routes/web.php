@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\CartComponent;
 use App\Http\Livewire\CheckoutComponent;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\ShopComponent;
+use App\Http\Livewire\User\UserDashboardComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,21 +43,21 @@ Route::get('/checkout', CheckoutComponent::class);
 //     })->name('dashboard');
 // });
 
-//Untuk Owner
-Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    // Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
+//For Owner
+Route::middleware(['auth:sanctum', 'verified', 'authowner'])->group(function () {
+    // Route::get('/owner/dashboard', OwnerDashboardComponent::class)->name('owner.dashboard');
+    // Route::get('/owner/brands', OwnerBrandComponent::class)->name('owner.brands');
+    // Route::get('/owner/brands/add', OwnerAddBrandComponent::class)->name('owner.addbrands');
+});
+
+//For Admin
+Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function () {
+    Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
     // Route::get('/admin/brands', AdminBrandComponent::class)->name('admin.brands');
     // Route::get('/admin/brands/add', AdminAddBrandComponent::class)->name('admin.addbrands');
 });
 
-//Untuk Admin
+//For User or Customer
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    // Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
-    // Route::get('/admin/brands', AdminBrandComponent::class)->name('admin.brands');
-    // Route::get('/admin/brands/add', AdminAddBrandComponent::class)->name('admin.addbrands');
-});
-
-//Untuk Customer
-Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    // Route::get('/user/dashboard', UserDashboardComponent::class)->name('user.dashboard');
+    Route::get('/user/dashboard', UserDashboardComponent::class)->name('user.dashboard');
 });
