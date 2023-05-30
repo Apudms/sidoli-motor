@@ -46,7 +46,7 @@
 
 Clone the repo and install dependencies:
 ```bash
-git clone https://github.com/paulpierre/RasaGPT.git
+git clone https://github.com/Apudms/sidoli-motor.git
 cd sidoli-motor
 cp .env-example .env
 php artisan migrate
