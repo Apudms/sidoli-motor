@@ -29,12 +29,33 @@ Route::get('/keranjang', CartComponent::class);
 
 Route::get('/checkout', CheckoutComponent::class);
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+// Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
+
+// Route::middleware([
+//     'auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified'
+// ])->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('dashboard');
+//     })->name('dashboard');
+// });
+
+//Untuk Owner
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    // Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
+    // Route::get('/admin/brands', AdminBrandComponent::class)->name('admin.brands');
+    // Route::get('/admin/brands/add', AdminAddBrandComponent::class)->name('admin.addbrands');
+});
+
+//Untuk Admin
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    // Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
+    // Route::get('/admin/brands', AdminBrandComponent::class)->name('admin.brands');
+    // Route::get('/admin/brands/add', AdminAddBrandComponent::class)->name('admin.addbrands');
+});
+
+//Untuk Customer
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    // Route::get('/user/dashboard', UserDashboardComponent::class)->name('user.dashboard');
 });
