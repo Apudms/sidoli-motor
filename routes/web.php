@@ -4,6 +4,7 @@ use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\CartComponent;
 use App\Http\Livewire\CheckoutComponent;
 use App\Http\Livewire\HomeComponent;
+use App\Http\Livewire\Owner\OwnerDashboardComponent;
 use App\Http\Livewire\ShopComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use Illuminate\Support\Facades\Route;
@@ -45,7 +46,7 @@ Route::get('/checkout', CheckoutComponent::class);
 
 //For Owner
 Route::middleware(['auth:sanctum', 'verified', 'authowner'])->group(function () {
-    // Route::get('/owner/dashboard', OwnerDashboardComponent::class)->name('owner.dashboard');
+    Route::get('/owner/dashboard', OwnerDashboardComponent::class)->name('owner.dashboard');
     // Route::get('/owner/brands', OwnerBrandComponent::class)->name('owner.brands');
     // Route::get('/owner/brands/add', OwnerAddBrandComponent::class)->name('owner.addbrands');
 });

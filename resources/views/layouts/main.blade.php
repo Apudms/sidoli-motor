@@ -43,70 +43,70 @@
                         <div class="topbar-menu right-menu">
                             <ul>
                                 @if (Route::has('login'))
-                                    @auth
-                                        @if (Auth::user()->utype === 'OWN')
-                                            <li class="menu-item menu-item-has-children parent">
-                                                <a title="Akun Saya ({{ Auth::user()->name }})" href="#">Akun Saya ({{ Auth::user()->name }})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                                <ul class="submenu curency">
-                                                    <li class="menu-item">
-                                                        <a title="Dashboard" href="{{ route('owner.dashboard') }}">Dashboard</a>
-                                                    </li>
-                                                    <li class="menu-item">
+                                @auth
+                                @if (Auth::user()->utype === 'OWN')
+                                <li class="menu-item menu-item-has-children parent">
+                                    <a title="{{ Auth::user()->name }}" href="#">{{ Auth::user()->name }}<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                    <ul class="submenu curency">
+                                        <li class="menu-item">
+                                            <a title="Dashboard" href="{{ route('owner.dashboard') }}">Dashboard</a>
+                                        </li>
+                                        {{-- <li class="menu-item">
                                                         <a title="Brand" href="{{ route('owner.brands') }}">Brand</a>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <a title="Produk" href="{{ route('owner.brands') }}">Produk</a>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <a title="Logout" href="{{ route('owner.dashboard') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                                                    </li>
-                                                    <form id="logout-form" method="POST" action="{{ route('logout') }}">
-                                                        @csrf
-                                                    </form>
-                                                </ul>
-                                            </li>
-                                        @elseif (Auth::user()->utype === 'ADM')
-                                            <li class="menu-item menu-item-has-children parent">
-                                                <a title="Akun Saya ({{ Auth::user()->name }})" href="#">Akun Saya ({{ Auth::user()->name }})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                                <ul class="submenu curency">
-                                                    <li class="menu-item">
-                                                        <a title="Dashboard" href="{{ route('admin.dashboard') }}">Dashboard</a>
-                                                    </li>
-                                                    <li class="menu-item">
+                                </li>
+                                <li class="menu-item">
+                                    <a title="Produk" href="{{ route('owner.brands') }}">Produk</a>
+                                </li> --}}
+                                <li class="menu-item">
+                                    <a title="Logout" href="{{ route('owner.dashboard') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                </li>
+                                <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                </form>
+                            </ul>
+                            </li>
+                            @elseif (Auth::user()->utype === 'ADM')
+                            <li class="menu-item menu-item-has-children parent">
+                                <a title="{{ Auth::user()->name }}" href="#">{{ Auth::user()->name }}<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                <ul class="submenu curency">
+                                    <li class="menu-item">
+                                        <a title="Dashboard" href="{{ route('admin.dashboard') }}">Dashboard</a>
+                                    </li>
+                                    {{-- <li class="menu-item">
                                                         <a title="Brand" href="{{ route('admin.brands') }}">Brand</a>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <a title="Produk" href="{{ route('admin.brands') }}">Produk</a>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <a title="Logout" href="{{ route('admin.dashboard') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                                                    </li>
-                                                    <form id="logout-form" method="POST" action="{{ route('logout') }}">
-                                                        @csrf
-                                                    </form>
-                                                </ul>
-                                            </li>
-                                        @else
-                                            <li class="menu-item menu-item-has-children parent">
-                                                <a title="Akun Saya ({{ Auth::user()->name }})" href="#">Akun Saya ({{ Auth::user()->name }})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                                <ul class="submenu curency">
-                                                    <li class="menu-item">
-                                                        <a title="Dashboard" href="{{ route('user.dashboard') }}">Dashboard</a>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <a title="Logout" href="{{ route('user.dashboard') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                                                    </li>
-                                                    <form id="logout-form" method="POST" action="{{ route('logout') }}">
-                                                        @csrf
-                                                    </form>
-                                                </ul>
-                                            </li>
-                                        @endif
-                                    @else
-                                        <li class="menu-item"><a title="Register or Login" href="{{ route('login') }}">Login</a></li>
-                                        <li class="menu-item"><a title="Register or Login" href="{{ route('register') }}">Daftar</a></li>
-                                    @endif
-                                @endif
+                            </li>
+                            <li class="menu-item">
+                                <a title="Produk" href="{{ route('admin.brands') }}">Produk</a>
+                            </li> --}}
+                            <li class="menu-item">
+                                <a title="Logout" href="{{ route('admin.dashboard') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                            </li>
+                            <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                                @csrf
+                            </form>
+                            </ul>
+                            </li>
+                            @else
+                            <li class="menu-item menu-item-has-children parent">
+                                <a title="Akun Saya ({{ Auth::user()->name }})" href="#">Akun Saya ({{ Auth::user()->name }})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                <ul class="submenu curency">
+                                    <li class="menu-item">
+                                        <a title="Dashboard" href="{{ route('user.dashboard') }}">Dashboard</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a title="Logout" href="{{ route('user.dashboard') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                    </li>
+                                    <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                    </form>
+                                </ul>
+                            </li>
+                            @endif
+                            @else
+                            <li class="menu-item"><a title="Register or Login" href="{{ route('login') }}">Login</a></li>
+                            <li class="menu-item"><a title="Register or Login" href="{{ route('register') }}">Daftar</a></li>
+                            @endif
+                            @endif
                             </ul>
                         </div>
                     </div>
@@ -151,33 +151,39 @@
                             </div>
                         </div>
 
-                        <div class="wrap-icon right-section">
-                            <div class="wrap-icon-section wishlist">
-                                <a href="#" class="link-direction">
-                                    <i class="fa fa-heart" aria-hidden="true"></i>
-                                    <div class="left-info">
-                                        <span class="index">0 produk</span>
-                                        <span class="title">Disukai</span>
+                        @if (Route::has('login'))
+                            @auth
+                                @if (Auth::user()->utype === 'USR')
+                                    <div class="wrap-icon right-section">
+                                        <div class="wrap-icon-section wishlist">
+                                            <a href="#" class="link-direction">
+                                                <i class="fa fa-heart" aria-hidden="true"></i>
+                                                <div class="left-info">
+                                                    <span class="index">0 produk</span>
+                                                    <span class="title">Disukai</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="wrap-icon-section minicart">
+                                            <a href="#" class="link-direction">
+                                                <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                                <div class="left-info">
+                                                    <span class="index">2 produk</span>
+                                                    <span class="title">Keranjang</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="wrap-icon-section show-up-after-1024">
+                                            <a href="#" class="mobile-navigation">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </a>
+                                        </div>
                                     </div>
-                                </a>
-                            </div>
-                            <div class="wrap-icon-section minicart">
-                                <a href="#" class="link-direction">
-                                    <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-                                    <div class="left-info">
-                                        <span class="index">2 produk</span>
-                                        <span class="title">Keranjang</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="wrap-icon-section show-up-after-1024">
-                                <a href="#" class="mobile-navigation">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </a>
-                            </div>
-                        </div>
+                                @endif
+                            @endif
+                        @endif
 
                     </div>
                 </div>
@@ -192,18 +198,50 @@
                                 {{-- <li class="menu-item home-icon" style="background: none">
 <a href="/" class="link-term mercado-item-title"><i class="fa fa-home" aria-hidden="true"></i></a>
 </li> --}}
-                                <li class="menu-item">
-                                    <a href="/toko" class="link-term mercado-item-title">Toko</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="/keranjang" class="link-term mercado-item-title">Keranjang</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="/checkout" class="link-term mercado-item-title">Checkout</a>
-                                </li>
+                                @if (Route::has('login'))
+                                    @auth
+                                        @if (Auth::user()->utype === 'OWN')
+                                            <li class="menu-item">
+                                                <a href="/toko" class="link-term mercado-item-title">PRODUK</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="/keranjang" class="link-term mercado-item-title">INCOMING</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="/checkout" class="link-term mercado-item-title">OUTGOING</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="/checkout" class="link-term mercado-item-title">WILAYAH</a>
+                                            </li>
+                                        @elseif (Auth::user()->utype === 'ADM')
+                                            <li class="menu-item">
+                                                <a href="/toko" class="link-term mercado-item-title">PRODUK</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="/keranjang" class="link-term mercado-item-title">WILAYAH</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="/keranjang" class="link-term mercado-item-title">CUSTOMER</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="/checkout" class="link-term mercado-item-title">INCOMING</a>
+                                            </li>
+                                        @elseif (Auth::user()->utype === 'USR')
+                                            <li class="menu-item">
+                                                <a href="/toko" class="link-term mercado-item-title">Toko</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="/keranjang" class="link-term mercado-item-title">Keranjang</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="/checkout" class="link-term mercado-item-title">Checkout</a>
+                                            </li>
+                                        @endif
+                                    @endif
+                                @endif
                                 {{-- <li class="menu-item">
-<a href="/checkout" class="link-term mercado-item-title" style="background: #ff2832">Checkout</a>
-</li> --}}
+                                    <a href="/checkout" class="link-term mercado-item-title" style="background: #ff2832">Checkout</a>
+                                </li> --}}
                             </ul>
                         </div>
                     </div>
