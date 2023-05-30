@@ -19,8 +19,9 @@ class AuthOwner
         if (session('utype') === 'OWN') {
             return $next($request);
         } else {
-            session()->flush();
-            return redirect()->route('login');
+            // session()->flush();
+            // return redirect()->route('login');
+            return redirect()->back();
         }
         return $next($request);
     }
