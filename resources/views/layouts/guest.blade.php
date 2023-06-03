@@ -94,7 +94,7 @@
                                         </li> --}}
                                         <li class="menu-item">
                                             <a title="Logout" href="{{ route('owner.dashboard') }}"
-                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Keluar</a>
                                         </li>
                                         <form id="logout-form" method="POST" action="{{ route('logout') }}">
                                             @csrf
@@ -117,7 +117,7 @@
                                         </li> --}}
                                         <li class="menu-item">
                                             <a title="Logout" href="{{ route('admin.dashboard') }}"
-                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Keluar</a>
                                         </li>
                                         <form id="logout-form" method="POST" action="{{ route('logout') }}">
                                             @csrf
@@ -134,7 +134,7 @@
                                         </li>
                                         <li class="menu-item">
                                             <a title="Logout" href="{{ route('user.dashboard') }}"
-                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Keluar</a>
                                         </li>
                                         <form id="logout-form" method="POST" action="{{ route('logout') }}">
                                             @csrf
@@ -143,10 +143,9 @@
                                 </li>
                                 @endif
                                 @else
-                                <li class="menu-item"><a title="Register or Login" href="{{ route('login') }}">Login</a>
+                                <li class="menu-item"><a title="Masuk" href="{{ route('login') }}">Masuk</a>
                                 </li>
-                                <li class="menu-item"><a title="Register or Login"
-                                        href="{{ route('register') }}">Daftar</a></li>
+                                <li class="menu-item"><a title="Daftar" href="{{ route('register') }}">Daftar</a></li>
                                 @endif
                                 @endif
                             </ul>
