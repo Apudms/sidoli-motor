@@ -54,8 +54,8 @@
 
             <div class="wrap-breadcrumb">
                 <ul>
-                    <li class="item-link"><a href="/" class="link">home</a></li>
-                    <li class="item-link"><span>login</span></li>
+                    <li class="item-link"><a href="/" class="link">Halaman Utama</a></li>
+                    <li class="item-link"><span>Masuk</span></li>
                 </ul>
             </div>
             <div class="row">
@@ -67,10 +67,10 @@
                                 <form name="frm-login" method="POST" action="{{ route('login') }}">
                                     @csrf
                                     <fieldset class="wrap-title">
-                                        <h3 class="form-title">Log in to your account</h3>
+                                        <h3 class="form-title">Masuk ke akun anda</h3>
                                     </fieldset>
                                     <fieldset class="wrap-input">
-                                        <label for="frm-login-uname">Email Address:</label>
+                                        <label for="frm-login-uname">Alamat Email:</label>
                                         <input type="email" id="frm-login-uname" name="email"
                                             placeholder="Type your email address" :value="old('email')" required
                                             autofocus>
@@ -84,12 +84,12 @@
                                     <fieldset class="wrap-input">
                                         <label class="remember-field">
                                             <input class="frm-input " name="remember" id="rememberme" value="forever"
-                                                type="checkbox"><span>Remember me</span>
+                                                type="checkbox"><span>Ingat saya</span>
                                         </label>
                                         <a class="link-function left-position" href="{{ route('password.request') }}"
-                                            title="Forgotten password?">Forgotten password?</a>
+                                            title="Forgotten password?">Lupa password?</a>
                                     </fieldset>
-                                    <input type="submit" class="btn btn-submit" value="Login" name="submit">
+                                    <input type="submit" class="btn btn-submit" value="Masuk" name="submit">
                                 </form>
                             </div>
                         </div>
