@@ -3,6 +3,7 @@
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\CartComponent;
 use App\Http\Livewire\CheckoutComponent;
+use App\Http\Livewire\DetailsComponent;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\Owner\OwnerDashboardComponent;
 use App\Http\Livewire\ShopComponent;
@@ -32,7 +33,7 @@ Route::get('/keranjang', CartComponent::class);
 
 Route::get('/checkout', CheckoutComponent::class);
 
-// Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
+Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
 
 // Route::middleware([
 //     'auth:sanctum',
