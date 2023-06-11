@@ -49,33 +49,43 @@
 
                     <ul class="product-list grid-products equal-container">
 
+                        @foreach ($products as $product)
+
                         <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
                             <div class="product product-style-3 equal-elem ">
                                 <div class="product-thumnail">
-                                    <a href="" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets') }}/images/products/produk.jpg" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+                                    <a href="{{ route('product.details',['slug'=>$product->slug]) }}"
+                                        title="{{ $product->name }}">
+                                        <figure><img src="{{ asset('/assets/images/products') }}/{{ $product->image }}"
+                                                alt="{{ $product->name }}"></figure>
                                     </a>
                                 </div>
                                 <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama Produk</span></a>
-                                    <div class="wrap-price"><span class="product-price">Rp123</span></div>
+                                    <a href="{{ route('product.details',['slug'=>$product->slug]) }}"
+                                        class="product-name"><span>{{ $product->name
+                                            }}</span></a>
+                                    <div class="wrap-price"><span class="product-price">Rp{{ $product->regular_price
+                                            }}</span></div>
                                     <a href="#" class="btn add-to-cart">Masukkan Keranjang</a>
                                 </div>
                             </div>
                         </li>
+
+                        @endforeach
 
                     </ul>
 
                 </div>
 
                 <div class="wrap-pagination-info">
-                    <ul class="page-numbers">
+                    {{ $products->links() }}
+                    {{-- <ul class="page-numbers">
                         <li><span class="page-number-item current">1</span></li>
                         <li><a class="page-number-item" href="#">2</a></li>
                         <li><a class="page-number-item" href="#">3</a></li>
                         <li><a class="page-number-item next-link" href="#">Next</a></li>
                     </ul>
-                    <p class="result-count">Menampilkan 1-9 dari 21 hasil</p>
+                    <p class="result-count">Menampilkan 1-9 dari 21 hasil</p> --}}
                 </div>
             </div>
             <!--end main products area-->
@@ -133,7 +143,10 @@
                             <li class="list-item default-hiden"><a class="filter-link " href="#">TDR</a></li>
                             <li class="list-item default-hiden"><a class="filter-link " href="#">Yamaha</a></li>
                             <li class="list-item default-hiden"><a class="filter-link " href="#">Yamalube</a></li>
-                            <li class="list-item"><a data-label='Tampilkan lebih sedikit<i class="fa fa-angle-up" aria-hidden="true"></i>' class="btn-control control-show-more" href="#">Tampilkan lainnya<i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
+                            <li class="list-item"><a
+                                    data-label='Tampilkan lebih sedikit<i class="fa fa-angle-up" aria-hidden="true"></i>'
+                                    class="btn-control control-show-more" href="#">Tampilkan lainnya<i
+                                        class="fa fa-angle-down" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
                 </div><!-- brand widget-->
@@ -147,8 +160,10 @@
                             <li class="product-item">
                                 <div class="product product-widget-style">
                                     <div class="thumbnnail">
-                                        <a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
-                                            <figure><img src="{{ asset('/assets') }}/images/products/produk.jpg" alt=""></figure>
+                                        <a href="detail.html"
+                                            title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
+                                            <figure><img src="{{ asset('/assets') }}/images/products/barang_1.jpg"
+                                                    alt=""></figure>
                                         </a>
                                     </div>
                                     <div class="product-info">
@@ -161,8 +176,10 @@
                             <li class="product-item">
                                 <div class="product product-widget-style">
                                     <div class="thumbnnail">
-                                        <a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
-                                            <figure><img src="{{ asset('/assets') }}/images/products/produk.jpg" alt=""></figure>
+                                        <a href="detail.html"
+                                            title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
+                                            <figure><img src="{{ asset('/assets') }}/images/products/produk.jpg" alt="">
+                                            </figure>
                                         </a>
                                     </div>
                                     <div class="product-info">
@@ -175,8 +192,10 @@
                             <li class="product-item">
                                 <div class="product product-widget-style">
                                     <div class="thumbnnail">
-                                        <a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
-                                            <figure><img src="{{ asset('/assets') }}/images/products/produk.jpg" alt=""></figure>
+                                        <a href="detail.html"
+                                            title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
+                                            <figure><img src="{{ asset('/assets') }}/images/products/produk.jpg" alt="">
+                                            </figure>
                                         </a>
                                     </div>
                                     <div class="product-info">
