@@ -40,7 +40,9 @@
                             </div>
                         </div>
                         <div class="wrap-butons">
-                            <a href="#" class="btn add-to-cart">Tambahkan keranjang</a>
+                            <a href="#" class="btn add-to-cart"
+                                wire:click.prevent="store({{ $product->id }},'{{ $product->name }}',{{ $product->regular_price }})">Tambahkan
+                                keranjang</a>
                             <div class="wrap-btn">
                                 <a href="#" class="btn btn-wishlist">Tambahkan disukai</a>
                             </div>
