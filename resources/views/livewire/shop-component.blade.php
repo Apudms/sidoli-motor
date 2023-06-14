@@ -19,10 +19,10 @@
                     <div class="wrap-right">
 
                         <div class="sort-item orderby ">
-                            <select name="orderby" class="use-chosen">
-                                <option value="menu_order" selected="selected">Sortir berdasarkan</option>
-                                <option value="popularity">Terpopuler</option>
-                                <option value="rating">Terlaris</option>
+                            <select name="orderby" class="use-chosen" wire:model="sorting">
+                                <option value="default" selected="selected">Sortir berdasarkan (default)</option>
+                                {{-- <option value="popularity">Terpopuler</option> --}}
+                                {{-- <option value="rating">Terlaris</option> --}}
                                 <option value="date">Terbaru</option>
                                 <option value="price">Harga: Rendah ke Tinggi</option>
                                 <option value="price-desc">Harga: Tinggi ke Rendah</option>
@@ -30,7 +30,7 @@
                         </div>
 
                         <div class="sort-item product-per-page">
-                            <select name="post-per-page" class="use-chosen">
+                            <select name="post-per-page" class="use-chosen" wire:model="pageSize">
                                 <option value="9" selected="selected">9 per halaman</option>
                                 <option value="12">12 per halaman</option>
                                 <option value="15">15 per halaman</option>

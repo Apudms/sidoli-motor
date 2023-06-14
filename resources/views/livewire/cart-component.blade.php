@@ -47,7 +47,8 @@
                             <p class="price">Rp{{ $item->subtotal }}</p>
                         </div>
                         <div class="delete">
-                            <a href="#" class="btn btn-delete" title="">
+                            <a href="#" wire:click.prevent="destroy('{{ $item->rowId }}')" class="btn btn-delete"
+                                title="">
                                 <span>Hapus dari keranjang</span>
                                 <i class="fa fa-times-circle" aria-hidden="true"></i>
                             </a>
@@ -132,7 +133,7 @@
                             aria-hidden="true"></i></a>
                 </div>
                 <div class="update-clear">
-                    <a class="btn btn-clear" href="#">Hapus Keranjang Belanja</a>
+                    <a class="btn btn-clear" href="#" wire:click.prevent="destroyAll()">Hapus Keranjang Belanja</a>
                     <a class="btn btn-update" href="#">Perbarui Keranjang Belanja</a>
                 </div>
             </div>
