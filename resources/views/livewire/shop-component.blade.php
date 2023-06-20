@@ -5,7 +5,7 @@
         <div class="wrap-breadcrumb">
             <ul>
                 <li class="item-link"><a href="/" class="link">Halaman Utama</a></li>
-                <li class="item-link"><span>Velg</span></li>
+                <li class="item-link"><span>Toko</span></li>
             </ul>
         </div>
         <div class="row">
@@ -14,7 +14,7 @@
 
                 <div class="wrap-shop-control">
 
-                    <h1 class="shop-title">Velg</h1>
+                    <h1 class="shop-title">Toko</h1>
 
                     <div class="wrap-right">
 
@@ -126,7 +126,8 @@
                             </li> --}}
                             @foreach ($categories as $category)
                             <li class="category-item has-child-cate active">
-                                <a href="#" class="cate-link">{{ $category->name }}</a>
+                                <a href="{{ route('produk.kategori',['category_slug' => $category->slug]) }}"
+                                    class="cate-link">{{ $category->name }}</a>
                             </li>
                             @endforeach
                         </ul>
