@@ -130,7 +130,7 @@
                     <div class="mid-section main-info-area">
 
                         <div class="wrap-logo-top left-section">
-                            <a href="/" class="link-to-home"><img src="{{ asset('/assets') }}/images/Sidoli Motor.png"
+                            <a href="/" class="link-to-home"><img src="{{ asset('/assets/images') }}/Sidoli Motor.png"
                                     alt="SIDOLI MOTOR"></a>
                         </div>
 
@@ -181,7 +181,7 @@
                                 </a>
                             </div>
                             <div class="wrap-icon-section minicart">
-                                <a href="#" class="link-direction">
+                                <a href="/keranjang" class="link-direction">
                                     <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                                     <div class="left-info">
                                         @if (Cart::count() > 0)

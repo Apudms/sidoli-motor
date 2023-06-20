@@ -28,7 +28,7 @@
                         </div>
                         <div class="product-name">
                             <a class="link-to-product"
-                                href="{{ route('product.details',['slug'=>$item->model->slug]) }}">{{ $item->name }}</a>
+                                href="{{ route('produk.detail',['slug'=>$item->model->slug]) }}">{{ $item->name }}</a>
                         </div>
                         <div class="price-field produtc-price">
                             <p class="price">Rp{{ $item->model->regular_price }}</p>

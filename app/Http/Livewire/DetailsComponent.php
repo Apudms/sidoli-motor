@@ -19,7 +19,7 @@ class DetailsComponent extends Component
     {
         Cart::add($product_id, $product_name, 1, $product_price)->associate('App\Models\Product');
         session()->flash('success_message', 'Produk berhasil ditambahkan ke keranjang');
-        return redirect()->route('product.cart');
+        return redirect()->route('produk.keranjang');
     }
 
     public function render()

@@ -6,6 +6,7 @@ use App\Models\Product;
 use Livewire\Component;
 use Livewire\withPagination;
 use Cart;
+use App\Models\Category;
 
 class ShopComponent extends Component
 {
@@ -23,7 +24,7 @@ class ShopComponent extends Component
         Cart::add($product_id, $product_name, 1, $product_price)->associate('App\Models\Product');
         session()->flash('success_message', 'Produk berhasil ditambahkan ke keranjang');
 
-        return redirect()->route('product.cart');
+        return redirect()->route('produk.keranjang');
     }
 
     use withPagination;
@@ -39,6 +40,8 @@ class ShopComponent extends Component
             $products = Product::paginate($this->pageSize);
         }
 
-        return view('livewire.shop-component', ['products' => $products])->layout('layouts.main');
+        $categories = Category::all();
+
+        return view('livewire.shop-component', ['products' => $products, 'categories' => $categories])->layout('layouts.main');
     }
 }

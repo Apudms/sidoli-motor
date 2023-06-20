@@ -54,14 +54,14 @@
                         <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
                             <div class="product product-style-3 equal-elem ">
                                 <div class="product-thumnail">
-                                    <a href="{{ route('product.details',['slug'=>$product->slug]) }}"
+                                    <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
                                         title="{{ $product->name }}">
                                         <figure><img src="{{ asset('/assets/images/products') }}/{{ $product->image }}"
                                                 alt="{{ $product->name }}"></figure>
                                     </a>
                                 </div>
                                 <div class="product-info">
-                                    <a href="{{ route('product.details',['slug'=>$product->slug]) }}"
+                                    <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
                                         class="product-name"><span>{{ $product->name
                                             }}</span></a>
                                     <div class="wrap-price"><span class="product-price">Rp{{ $product->regular_price
@@ -100,7 +100,8 @@
                     <h2 class="widget-title">Semua Kategori</h2>
                     <div class="widget-content">
                         <ul class="list-category">
-                            <li class="category-item has-child-cate">
+
+                            {{-- <li class="category-item has-child-cate">
                                 <a href="#" class="cate-link">Ban</a>
                                 <span class="toggle-control">+</span>
                                 <ul class="sub-cate">
@@ -122,10 +123,12 @@
                             </li>
                             <li class="category-item has-child-cate">
                                 <a href="#" class="cate-link">Knalpot</a>
-                            </li>
+                            </li> --}}
+                            @foreach ($categories as $category)
                             <li class="category-item has-child-cate active">
-                                <a href="#" class="cate-link">Velg</a>
+                                <a href="#" class="cate-link">{{ $category->name }}</a>
                             </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div><!-- Categories widget-->

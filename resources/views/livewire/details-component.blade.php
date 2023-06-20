@@ -89,8 +89,8 @@
                                             <li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1"
                                                 id="li-comment-20">
                                                 <div id="comment-20" class="comment_container">
-                                                    <img alt="" src="assets/images/author-avata.jpg" height="80"
-                                                        width="80">
+                                                    <img alt="" src="{{ asset('/assets/images') }}/author-avata.jpg"
+                                                        height="80" width="80">
                                                     <div class="comment-text">
                                                         <div class="star-rating">
                                                             <span class="width-80-percent">Rated <strong
@@ -183,7 +183,7 @@
                             <li class="product-item">
                                 <div class="product product-widget-style">
                                     <div class="thumbnnail">
-                                        <a href="{{ route('product.details', ['slug' => $popular->slug]) }}"
+                                        <a href="{{ route('produk.detail', ['slug' => $popular->slug]) }}"
                                             title="{{ $popular->name }}">
                                             <figure><img
                                                     src="{{ asset('/assets/images/products') }}/{{ $popular->image }}"
@@ -192,7 +192,7 @@
                                         </a>
                                     </div>
                                     <div class="product-info">
-                                        <a href="{{ route('product.details', ['slug' => $popular->slug]) }}"
+                                        <a href="{{ route('produk.detail', ['slug' => $popular->slug]) }}"
                                             title="{{ $popular->name }}"><span>{{ $popular->name }}</span></a>
                                         <div class="wrap-price"><span class="product-price">Rp{{ $popular->regular_price
                                                 }}
@@ -223,7 +223,7 @@
 
                             <div class="product product-style-2 equal-elem ">
                                 <div class="product-thumnail">
-                                    <a href="{{ route('product.details', ['slug' => $related->slug]) }}"
+                                    <a href="{{ route('produk.detail', ['slug' => $related->slug]) }}"
                                         title="{{ $related->name }}">
                                         <figure><img src="{{ asset('/assets/images/products') }}/{{ $related->image }}"
                                                 width="214" height="214"
@@ -234,12 +234,12 @@
                                         <span class="flash-item new-label">Baru</span>
                                     </div>
                                     <div class="wrap-btn">
-                                        <a href="{{ route('product.details', ['slug' => $related->slug]) }}"
+                                        <a href="{{ route('produk.detail', ['slug' => $related->slug]) }}"
                                             title="{{ $related->name }}" class="function-link">Selengkapnya</a>
                                     </div>
                                 </div>
                                 <div class="product-info">
-                                    <a href="{{ route('product.details', ['slug' => $related->slug]) }}"
+                                    <a href="{{ route('produk.detail', ['slug' => $related->slug]) }}"
                                         title="{{ $related->name }}" class="product-name"><span>{{ $related->name
                                             }}</span></a>
                                     <div class="wrap-price"><span class="product-price">Rp{{ $related->regular_price }}

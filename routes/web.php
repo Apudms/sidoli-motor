@@ -29,11 +29,11 @@ Route::get('/', HomeComponent::class);
 
 Route::get('/toko', ShopComponent::class);
 
-Route::get('/cart', CartComponent::class)->name('product.cart');
+Route::get('/keranjang', CartComponent::class)->name('produk.keranjang');
 
 Route::get('/checkout', CheckoutComponent::class);
 
-Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
+Route::get('/produk/{slug}', DetailsComponent::class)->name('produk.detail');
 
 // Route::middleware([
 //     'auth:sanctum',
