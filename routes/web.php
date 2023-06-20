@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\CartComponent;
+use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\CheckoutComponent;
 use App\Http\Livewire\DetailsComponent;
 use App\Http\Livewire\HomeComponent;
@@ -34,6 +35,8 @@ Route::get('/keranjang', CartComponent::class)->name('produk.keranjang');
 Route::get('/checkout', CheckoutComponent::class);
 
 Route::get('/produk/{slug}', DetailsComponent::class)->name('produk.detail');
+
+Route::get('/kategori-produk/{category_slug}', CategoryComponent::class)->name('produk.kategori');
 
 // Route::middleware([
 //     'auth:sanctum',
