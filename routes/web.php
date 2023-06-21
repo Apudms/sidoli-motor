@@ -7,6 +7,7 @@ use App\Http\Livewire\CheckoutComponent;
 use App\Http\Livewire\DetailsComponent;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\Owner\OwnerDashboardComponent;
+use App\Http\Livewire\SearchComponent;
 use App\Http\Livewire\ShopComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use Illuminate\Support\Facades\Route;
@@ -22,10 +23,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/', HomeComponent::class);
 
 Route::get('/toko', ShopComponent::class);
@@ -37,6 +34,8 @@ Route::get('/checkout', CheckoutComponent::class);
 Route::get('/produk/{slug}', DetailsComponent::class)->name('produk.detail');
 
 Route::get('/kategori-produk/{category_slug}', CategoryComponent::class)->name('produk.kategori');
+
+Route::get('/cari', SearchComponent::class)->name('produk.cari');
 
 // Route::middleware([
 //     'auth:sanctum',

@@ -134,38 +134,7 @@
                                     alt="SIDOLI MOTOR"></a>
                         </div>
 
-                        <div class="wrap-search center-section">
-                            <div class="wrap-search-form">
-                                <form action="#" id="form-search-top" name="form-search-top">
-                                    <input type="text" name="search" value="" placeholder="Cari produk...">
-                                    <button form="form-search-top" type="button"><i class="fa fa-search"
-                                            aria-hidden="true"></i></button>
-                                    <div class="wrap-list-cate">
-                                        <input type="hidden" name="product-cate" value="0" id="product-cate">
-                                        <a href="#" class="link-control">Kategori</a>
-                                        <ul class="list-cate">
-                                            <li class="level-0">Kategori</li>
-                                            <li class="level-1">-Honda</li>
-                                            <li class="level-2">Handle Rem</li>
-                                            <li class="level-2">Knalpot</li>
-                                            <li class="level-2">Velg</li>
-                                            <li class="level-1">-Kawasaki</li>
-                                            <li class="level-2">Handle Rem</li>
-                                            <li class="level-2">Knalpot</li>
-                                            <li class="level-2">Velg</li>
-                                            <li class="level-1">-Suzuki</li>
-                                            <li class="level-2">Handle Rem</li>
-                                            <li class="level-2">Knalpot</li>
-                                            <li class="level-2">Velg</li>
-                                            <li class="level-1">-Yamaha</li>
-                                            <li class="level-2">Handle Rem</li>
-                                            <li class="level-2">Knalpot</li>
-                                            <li class="level-2">Velg</li>
-                                        </ul>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                        @livewire('header-search-component')
 
                         @if (Route::has('login'))
                         @auth
