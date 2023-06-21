@@ -19,12 +19,12 @@ class CreateProductsTable extends Migration
             $table->string('slug')->unique();
             $table->string('short_description')->nullable();
             $table->text('description');
-            $table->decimal('regular_price');
-            $table->decimal('sale_price')->nullable();
+            $table->decimal('regular_price', $precision = 15, $scale = 0);
+            $table->decimal('sale_price', $precision = 15, $scale = 0)->nullable();
             $table->string('SKU');
-            $table->enum('stock_status', ['instock', 'outofstock']);
+            $table->enum('stok', ['Tersedia', 'Kosong']);
             $table->boolean('featured')->default(false);
-            $table->unsignedBigInteger('quantity')->default(10);
+            $table->unsignedInteger('quantity')->default(10);
             $table->string('image')->nullable();
             $table->text('images')->nullable();
             $table->bigInteger('category_id')->unsigned()->nullable();
