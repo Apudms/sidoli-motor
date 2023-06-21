@@ -64,6 +64,10 @@
                                     <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
                                         class="product-name"><span>{{ $product->name
                                             }}</span></a>
+                                    <div class="stock-info">
+                                        <br>
+                                        <p class="availability">Stok: <b>{{ $product->quantity }}</b></p>
+                                    </div>
                                     <div class="wrap-price"><span class="product-price">Rp{{ $product->regular_price
                                             }}</span></div>
                                     <a href="#" class="btn add-to-cart"

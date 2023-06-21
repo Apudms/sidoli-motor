@@ -76,16 +76,19 @@
                                 <div class="product-info">
                                     <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
                                         class="product-name"><span>{{ $product->name }}</span></a>
+                                    @if (isset($product->sale_price))
                                     <div class="wrap-price">
                                         <ins>
                                             <p class="product-price">Rp{{ $product->regular_price }}</p>
                                         </ins>
-                                        @if (isset($product->sale_price))
                                         <del>
                                             <p class="product-price">Rp{{ $product->sale_price }}</p>
                                         </del>
-                                        @endif
                                     </div>
+                                    @else
+                                    <div class="wrap-price"><span class="product-price">Rp{{ $product->regular_price
+                                            }}</span></div>
+                                    @endif
                                 </div>
                             </div>
                             @endforeach

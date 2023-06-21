@@ -5,6 +5,7 @@
         <div class="wrap-breadcrumb">
             <ul>
                 <li class="item-link"><a href="/" class="link">Halaman Utama</a></li>
+                <li class="item-link"><a href="/toko" class="link">Toko</a></li>
                 <li class="item-link"><span>Detail</span></li>
             </ul>
         </div>
@@ -28,7 +29,8 @@
                         <h2 class="product-name"><b>{{ $product->name }}</b></h2>
                         <div class="wrap-price"><span class="product-price">Rp{{ $product->regular_price }}</span></div>
                         <div class="stock-info in-stock">
-                            <p class="availability">Stok: <b>7</b></p>
+                            <br>
+                            <p class="availability">Stok: <b>{{ $product->quantity }}</b></p>
                         </div>
                         <div class="quantity">
                             <span>Jumlah:</span>
@@ -51,14 +53,14 @@
                     <div class="advance-info">
                         <div class="tab-control normal">
                             <a href="#description" class="tab-control-item active">Deskripsi</a>
-                            <a href="#add_infomation" class="tab-control-item">Addtional Infomation</a>
-                            <a href="#review" class="tab-control-item">Reviews</a>
+                            {{-- <a href="#add_infomation" class="tab-control-item">Addtional Infomation</a> --}}
+                            {{-- <a href="#review" class="tab-control-item">Reviews</a> --}}
                         </div>
                         <div class="tab-contents">
                             <div class="tab-content-item active" id="description">
                                 <p>{{ $product->description }}</p>
                             </div>
-                            <div class="tab-content-item " id="add_infomation">
+                            {{-- <div class="tab-content-item " id="add_infomation">
                                 <table class="shop_attributes">
                                     <tbody>
                                         <tr>
@@ -77,8 +79,8 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div>
-                            <div class="tab-content-item " id="review">
+                            </div> --}}
+                            {{-- <div class="tab-content-item " id="review">
 
                                 <div class="wrap-review-form">
 
@@ -165,7 +167,7 @@
                                     </div><!-- #review_form_wrapper -->
 
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
