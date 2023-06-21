@@ -93,152 +93,6 @@
                             </div>
                             @endforeach
 
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item new-label">Baru</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="wrap-price"><span class="product-price">Rp123</span></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item bestseller-label">Terlaris</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="wrap-price"><span class="product-price">Rp123</span></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="wrap-price"><span class="product-price">Rp123</span></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item new-label">Baru</span>
-                                        <span class="flash-item sale-label">Diskon</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="wrap-price"><ins>
-                                            <p class="product-price">Rp123</p>
-                                        </ins> <del>
-                                            <p class="product-price">Rp123</p>
-                                        </del></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item sale-label">Diskon</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="wrap-price"><ins>
-                                            <p class="product-price">Rp123</p>
-                                        </ins> <del>
-                                            <p class="product-price">Rp123</p>
-                                        </del></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item new-label">Baru</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="wrap-price"><span class="product-price">Rp123</span></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item bestseller-label">Terlaris</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="wrap-price"><span class="product-price">Rp123</span></div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
@@ -252,795 +106,250 @@
         <div class="wrap-products">
             <div class="wrap-product-tab tab-style-1">
                 <div class="tab-control">
-                    <a href="#fashion_1a" class="tab-control-item active">Honda</a>
-                    <a href="#fashion_1b" class="tab-control-item">Kawasaki</a>
-                    <a href="#fashion_1c" class="tab-control-item">Suzuki</a>
-                    <a href="#fashion_1d" class="tab-control-item">Yamaha</a>
-                </div>
-                <div class="tab-contents">
 
-                    <div class="tab-content-item active" id="fashion_1a">
-                        <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container"
-                            data-items="5" data-loop="false" data-nav="true" data-dots="false"
-                            data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama Produk</span></a>
-                                    <div class="wrap-price"><span class="product-price">Rp123</span></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item new-label">Baru</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama Produk</span></a>
-                                    <div class="wrap-price"><span class="product-price">Rp123</span></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item bestseller-label">Terlaris</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="wrap-price"><span class="product-price">Rp123</span></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item sale-label">Diskon</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama Produk</span></a>
-                                    <div class="wrap-price"><ins>
-                                            <p class="product-price">Rp123</p>
-                                        </ins> <del>
-                                            <p class="product-price">Rp123</p>
-                                        </del></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item bestseller-label">Terlaris</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="wrap-price"><span class="product-price">Rp123</span></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item new-label">Baru</span>
-                                        <span class="flash-item sale-label">Diskon</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama Produk</span></a>
-                                    <div class="wrap-price"><ins>
-                                            <p class="product-price">Rp123</p>
-                                        </ins> <del>
-                                            <p class="product-price">Rp123</p>
-                                        </del></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item sale-label">Diskon</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="wrap-price"><ins>
-                                            <p class="product-price">Rp123</p>
-                                        </ins> <del>
-                                            <p class="product-price">Rp123</p>
-                                        </del></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item new-label">Baru</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="wrap-price"><span class="product-price">Rp123</span></div>
-                                </div>
-                            </div>
-
-                        </div>
+                    <div class="tab-control">
+                        @foreach ($product_cat as $category)
+                        <a href="#category_{{ $category->id }}" class="tab-control-item">{{ $category->id }}-{{
+                            $category->name
+                            }}</a>
+                        @endforeach
                     </div>
+                    <div class="tab-contents">
 
-                    <div class="tab-content-item" id="fashion_1b">
-                        <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container "
-                            data-items="5" data-loop="false" data-nav="true" data-dots="false"
-                            data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
+                        <div class="tab-content-item active" id="category_1">
+                            <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container"
+                                data-items="5" data-loop="false" data-nav="true" data-dots="false"
+                                data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
 
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item bestseller-label">Terlaris</span>
+                                @foreach ($products as $product)
+                                @if ($product->category_id == 1)
+                                <div class="product product-style-2 equal-elem ">
+                                    <div class="product-thumnail">
+                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
+                                            title="{{ $product->name }}">
+                                            <figure><img
+                                                    src="{{ asset('/assets/images/products') }}/{{ $product->image }}"
+                                                    width="800" height="800" alt="{{ $product->name }}">
+                                            </figure>
+                                        </a>
+                                        <div class="wrap-btn">
+                                            <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
+                                                class="function-link">Lihat Detail</a>
+                                        </div>
                                     </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
+                                    <div class="product-info">
+                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
+                                            class="product-name"><span>{{ $product->category_id }} - {{ $product->name
+                                                }}</span></a>
+                                        @if (isset($product->sale_price))
+                                        <div class="wrap-price">
+                                            <ins>
+                                                <p class="product-price">Rp{{ $product->regular_price }}</p>
+                                            </ins>
+                                            <del>
+                                                <p class="product-price">Rp{{ $product->sale_price }}</p>
+                                            </del>
+                                        </div>
+                                        @else
+                                        <div class="wrap-price"><span class="product-price">Rp{{ $product->regular_price
+                                                }}</span></div>
+                                        @endif
                                     </div>
                                 </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="wrap-price"><span class="product-price">Rp123</span></div>
-                                </div>
+
+                                @endif
+                                @endforeach
                             </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item bestseller-label">Terlaris</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="wrap-price"><ins>
-                                            <p class="product-price">Rp123</p>
-                                        </ins> <del>
-                                            <p class="product-price">Rp123</p>
-                                        </del></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item bestseller-label">Terlaris</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="wrap-price"><span class="product-price">Rp123</span></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item bestseller-label">Terlaris</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">quic view</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="wrap-price"><ins>
-                                            <p class="product-price">Rp123</p>
-                                        </ins> <del>
-                                            <p class="product-price">Rp123</p>
-                                        </del></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item bestseller-label">Terlaris</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="wrap-price"><span class="product-price">Rp123</span></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item bestseller-label">Terlaris</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="wrap-price"><ins>
-                                            <p class="product-price">Rp123</p>
-                                        </ins> <del>
-                                            <p class="product-price">Rp123</p>
-                                        </del></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item bestseller-label">Terlaris</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="wrap-price"><span class="product-price">Rp123</span></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item bestseller-label">Terlaris</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="wrap-price"><ins>
-                                            <p class="product-price">Rp123</p>
-                                        </ins> <del>
-                                            <p class="product-price">Rp123</p>
-                                        </del></div>
-                                </div>
-                            </div>
-
                         </div>
-                    </div>
 
-                    <div class="tab-content-item" id="fashion_1c">
-                        <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container"
-                            data-items="5" data-loop="false" data-nav="true" data-dots="false"
-                            data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
+                        <div class="tab-content-item" id="category_2">
+                            <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container"
+                                data-items="5" data-loop="false" data-nav="true" data-dots="false"
+                                data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
 
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item new-label">Baru</span>
-                                        <span class="flash-item sale-label">Diskon</span>
+                                @foreach ($products as $product)
+                                @if ($product->category_id == 2)
+                                <div class="product product-style-2 equal-elem ">
+                                    <div class="product-thumnail">
+                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
+                                            title="{{ $product->name }}">
+                                            <figure><img
+                                                    src="{{ asset('/assets/images/products') }}/{{ $product->image }}"
+                                                    width="800" height="800" alt="{{ $product->name }}">
+                                            </figure>
+                                        </a>
+                                        <div class="wrap-btn">
+                                            <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
+                                                class="function-link">Lihat Detail</a>
+                                        </div>
                                     </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
+                                    <div class="product-info">
+                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
+                                            class="product-name"><span>{{ $product->category_id }} - {{ $product->name
+                                                }}</span></a>
+                                        @if (isset($product->sale_price))
+                                        <div class="wrap-price">
+                                            <ins>
+                                                <p class="product-price">Rp{{ $product->regular_price }}</p>
+                                            </ins>
+                                            <del>
+                                                <p class="product-price">Rp{{ $product->sale_price }}</p>
+                                            </del>
+                                        </div>
+                                        @else
+                                        <div class="wrap-price"><span class="product-price">Rp{{ $product->regular_price
+                                                }}</span></div>
+                                        @endif
                                     </div>
                                 </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="wrap-price"><ins>
-                                            <p class="product-price">Rp123</p>
-                                        </ins> <del>
-                                            <p class="product-price">Rp123</p>
-                                        </del></div>
-                                </div>
+
+                                @endif
+                                @endforeach
                             </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item new-label">Baru</span>
-                                        <span class="flash-item sale-label">Diskon</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="wrap-price"><ins>
-                                            <p class="product-price">Rp123</p>
-                                        </ins> <del>
-                                            <p class="product-price">Rp123</p>
-                                        </del></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item new-label">Baru</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="wrap-price"><span class="product-price">Rp123</span></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item new-label">Baru</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="wrap-price"><span class="product-price">Rp123</span></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item new-label">Baru</span>
-                                        <span class="flash-item sale-label">Diskon</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="wrap-price"><ins>
-                                            <p class="product-price">Rp123</p>
-                                        </ins> <del>
-                                            <p class="product-price">Rp123</p>
-                                        </del></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item new-label">Baru</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="wrap-price"><span class="product-price">Rp123</span></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item new-label">Baru</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">quic view</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="wrap-price"><span class="product-price">Rp123</span></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item new-label">Baru</span>
-                                        <span class="flash-item sale-label">Diskon</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">quic view</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="wrap-price"><ins>
-                                            <p class="product-price">Rp123</p>
-                                        </ins> <del>
-                                            <p class="product-price">Rp123</p>
-                                        </del></div>
-                                </div>
-                            </div>
-
                         </div>
-                    </div>
 
-                    <div class="tab-content-item" id="fashion_1d">
-                        <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container"
-                            data-items="5" data-loop="false" data-nav="true" data-dots="false"
-                            data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
+                        <div class="tab-content-item" id="category_3">
+                            <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container"
+                                data-items="5" data-loop="false" data-nav="true" data-dots="false"
+                                data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
 
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">Lihat Detail</a>
+                                @foreach ($products as $product)
+                                @if ($product->category_id == 3)
+                                <div class="product product-style-2 equal-elem ">
+                                    <div class="product-thumnail">
+                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
+                                            title="{{ $product->name }}">
+                                            <figure><img
+                                                    src="{{ asset('/assets/images/products') }}/{{ $product->image }}"
+                                                    width="800" height="800" alt="{{ $product->name }}">
+                                            </figure>
+                                        </a>
+                                        <div class="wrap-btn">
+                                            <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
+                                                class="function-link">Lihat Detail</a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
+                                            class="product-name"><span>{{ $product->category_id }} - {{ $product->name
+                                                }}</span></a>
+                                        @if (isset($product->sale_price))
+                                        <div class="wrap-price">
+                                            <ins>
+                                                <p class="product-price">Rp{{ $product->regular_price }}</p>
+                                            </ins>
+                                            <del>
+                                                <p class="product-price">Rp{{ $product->sale_price }}</p>
+                                            </del>
+                                        </div>
+                                        @else
+                                        <div class="wrap-price"><span class="product-price">Rp{{ $product->regular_price
+                                                }}</span></div>
+                                        @endif
                                     </div>
                                 </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="wrap-price"><span class="product-price">Rp123</span></div>
-                                </div>
+
+                                @endif
+                                @endforeach
                             </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item new-label">Baru</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">quic view</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="wrap-price"><span class="product-price">Rp123</span></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item new-label">Baru</span>
-                                        <span class="flash-item sale-label">Diskon</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">quic view</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="wrap-price"><span class="product-price">Rp123</span></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item sale-label">Diskon</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">quic view</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="wrap-price"><ins>
-                                            <p class="product-price">Rp123</p>
-                                        </ins> <del>
-                                            <p class="product-price">Rp123</p>
-                                        </del></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item sale-label">Diskon</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">quic view</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="wrap-price"><ins>
-                                            <p class="product-price">Rp123</p>
-                                        </ins> <del>
-                                            <p class="product-price">Rp123</p>
-                                        </del></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item bestseller-label">Terlaris</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">quic view</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="wrap-price"><ins>
-                                            <p class="product-price">Rp123</p>
-                                        </ins> <del>
-                                            <p class="product-price">Rp123</p>
-                                        </del></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">quic view</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="wrap-price"><span class="product-price">Rp123</span></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{ asset('/assets/images/products') }}/produk.jpg" width="800"
-                                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item bestseller-label">Terlaris</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">quic view</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Nama produk</span></a>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="wrap-price"><ins>
-                                            <p class="product-price">Rp123</p>
-                                        </ins> <del>
-                                            <p class="product-price">Rp123</p>
-                                        </del></div>
-                                </div>
-                            </div>
-
                         </div>
+
+                        <div class="tab-content-item" id="category_4">
+                            <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container"
+                                data-items="5" data-loop="false" data-nav="true" data-dots="false"
+                                data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
+
+                                @foreach ($products as $product)
+                                @if ($product->category_id == 4)
+                                <div class="product product-style-2 equal-elem ">
+                                    <div class="product-thumnail">
+                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
+                                            title="{{ $product->name }}">
+                                            <figure><img
+                                                    src="{{ asset('/assets/images/products') }}/{{ $product->image }}"
+                                                    width="800" height="800" alt="{{ $product->name }}">
+                                            </figure>
+                                        </a>
+                                        <div class="wrap-btn">
+                                            <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
+                                                class="function-link">Lihat Detail</a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
+                                            class="product-name"><span>{{ $product->category_id }} - {{ $product->name
+                                                }}</span></a>
+                                        @if (isset($product->sale_price))
+                                        <div class="wrap-price">
+                                            <ins>
+                                                <p class="product-price">Rp{{ $product->regular_price }}</p>
+                                            </ins>
+                                            <del>
+                                                <p class="product-price">Rp{{ $product->sale_price }}</p>
+                                            </del>
+                                        </div>
+                                        @else
+                                        <div class="wrap-price"><span class="product-price">Rp{{ $product->regular_price
+                                                }}</span></div>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                @endif
+                                @endforeach
+                            </div>
+                        </div>
+
+                        <div class="tab-content-item" id="category_5">
+                            <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container"
+                                data-items="5" data-loop="false" data-nav="true" data-dots="false"
+                                data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
+
+                                @foreach ($products as $product)
+                                @if ($product->category_id == 5)
+                                <div class="product product-style-2 equal-elem ">
+                                    <div class="product-thumnail">
+                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
+                                            title="{{ $product->name }}">
+                                            <figure><img
+                                                    src="{{ asset('/assets/images/products') }}/{{ $product->image }}"
+                                                    width="800" height="800" alt="{{ $product->name }}">
+                                            </figure>
+                                        </a>
+                                        <div class="wrap-btn">
+                                            <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
+                                                class="function-link">Lihat Detail</a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
+                                            class="product-name"><span>{{ $product->category_id }} - {{ $product->name
+                                                }}</span></a>
+                                        @if (isset($product->sale_price))
+                                        <div class="wrap-price">
+                                            <ins>
+                                                <p class="product-price">Rp{{ $product->regular_price }}</p>
+                                            </ins>
+                                            <del>
+                                                <p class="product-price">Rp{{ $product->sale_price }}</p>
+                                            </del>
+                                        </div>
+                                        @else
+                                        <div class="wrap-price"><span class="product-price">Rp{{ $product->regular_price
+                                                }}</span></div>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                @endif
+                                @endforeach
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
     </div>
 

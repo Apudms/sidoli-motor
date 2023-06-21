@@ -34,7 +34,7 @@ class ProductFactory extends Factory
             'stok' => 'Tersedia',
             'quantity' => $this->faker->numberBetween(10, 100),
             'image' => 'barang_' . $this->faker->numberBetween(1, 72) . '.jpg',
-            'category_id' => $this->faker->numberBetween(1, 7)
+            'category_id' => $this->faker->numberBetween(1, 10)
         ];
     }
 }
