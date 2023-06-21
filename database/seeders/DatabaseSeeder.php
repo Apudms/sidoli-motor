@@ -17,7 +17,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Category::factory(7)->create();
         User::factory(1)->create();
         User::create(
             [
@@ -29,6 +28,77 @@ class DatabaseSeeder extends Seeder
                 'utype' => 'ADM',
             ]
         );
+        Category::create(
+            [
+                'name' => 'Honda',
+                'slug' => 'honda'
+            ]
+        );
+
+        Category::create(
+            [
+                'name' => 'Yamaha',
+                'slug' => 'yamaha'
+            ]
+        );
+
+        Category::create(
+            [
+                'name' => 'Suzuki',
+                'slug' => 'suzuki'
+            ]
+        );
+
+        Category::create(
+            [
+                'name' => 'Kawasaki',
+                'slug' => 'kawasaki'
+            ]
+        );
+
+        Category::create(
+            [
+                'name' => 'TDR',
+                'slug' => 'tdr'
+            ]
+        );
+
+        Category::create(
+            [
+                'name' => 'Kawahara',
+                'slug' => 'kawahara'
+            ]
+        );
+
+        Category::create(
+            [
+                'name' => 'Michelin',
+                'slug' => 'michelin'
+            ]
+        );
+
+        Category::create(
+            [
+                'name' => 'Ring Velg',
+                'slug' => 'ring_velg'
+            ]
+        );
+
+        Category::create(
+            [
+                'name' => 'Ban Tubeless',
+                'slug' => 'ban_tubeless'
+            ]
+        );
+
+        Category::create(
+            [
+                'name' => 'Oli',
+                'slug' => 'oli'
+            ]
+        );
+
+        //Category::factory(7)->create();
         Product::factory(73)->create();
     }
 }
