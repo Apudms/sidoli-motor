@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Livewire\Admin\AdminAddCategoryComponent;
+use App\Http\Livewire\Admin\AdminCategoryComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\CartComponent;
 use App\Http\Livewire\CategoryComponent;
@@ -24,17 +26,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', HomeComponent::class);
-
 Route::get('/toko', ShopComponent::class);
-
 Route::get('/keranjang', CartComponent::class)->name('produk.keranjang');
-
 Route::get('/checkout', CheckoutComponent::class);
-
 Route::get('/produk/{slug}', DetailsComponent::class)->name('produk.detail');
-
 Route::get('/kategori-produk/{category_slug}', CategoryComponent::class)->name('produk.kategori');
-
 Route::get('/cari', SearchComponent::class)->name('produk.cari');
 
 // Route::middleware([
@@ -57,6 +53,9 @@ Route::middleware(['auth:sanctum', 'verified', 'authowner'])->group(function () 
 //For Admin
 Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function () {
     Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
+    Route::get('/admin/kategori', AdminCategoryComponent::class)->name('admin.kategori');
+    Route::get('/admin/kategori/tambah', AdminAddCategoryComponent::class)->name('admin.tambahkategori');
+
     // Route::get('/admin/brands', AdminBrandComponent::class)->name('admin.brands');
     // Route::get('/admin/brands/add', AdminAddBrandComponent::class)->name('admin.addbrands');
 });
