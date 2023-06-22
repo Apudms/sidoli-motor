@@ -5,34 +5,18 @@
         <div class="wrap-main-slide">
             <div class="slide-carousel owl-carousel style-nav-1" data-items="1" data-loop="1" data-nav="true"
                 data-dots="false">
+                @foreach ($banners as $banner)
                 <div class="item-slide">
-                    <img src="{{ asset('/assets') }}/images/banner.jpg" alt="" class="img-slide">
-                    <div class="slide-info slide-1">
+                    <img src="{{ asset('/assets/images/banner') }}/{{ $banner->image }}" alt="{{ $banner->name }}"
+                        class="img-slide">
+                    <div class="slide-info slide-{{ $banner->id }}">
                         {{-- <h2 class="f-title">Judul <b>Besar</b></h2>
                         <span class="subtitle">Keterangan singkat.</span>
                         <p class="sale-info">Harga: <span class="price">Rp123</span></p>
                         <a href="#" class="btn-link">Belanja sekarang</a> --}}
                     </div>
                 </div>
-                <div class="item-slide">
-                    <img src="{{ asset('/assets') }}/images/banner-2.jpg" alt="" class="img-slide">
-                    <div class="slide-info slide-2">
-                        {{-- <h2 class="f-title">Extra 25% Off</h2>
-                        <span class="f-subtitle">On online payments</span>
-                        <p class="discount-code">Use Code: #FA6868</p>
-                        <h4 class="s-title">Get Free</h4>
-                        <p class="s-subtitle">TRansparent Bra Straps</p> --}}
-                    </div>
-                </div>
-                <div class="item-slide">
-                    <img src="{{ asset('/assets') }}/images/banner-3.jpg" alt="" class="img-slide">
-                    <div class="slide-info slide-3">
-                        {{-- <h2 class="f-title">Judul <b>Besar</b></h2>
-                        <span class="f-subtitle">Keterangan singkat</span>
-                        <p class="sale-info">Harga: <b class="price">Rp123</b></p>
-                        <a href="#" class="btn-link">Belanja sekarang</a> --}}
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
 
