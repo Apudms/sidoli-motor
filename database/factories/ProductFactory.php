@@ -30,11 +30,11 @@ class ProductFactory extends Factory
             'short_description' => $this->faker->text(200),
             'description' => $this->faker->text(500),
             'regular_price' => $this->faker->numberBetween(10000, 400000),
-            'SKU' => 'DIGI' . $this->faker->unique()->numberBetween(100, 500),
-            'stock_status' => 'instock',
+            'SKU' => 'ONDR' . $this->faker->unique()->numberBetween(100, 500),
+            'stok' => 'Tersedia',
             'quantity' => $this->faker->numberBetween(10, 100),
             'image' => 'barang_' . $this->faker->numberBetween(1, 72) . '.jpg',
-            'category_id' => $this->faker->numberBetween(1, 7)
+            'category_id' => $this->faker->numberBetween(1, 10)
         ];
     }
 }

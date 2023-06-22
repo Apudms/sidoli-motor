@@ -45,6 +45,8 @@
                 </div>
                 <!--end wrap shop control-->
 
+                @if ($products->count() > 0)
+
                 <div class="row">
 
                     <ul class="product-list grid-products equal-container">
@@ -64,10 +66,6 @@
                                     <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
                                         class="product-name"><span>{{ $product->name
                                             }}</span></a>
-                                    <div class="stock-info">
-                                        <br>
-                                        <p class="availability">Stok: <b>{{ $product->quantity }}</b></p>
-                                    </div>
                                     <div class="wrap-price"><span class="product-price">Rp{{ $product->regular_price
                                             }}</span></div>
                                     <a href="#" class="btn add-to-cart"
@@ -82,6 +80,12 @@
                     </ul>
 
                 </div>
+
+                @else
+
+                <p style="padding-top: 30px;">Tidak ada produk yang ditemukan.</p>
+
+                @endif
 
                 <div class="wrap-pagination-info">
                     {{ $products->links() }}

@@ -5,6 +5,7 @@
         <div class="wrap-breadcrumb">
             <ul>
                 <li class="item-link"><a href="/" class="link">Halaman Utama</a></li>
+                <li class="item-link"><a href="/toko" class="link">Toko</a></li>
                 <li class="item-link"><span>Detail</span></li>
             </ul>
         </div>
@@ -28,7 +29,8 @@
                         <h2 class="product-name"><b>{{ $product->name }}</b></h2>
                         <div class="wrap-price"><span class="product-price">Rp{{ $product->regular_price }}</span></div>
                         <div class="stock-info in-stock">
-                            <p class="availability">Stok: <b>7</b></p>
+                            <br>
+                            <p class="availability">Stok: <b>{{ $product->quantity }}</b></p>
                         </div>
                         <div class="quantity">
                             <span>Jumlah:</span>
@@ -40,7 +42,9 @@
                             </div>
                         </div>
                         <div class="wrap-butons">
-                            <a href="#" class="btn add-to-cart">Tambahkan keranjang</a>
+                            <a href="#" class="btn add-to-cart"
+                                wire:click.prevent="store({{ $product->id }},'{{ $product->name }}',{{ $product->regular_price }})">Tambahkan
+                                keranjang</a>
                             <div class="wrap-btn">
                                 <a href="#" class="btn btn-wishlist">Tambahkan disukai</a>
                             </div>
@@ -49,14 +53,14 @@
                     <div class="advance-info">
                         <div class="tab-control normal">
                             <a href="#description" class="tab-control-item active">Deskripsi</a>
-                            <a href="#add_infomation" class="tab-control-item">Addtional Infomation</a>
-                            <a href="#review" class="tab-control-item">Reviews</a>
+                            {{-- <a href="#add_infomation" class="tab-control-item">Addtional Infomation</a> --}}
+                            {{-- <a href="#review" class="tab-control-item">Reviews</a> --}}
                         </div>
                         <div class="tab-contents">
                             <div class="tab-content-item active" id="description">
                                 <p>{{ $product->description }}</p>
                             </div>
-                            <div class="tab-content-item " id="add_infomation">
+                            {{-- <div class="tab-content-item " id="add_infomation">
                                 <table class="shop_attributes">
                                     <tbody>
                                         <tr>
@@ -75,8 +79,8 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div>
-                            <div class="tab-content-item " id="review">
+                            </div> --}}
+                            {{-- <div class="tab-content-item " id="review">
 
                                 <div class="wrap-review-form">
 
@@ -87,8 +91,8 @@
                                             <li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1"
                                                 id="li-comment-20">
                                                 <div id="comment-20" class="comment_container">
-                                                    <img alt="" src="assets/images/author-avata.jpg" height="80"
-                                                        width="80">
+                                                    <img alt="" src="{{ asset('/assets/images') }}/author-avata.jpg"
+                                                        height="80" width="80">
                                                     <div class="comment-text">
                                                         <div class="star-rating">
                                                             <span class="width-80-percent">Rated <strong
@@ -163,7 +167,7 @@
                                     </div><!-- #review_form_wrapper -->
 
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -181,7 +185,7 @@
                             <li class="product-item">
                                 <div class="product product-widget-style">
                                     <div class="thumbnnail">
-                                        <a href="{{ route('product.details', ['slug' => $popular->slug]) }}"
+                                        <a href="{{ route('produk.detail', ['slug' => $popular->slug]) }}"
                                             title="{{ $popular->name }}">
                                             <figure><img
                                                     src="{{ asset('/assets/images/products') }}/{{ $popular->image }}"
@@ -190,7 +194,7 @@
                                         </a>
                                     </div>
                                     <div class="product-info">
-                                        <a href="{{ route('product.details', ['slug' => $popular->slug]) }}"
+                                        <a href="{{ route('produk.detail', ['slug' => $popular->slug]) }}"
                                             title="{{ $popular->name }}"><span>{{ $popular->name }}</span></a>
                                         <div class="wrap-price"><span class="product-price">Rp{{ $popular->regular_price
                                                 }}
@@ -221,7 +225,7 @@
 
                             <div class="product product-style-2 equal-elem ">
                                 <div class="product-thumnail">
-                                    <a href="{{ route('product.details', ['slug' => $related->slug]) }}"
+                                    <a href="{{ route('produk.detail', ['slug' => $related->slug]) }}"
                                         title="{{ $related->name }}">
                                         <figure><img src="{{ asset('/assets/images/products') }}/{{ $related->image }}"
                                                 width="214" height="214"
@@ -232,12 +236,12 @@
                                         <span class="flash-item new-label">Baru</span>
                                     </div>
                                     <div class="wrap-btn">
-                                        <a href="{{ route('product.details', ['slug' => $related->slug]) }}"
+                                        <a href="{{ route('produk.detail', ['slug' => $related->slug]) }}"
                                             title="{{ $related->name }}" class="function-link">Selengkapnya</a>
                                     </div>
                                 </div>
                                 <div class="product-info">
-                                    <a href="{{ route('product.details', ['slug' => $related->slug]) }}"
+                                    <a href="{{ route('produk.detail', ['slug' => $related->slug]) }}"
                                         title="{{ $related->name }}" class="product-name"><span>{{ $related->name
                                             }}</span></a>
                                     <div class="wrap-price"><span class="product-price">Rp{{ $related->regular_price }}

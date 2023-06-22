@@ -82,6 +82,9 @@
                                         <li class="menu-item">
                                             <a title="Dashboard" href="{{ route('admin.dashboard') }}">Dashboard</a>
                                         </li>
+                                        <li class="menu-item">
+                                            <a title="Kategori" href="{{ route('admin.kategori') }}">Kategori</a>
+                                        </li>
                                         {{-- <li class="menu-item">
                                             <a title="Brand" href="{{ route('admin.brands') }}">Brand</a>
                                         </li>
@@ -130,42 +133,11 @@
                     <div class="mid-section main-info-area">
 
                         <div class="wrap-logo-top left-section">
-                            <a href="/" class="link-to-home"><img src="{{ asset('/assets') }}/images/Sidoli Motor.png"
+                            <a href="/" class="link-to-home"><img src="{{ asset('/assets/images') }}/Sidoli Motor.png"
                                     alt="SIDOLI MOTOR"></a>
                         </div>
 
-                        <div class="wrap-search center-section">
-                            <div class="wrap-search-form">
-                                <form action="#" id="form-search-top" name="form-search-top">
-                                    <input type="text" name="search" value="" placeholder="Cari produk...">
-                                    <button form="form-search-top" type="button"><i class="fa fa-search"
-                                            aria-hidden="true"></i></button>
-                                    <div class="wrap-list-cate">
-                                        <input type="hidden" name="product-cate" value="0" id="product-cate">
-                                        <a href="#" class="link-control">Kategori</a>
-                                        <ul class="list-cate">
-                                            <li class="level-0">Kategori</li>
-                                            <li class="level-1">-Honda</li>
-                                            <li class="level-2">Handle Rem</li>
-                                            <li class="level-2">Knalpot</li>
-                                            <li class="level-2">Velg</li>
-                                            <li class="level-1">-Kawasaki</li>
-                                            <li class="level-2">Handle Rem</li>
-                                            <li class="level-2">Knalpot</li>
-                                            <li class="level-2">Velg</li>
-                                            <li class="level-1">-Suzuki</li>
-                                            <li class="level-2">Handle Rem</li>
-                                            <li class="level-2">Knalpot</li>
-                                            <li class="level-2">Velg</li>
-                                            <li class="level-1">-Yamaha</li>
-                                            <li class="level-2">Handle Rem</li>
-                                            <li class="level-2">Knalpot</li>
-                                            <li class="level-2">Velg</li>
-                                        </ul>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                        @livewire('header-search-component')
 
                         @if (Route::has('login'))
                         @auth
@@ -181,10 +153,12 @@
                                 </a>
                             </div>
                             <div class="wrap-icon-section minicart">
-                                <a href="#" class="link-direction">
+                                <a href="/keranjang" class="link-direction">
                                     <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                                     <div class="left-info">
-                                        <span class="index">2 produk</span>
+                                        @if (Cart::count() > 0)
+                                        <span class="index">{{ Cart::count() }} pcs</span>
+                                        @endif
                                         <span class="title">Keranjang</span>
                                     </div>
                                 </a>
@@ -296,7 +270,7 @@
     <script src="{{ asset('/assets/js') }}/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4"></script>
     <script src="{{ asset('/assets/js') }}/bootstrap.min.js"></script>
     <script src="{{ asset('/assets/js') }}/jquery.flexslider.js"></script>
-    <script src="{{ asset('/assets/js') }}/chosen.jquery.min.js"></script>
+    {{-- <script src="{{ asset('/assets/js') }}/chosen.jquery.min.js"></script> --}}
     <script src="{{ asset('/assets/js') }}/owl.carousel.min.js"></script>
     <script src="{{ asset('/assets/js') }}/jquery.countdown.min.js"></script>
     <script src="{{ asset('/assets/js') }}/jquery.sticky.js"></script>
