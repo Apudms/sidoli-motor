@@ -6,7 +6,7 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-md-6">
-                                Tambah Kategori Baru
+                                Ubah Kategori
                             </div>
                             <div class="col-md-6">
                                 <a href="{{ route('admin.kategori') }}" class="btn btn-success pull-right">Semua
@@ -18,7 +18,7 @@
                         @if (Session::has('message'))
                         <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
                         @endif
-                        <form class="form-horizontal" wire:submit.prevent="storeCategory">
+                        <form class="form-horizontal" wire:submit.prevent="updateCategory">
                             <div class="form-group">
                                 <label for="" class="col-md-4 control-label">Nama Kategori</label>
                                 <div class="col-md-4">
