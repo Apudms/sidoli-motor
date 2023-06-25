@@ -39,7 +39,16 @@
                                     <td>{{ $category->id }}</td>
                                     <td>{{ $category->name }}</td>
                                     <td>{{ $category->slug }}</td>
-                                    <td></td>
+                                    <td>
+                                        <a
+                                            href="{{ route('admin.ubahkategori', ['category_slug' => $category->slug]) }}"><i
+                                                class="fa fa-edit fa-2x"></i>
+                                        </a>
+                                        <a
+                                            href="{{ route('admin.ubahkategori', ['category_slug' => $category->slug]) }}"><i
+                                                class="fa fa-trash fa-2x"></i>
+                                        </a>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
