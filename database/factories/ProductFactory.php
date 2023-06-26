@@ -25,14 +25,14 @@ class ProductFactory extends Factory
         $product_name = $this->faker->unique()->words($nb = 4, $asText = true);
         $slug = Str::slug($product_name);
         return [
-            'name' => $product_name,
+            'nama_produk' => $product_name,
             'slug' => $slug,
-            'short_description' => $this->faker->text(200),
-            'description' => $this->faker->text(500),
-            'regular_price' => $this->faker->numberBetween(10000, 400000),
+            'deskripsi_singkat' => $this->faker->text(200),
+            'deskripsi' => $this->faker->text(500),
+            'harga_normal' => $this->faker->numberBetween(10000, 400000),
             'SKU' => 'ONDR' . $this->faker->unique()->numberBetween(100, 500),
-            'stok' => 'Tersedia',
-            'quantity' => $this->faker->numberBetween(10, 100),
+            'status_stok' => 'Tersedia',
+            'jumlah_stok' => $this->faker->numberBetween(10, 100),
             'image' => 'barang_' . $this->faker->numberBetween(1, 72) . '.jpg',
             'category_id' => $this->faker->numberBetween(1, 10)
         ];
