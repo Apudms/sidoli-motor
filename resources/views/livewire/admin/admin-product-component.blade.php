@@ -17,10 +17,10 @@
                             <div class="col-md-6">
                                 Semua Produk
                             </div>
-                            {{-- <div class="col-md-6">
+                            <div class="col-md-6">
                                 <a href="{{ route('admin.tambahproduk') }}" class="btn btn-success pull-right">Tambah
                                     Produk</a>
-                            </div> --}}
+                            </div>
                         </div>
                     </div>
                     <div class="panel-body">
@@ -47,10 +47,10 @@
                                 <tr>
                                     <td>{{ $product->id }}</td>
                                     <td><img src="{{ asset('assets/images/products') }}/{{ $product->image }}"
-                                            width="60" alt="{{ $product->name }}">
+                                            width="60" alt="{{ $product->nama_produk }}">
                                     </td>
-                                    <td>{{ $product->name }}</td>
-                                    <td>{{ $product->stok }}</td>
+                                    <td>{{ $product->nama_produk }}</td>
+                                    <td>{{ $product->jumlah_stok }}</td>
                                     <td>{{ $product->regular_price }}</td>
                                     <td>{{ $product->category->name }}</td>
                                     <td>{{ $product->created_at }}</td>

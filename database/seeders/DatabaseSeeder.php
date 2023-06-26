@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
                 'utype' => 'ADM',
             ]
         );
+
         Category::create(
             [
                 'name' => 'Honda',

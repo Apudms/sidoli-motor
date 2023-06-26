@@ -57,19 +57,19 @@
                             <div class="product product-style-3 equal-elem ">
                                 <div class="product-thumnail">
                                     <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                        title="{{ $product->name }}">
+                                        title="{{ $product->nama_produk }}">
                                         <figure><img src="{{ asset('/assets/images/products') }}/{{ $product->image }}"
-                                                alt="{{ $product->name }}"></figure>
+                                                alt="{{ $product->nama_produk }}"></figure>
                                     </a>
                                 </div>
                                 <div class="product-info">
                                     <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                        class="product-name"><span>{{ $product->name
+                                        class="product-name"><span>{{ $product->nama_produk
                                             }}</span></a>
-                                    <div class="wrap-price"><span class="product-price">Rp{{ $product->regular_price
+                                    <div class="wrap-price"><span class="product-price">Rp{{ $product->harga_normal
                                             }}</span></div>
                                     <a href="#" class="btn add-to-cart"
-                                        wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->regular_price }})">Masukkan
+                                        wire:click.prevent="store({{ $product->id }}, '{{ $product->nama_produk }}', {{ $product->harga_normal }})">Masukkan
                                         Keranjang</a>
                                 </div>
                             </div>
