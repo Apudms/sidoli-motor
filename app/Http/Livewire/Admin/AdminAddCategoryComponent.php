@@ -8,18 +8,18 @@ use Illuminate\Support\Str;
 
 class AdminAddCategoryComponent extends Component
 {
-    public $name;
+    public $nama_kategori;
     public $slug;
 
     public function generateslug()
     {
-        $this->slug = Str::slug($this->name);
+        $this->slug = Str::slug($this->nama_kategori);
     }
 
     public function storeCategory()
     {
         $category = new Category();
-        $category->name = $this->name;
+        $category->nama_kategori = $this->nama_kategori;
         $category->slug = $this->slug;
         $category->save();
         session()->flash('message', 'Kategori berhasil ditambahkan!');

@@ -23,7 +23,7 @@
                                 <label for="" class="col-md-4 control-label">Nama Kategori</label>
                                 <div class="col-md-4">
                                     <input type="text" class="form-control input-md" placeholder="Nama Kategori"
-                                        wire:model="name" wire:keyup="generateslug">
+                                        wire:model="nama_kategori" wire:keyup="generateslug">
                                 </div>
                             </div>
                             <div class="form-group">

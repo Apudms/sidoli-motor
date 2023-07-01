@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Banner;
 use App\Models\Category;
+use App\Models\HomeSlider;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -30,78 +31,89 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
+        User::create(
+            [
+                'name' => 'Firhan Surya',
+                'email' => 'firhan@gmail.com',
+                'email_verified_at' => now(),
+                'password' => bcrypt('firhan123'),
+                'remember_token' => Str::random(30),
+                'utype' => 'USR',
+            ]
+        );
+
         Category::create(
             [
-                'name' => 'Honda',
+                'nama_kategori' => 'Honda',
                 'slug' => 'honda'
             ]
         );
 
         Category::create(
             [
-                'name' => 'Yamaha',
+                'nama_kategori' => 'Yamaha',
                 'slug' => 'yamaha'
             ]
         );
 
         Category::create(
             [
-                'name' => 'Suzuki',
+                'nama_kategori' => 'Suzuki',
                 'slug' => 'suzuki'
             ]
         );
 
         Category::create(
             [
-                'name' => 'Kawasaki',
+                'nama_kategori' => 'Kawasaki',
                 'slug' => 'kawasaki'
             ]
         );
 
         Category::create(
             [
-                'name' => 'TDR',
+                'nama_kategori' => 'TDR',
                 'slug' => 'tdr'
             ]
         );
 
         Category::create(
             [
-                'name' => 'Kawahara',
+                'nama_kategori' => 'Kawahara',
                 'slug' => 'kawahara'
             ]
         );
 
         Category::create(
             [
-                'name' => 'Michelin',
+                'nama_kategori' => 'Michelin',
                 'slug' => 'michelin'
             ]
         );
 
         Category::create(
             [
-                'name' => 'Ring Velg',
+                'nama_kategori' => 'Ring Velg',
                 'slug' => 'ring_velg'
             ]
         );
 
         Category::create(
             [
-                'name' => 'Ban Tubeless',
+                'nama_kategori' => 'Ban Tubeless',
                 'slug' => 'ban_tubeless'
             ]
         );
 
         Category::create(
             [
-                'name' => 'Oli',
+                'nama_kategori' => 'Oli',
                 'slug' => 'oli'
             ]
         );
 
         //Category::factory(7)->create();
         Product::factory(73)->create();
-        Banner::factory(3)->create();
+        //HomeSlider::factory(3)->create();
     }
 }

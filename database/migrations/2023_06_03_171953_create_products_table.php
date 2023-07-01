@@ -14,7 +14,7 @@ class CreateProductsTable extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->id();
+            $table->string('id')->primary();
             $table->string('nama_produk');
             $table->string('slug')->unique();
             $table->string('deskripsi_singkat')->nullable();
@@ -27,7 +27,7 @@ class CreateProductsTable extends Migration
             $table->unsignedInteger('jumlah_stok')->default(10);
             $table->string('image')->nullable();
             $table->text('images')->nullable();
-            $table->bigInteger('category_id')->unsigned()->nullable();
+            $table->string('category_id', 36);
             $table->timestamps();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });

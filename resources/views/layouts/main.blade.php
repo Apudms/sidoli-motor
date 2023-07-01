@@ -83,17 +83,14 @@
                                             <a title="Dashboard" href="{{ route('admin.dashboard') }}">Dashboard</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a title="Kategori" href="{{ route('admin.kategori') }}">Kategori</a>
+                                            <a title="Kategori" href="{{ route('admin.kategori') }}">Data Kategori</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a title="Produk" href="{{ route('admin.produk') }}">Produk</a>
-                                        </li>
-                                        {{-- <li class="menu-item">
-                                            <a title="Brand" href="{{ route('admin.brands') }}">Brand</a>
+                                            <a title="Produk" href="{{ route('admin.produk') }}">Data Produk</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a title="Produk" href="{{ route('admin.brands') }}">Produk</a>
-                                        </li> --}}
+                                            <a title="Slider" href="{{ route('admin.slider') }}">Manajemen Slider</a>
+                                        </li>
                                         <li class="menu-item">
                                             <a title="Logout" href="{{ route('admin.dashboard') }}"
                                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Keluar</a>

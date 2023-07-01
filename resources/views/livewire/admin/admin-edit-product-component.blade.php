@@ -92,8 +92,10 @@
                                 <div class="col-md-4">
                                     <input type="file" class="input-file" wire:model="newImage">
                                     @if ($newImage)
+                                    <br>
                                     <img src="{{ $newImage->temporaryUrl() }}" width="120">
                                     @else
+                                    <br>
                                     <img src="{{ asset('assets/images/products') }}/{{ $image }}" width="120">
                                     @endif
                                 </div>
@@ -105,7 +107,7 @@
                                     <select class="form-control" wire:model="category_id">
                                         <option value="">Pilih Kategori</option>
                                         @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        <option value="{{ $category->id }}">{{ $category->nama_kategori }}</option>
                                         @endforeach
                                     </select>
                                 </div>

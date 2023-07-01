@@ -5,11 +5,11 @@
         <div class="wrap-main-slide">
             <div class="slide-carousel owl-carousel style-nav-1" data-items="1" data-loop="1" data-nav="true"
                 data-dots="false">
-                @foreach ($banners as $banner)
+                @foreach ($sliders as $slider)
                 <div class="item-slide">
-                    <img src="{{ asset('/assets/images/banner') }}/{{ $banner->image }}" alt="{{ $banner->name }}"
-                        class="img-slide">
-                    <div class="slide-info slide-{{ $banner->id }}">
+                    <img src="{{ asset('/assets/images/sliders') }}/{{ $slider->foto }}"
+                        alt="{{ $slider->nama_slider }}" class="img-slide">
+                    <div class="slide-info slide-{{ $slider->id }}">
                         {{-- <h2 class="f-title">Judul <b>Besar</b></h2>
                         <span class="subtitle">Keterangan singkat.</span>
                         <p class="sale-info">Harga: <span class="price">Rp123</span></p>
