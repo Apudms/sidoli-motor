@@ -33,7 +33,7 @@ class AdminAddProductComponent extends Component
 
     public function generateslug()
     {
-        $this->slug = Str::slug($this->name);
+        $this->slug = Str::slug($this->nama_produk);
     }
 
     public function storeProduct()

@@ -71,7 +71,7 @@
                                     <div class="wrap-price"><span class="product-price">Rp{{ $product->harga_normal
                                             }}</span></div>
                                     <a href="#" class="btn add-to-cart"
-                                        wire:click.prevent="store({{ $product->id }}, '{{ $product->nama_produk }}', {{ $product->regular_price }})">Masukkan
+                                        wire:click.prevent="store('{{ $product->id }}', '{{ $product->nama_produk }}', {{ $product->harga_normal }})">Masukkan
                                         Keranjang</a>
                                 </div>
                             </div>
@@ -131,13 +131,14 @@
                             @foreach ($categories as $category)
                             <li class="category-item has-child-cate active">
                                 <a href="{{ route('produk.kategori',['category_slug' => $category->slug]) }}"
-                                    class="cate-link">{{ $category->name }}</a>
+                                    class="cate-link">{{ $category->nama_kategori }}</a>
                             </li>
                             @endforeach
                         </ul>
                     </div>
                 </div><!-- Categories widget-->
 
+                {{--
                 <hr>
 
                 <div class="widget mercado-widget filter-widget brand-widget">
@@ -155,12 +156,13 @@
                             <li class="list-item default-hiden"><a class="filter-link " href="#">Yamalube</a></li>
                             <li class="list-item"><a
                                     data-label='Tampilkan lebih sedikit<i class="fa fa-angle-up" aria-hidden="true"></i>'
-                                    class="btn-control control-show-more" href="#">Tampilkan lainnya<i
-                                        class="fa fa-angle-down" aria-hidden="true"></i></a></li>
+                                    class="btn-control control-show-more" href="#">Tampilkan lainnya
+                                    <i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
-                </div><!-- brand widget-->
+                </div><!-- brand widget--> --}}
 
+                {{--
                 <hr>
 
                 <div class="widget mercado-widget widget-product">
@@ -217,7 +219,7 @@
 
                         </ul>
                     </div>
-                </div><!-- brand widget-->
+                </div><!-- brand widget--> --}}
 
             </div>
             <!--end sitebar-->

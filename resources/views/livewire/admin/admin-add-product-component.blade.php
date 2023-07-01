@@ -10,7 +10,7 @@
                             </div>
                             <div class="col-md-6">
                                 <a href="{{ route('admin.produk') }}" class="btn btn-success pull-right">Semua
-                                    produk</a>
+                                    Produk</a>
                             </div>
                         </div>
                     </div>
@@ -105,7 +105,7 @@
                                     <select class="form-control" wire:model="category_id">
                                         <option value="">Pilih Kategori</option>
                                         @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        <option value="{{ $category->id }}">{{ $category->nama_kategori }}</option>
                                         @endforeach
                                     </select>
                                 </div>

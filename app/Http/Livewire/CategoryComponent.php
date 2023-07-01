@@ -34,14 +34,14 @@ class CategoryComponent extends Component
     {
         $category = Category::where('slug', $this->category_slug)->first();
         $category_id = $category->id;
-        $category_name = $category->name;
+        $category_name = $category->nama_kategori;
 
         if ($this->sorting == 'date') {
             $products = Product::where('category_id', $category_id)->orderBy('created_at', 'DESC')->paginate($this->pageSize);
         } elseif ($this->sorting == 'price') {
-            $products = Product::where('category_id', $category_id)->orderBy('regular_price', 'ASC')->paginate($this->pageSize);
+            $products = Product::where('category_id', $category_id)->orderBy('harga_normal', 'ASC')->paginate($this->pageSize);
         } elseif ($this->sorting == 'price-desc') {
-            $products = Product::where('category_id', $category_id)->orderBy('regular_price', 'DESC')->paginate($this->pageSize);
+            $products = Product::where('category_id', $category_id)->orderBy('harga_normal', 'DESC')->paginate($this->pageSize);
         } else {
             $products = Product::where('category_id', $category_id)->paginate($this->pageSize);
         }

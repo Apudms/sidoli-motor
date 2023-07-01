@@ -35,22 +35,23 @@
                                     <th>ID</th>
                                     <th>Nama Kategori</th>
                                     <th>Slug</th>
-                                    <th>Action</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($categories as $category)
                                 <tr>
                                     <td>{{ $category->id }}</td>
-                                    <td>{{ $category->name }}</td>
+                                    <td>{{ $category->nama_kategori }}</td>
                                     <td>{{ $category->slug }}</td>
                                     <td>
-                                        <a
-                                            href="{{ route('admin.ubahkategori', ['category_slug' => $category->slug]) }}"><i
+                                        <a href="{{ route('admin.ubahkategori', ['id' => $category->id]) }}"><i
                                                 class="fa fa-edit fa-2x"></i>
                                         </a>
-                                        <a href="#" wire:click.prevent="deleteCategory({{ $category->id }})"
-                                            style="margin-left:10px; "><i class="fa fa-trash fa-2x text-danger"></i>
+                                        <a href="#" wire:click.prevent="deleteCategory('{{ $category->id }}')"
+                                            style="margin-left:10px; "
+                                            onclick="return confirm('Yakin ingin menghapus {{ $category->nama_kategori }}?')"><i
+                                                class="fa fa-trash fa-2x text-danger"></i>
                                         </a>
                                     </td>
                                 </tr>

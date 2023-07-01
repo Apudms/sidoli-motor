@@ -27,9 +27,9 @@ class AdminEditProductComponent extends Component
     public $newImage;
     public $product_id;
 
-    public function mount($product_slug)
+    public function mount($id)
     {
-        $product = Product::where('slug', $product_slug)->first();
+        $product = Product::where('id', $id)->first();
         $this->nama_produk = $product->nama_produk;
         $this->slug = $product->slug;
         $this->deskripsi_singkat = $product->deskripsi_singkat;

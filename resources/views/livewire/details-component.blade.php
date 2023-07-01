@@ -43,7 +43,7 @@
                         </div>
                         <div class="wrap-butons">
                             <a href="#" class="btn add-to-cart"
-                                wire:click.prevent="store({{ $product->id }},'{{ $product->nama_produk }}',{{ $product->harga_normal }})">Tambahkan
+                                wire:click.prevent="store('{{ $product->id }}','{{ $product->nama_produk }}',{{ $product->harga_normal }})">Tambahkan
                                 keranjang</a>
                             <div class="wrap-btn">
                                 <a href="#" class="btn btn-wishlist">Tambahkan disukai</a>
@@ -176,7 +176,7 @@
 
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sitebar">
                 <div class="widget mercado-widget widget-product">
-                    <h2 class="widget-title">Produk Populer</h2>
+                    <h2 class="widget-title">Produk Terkait</h2>
                     <div class="widget-content">
                         <ul class="products">
 
@@ -216,7 +216,7 @@
 
             <div class="single-advance-box col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="wrap-show-advance-info-box style-1 box-in-site">
-                    <h3 class="title-box">Produk Terkait</h3>
+                    <h3 class="title-box">Kategori Terkait</h3>
                     <div class="wrap-products">
                         <div class="products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5"
                             data-loop="false" data-nav="true" data-dots="false"

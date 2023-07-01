@@ -1,11 +1,14 @@
 <?php
 
 use App\Http\Livewire\Admin\AdminAddCategoryComponent;
+use App\Http\Livewire\Admin\AdminAddHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminAddProductComponent;
 use App\Http\Livewire\Admin\AdminCategoryComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\AdminEditCategoryComponent;
+use App\Http\Livewire\Admin\AdminEditHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminEditProductComponent;
+use App\Http\Livewire\Admin\AdminHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminProductComponent;
 use App\Http\Livewire\CartComponent;
 use App\Http\Livewire\CategoryComponent;
@@ -59,10 +62,13 @@ Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function () 
     Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
     Route::get('/admin/kategori', AdminCategoryComponent::class)->name('admin.kategori');
     Route::get('/admin/kategori/tambah', AdminAddCategoryComponent::class)->name('admin.tambahkategori');
-    Route::get('/admin/kategori/ubah/{category_slug}', AdminEditCategoryComponent::class)->name('admin.ubahkategori');
+    Route::get('/admin/kategori/ubah/id={id}', AdminEditCategoryComponent::class)->name('admin.ubahkategori');
     Route::get('/admin/produk', AdminProductComponent::class)->name('admin.produk');
     Route::get('/admin/produk/tambah', AdminAddProductComponent::class)->name('admin.tambahproduk');
-    Route::get('/admin/produk/ubah/{product_slug}', AdminEditProductComponent::class)->name('admin.ubahproduk');
+    Route::get('/admin/produk/ubah/id={id}', AdminEditProductComponent::class)->name('admin.ubahproduk');
+    Route::get('/admin/slider', AdminHomeSliderComponent::class)->name('admin.slider');
+    Route::get('/admin/slider/tambah', AdminAddHomeSliderComponent::class)->name('admin.tambahslider');
+    Route::get('/admin/slider/ubah/id={id}', AdminEditHomeSliderComponent::class)->name('admin.ubahslider');
 
     // Route::get('/admin/brands', AdminBrandComponent::class)->name('admin.brands');
     // Route::get('/admin/brands/add', AdminAddBrandComponent::class)->name('admin.addbrands');

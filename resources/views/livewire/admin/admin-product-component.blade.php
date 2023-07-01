@@ -39,7 +39,7 @@
                                     <th>Harga</th>
                                     <th>Kategori</th>
                                     <th>Tanggal</th>
-                                    <th>Action</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -55,11 +55,13 @@
                                     <td>{{ $product->category->name }}</td>
                                     <td>{{ $product->created_at }}</td>
                                     <td>
-                                        <a href="{{ route('admin.ubahproduk', ['product_slug' => $product->slug]) }}"><i
+                                        <a href="{{ route('admin.ubahproduk', ['id' => $product->id]) }}"><i
                                                 class="fa fa-edit fa-2x"></i>
                                         </a>
-                                        <a href="#" wire:click.prevent="deleteProduct({{ $product->id }})"
-                                            style="margin-left:10px; "><i class="fa fa-trash fa-2x text-danger"></i>
+                                        <a href="#" wire:click.prevent="deleteProduct('{{ $product->id }}')"
+                                            style="margin-left:10px; "
+                                            onclick="return confirm('Yakin ingin menghapus {{ $product->nama_produk }}?')"><i
+                                                class="fa fa-trash fa-2x text-danger"></i>
                                         </a>
                                     </td>
                                 </tr>
