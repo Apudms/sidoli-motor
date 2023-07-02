@@ -31,7 +31,7 @@
                                 data-items="5" data-loop="false" data-nav="true" data-dots="false"
                                 data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
 
-                                @foreach ($products as $product)
+                                @foreach ($lproducts as $product)
                                 <div class="product product-style-2 equal-elem ">
                                     <div class="product-thumnail">
                                         <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
@@ -85,6 +85,9 @@
     </div>
 
     <!--Product Categories-->
+    @if (isset($category))
+
+    @endif
     <div class="wrap-show-advance-info-box style-1">
         <h3 class="title-box">Kategori Produk</h3>
         <div class="wrap-products">
@@ -92,483 +95,67 @@
                 <div class="tab-control">
 
                     <div class="tab-control">
-                        @foreach ($product_cat as $category)
-                        <a href="#category_{{ $category->id }}" class="tab-control-item">{{
-                            $category->name
-                            }}</a>
+                        @foreach ($categories as $key=>$category)
+                        <a href="#category_{{ $category->id }}" class="tab-control-item {{ $key==0 ? 'active':'' }}">{{
+                            $category->nama_kategori }}</a>
                         @endforeach
                     </div>
+
                     <div class="tab-contents">
-
-                        <div class="tab-content-item active" id="category_1">
+                        @foreach ($categories as $key=>$category)
+                        <div class="tab-content-item {{ $key==0 ? 'active':'' }}" id="category_{{ $category->id }}">
                             <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container"
                                 data-items="5" data-loop="false" data-nav="true" data-dots="false"
                                 data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
 
-                                @foreach ($products as $product)
-                                @if ($product->category_id == 1)
+                                @php
+                                $c_products = DB::table('products')->where('category_id',
+                                $category->id)->get()->take($no_of_products);
+                                @endphp
+                                @foreach ($c_products as $c_product)
                                 <div class="product product-style-2 equal-elem ">
                                     <div class="product-thumnail">
-                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                            title="{{ $product->nama_produk }}">
+                                        <a href="{{ route('produk.detail',['slug'=>$c_product->slug]) }}"
+                                            title="{{ $c_product->nama_produk }}">
                                             <figure><img
-                                                    src="{{ asset('/assets/images/products') }}/{{ $product->image }}"
-                                                    width="800" height="800" alt="{{ $product->nama_produk }}">
+                                                    src="{{ asset('/assets/images/products') }}/{{ $c_product->image }}"
+                                                    width="800" height="800" alt="{{ $c_product->nama_produk }}">
                                             </figure>
                                         </a>
                                         <div class="wrap-btn">
-                                            <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
+                                            <a href="{{ route('produk.detail',['slug'=>$c_product->slug]) }}"
                                                 class="function-link">Lihat Detail</a>
                                         </div>
                                     </div>
                                     <div class="product-info">
-                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                            class="product-name"><span>{{ $product->category_id }} - {{
-                                                $product->nama_produk
+                                        <a href="{{ route('produk.detail',['slug'=>$c_product->slug]) }}"
+                                            class="product-name"><span>{{
+                                                $c_product->nama_produk
                                                 }}</span></a>
-                                        @if (isset($product->harga_diskon))
+                                        @if (isset($c_product->harga_diskon))
                                         <div class="wrap-price">
                                             <ins>
-                                                <p class="product-price">Rp{{ $product->harga_normal }}</p>
+                                                <p class="product-price">Rp{{ $c_product->harga_normal }}</p>
                                             </ins>
                                             <del>
-                                                <p class="product-price">Rp{{ $product->harga_diskon }}</p>
+                                                <p class="product-price">Rp{{ $c_product->harga_diskon }}</p>
                                             </del>
                                         </div>
                                         @else
-                                        <div class="wrap-price"><span class="product-price">Rp{{ $product->harga_normal
-                                                }}</span></div>
+                                        <div class="wrap-price">
+                                            <span class="product-price">Rp{{
+                                                $c_product->harga_normal
+                                                }}
+                                            </span>
+                                        </div>
                                         @endif
                                     </div>
                                 </div>
 
-                                @endif
                                 @endforeach
                             </div>
                         </div>
-
-                        <div class="tab-content-item" id="category_2">
-                            <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container"
-                                data-items="5" data-loop="false" data-nav="true" data-dots="false"
-                                data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
-
-                                @foreach ($products as $product)
-                                @if ($product->category_id == 2)
-                                <div class="product product-style-2 equal-elem ">
-                                    <div class="product-thumnail">
-                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                            title="{{ $product->nama_produk }}">
-                                            <figure><img
-                                                    src="{{ asset('/assets/images/products') }}/{{ $product->image }}"
-                                                    width="800" height="800" alt="{{ $product->nama_produk }}">
-                                            </figure>
-                                        </a>
-                                        <div class="wrap-btn">
-                                            <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                                class="function-link">Lihat Detail</a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                            class="product-name"><span>{{ $product->category_id }} - {{
-                                                $product->nama_produk
-                                                }}</span></a>
-                                        @if (isset($product->harga_diskon))
-                                        <div class="wrap-price">
-                                            <ins>
-                                                <p class="product-price">Rp{{ $product->harga_normal }}</p>
-                                            </ins>
-                                            <del>
-                                                <p class="product-price">Rp{{ $product->harga_diskon }}</p>
-                                            </del>
-                                        </div>
-                                        @else
-                                        <div class="wrap-price"><span class="product-price">Rp{{ $product->harga_normal
-                                                }}</span></div>
-                                        @endif
-                                    </div>
-                                </div>
-
-                                @endif
-                                @endforeach
-                            </div>
-                        </div>
-
-                        <div class="tab-content-item" id="category_3">
-                            <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container"
-                                data-items="5" data-loop="false" data-nav="true" data-dots="false"
-                                data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
-
-                                @foreach ($products as $product)
-                                @if ($product->category_id == 3)
-                                <div class="product product-style-2 equal-elem ">
-                                    <div class="product-thumnail">
-                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                            title="{{ $product->nama_produk }}">
-                                            <figure><img
-                                                    src="{{ asset('/assets/images/products') }}/{{ $product->image }}"
-                                                    width="800" height="800" alt="{{ $product->nama_produk }}">
-                                            </figure>
-                                        </a>
-                                        <div class="wrap-btn">
-                                            <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                                class="function-link">Lihat Detail</a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                            class="product-name"><span>{{ $product->category_id }} - {{
-                                                $product->nama_produk
-                                                }}</span></a>
-                                        @if (isset($product->harga_diskon))
-                                        <div class="wrap-price">
-                                            <ins>
-                                                <p class="product-price">Rp{{ $product->harga_normal }}</p>
-                                            </ins>
-                                            <del>
-                                                <p class="product-price">Rp{{ $product->harga_diskon }}</p>
-                                            </del>
-                                        </div>
-                                        @else
-                                        <div class="wrap-price"><span class="product-price">Rp{{ $product->harga_normal
-                                                }}</span></div>
-                                        @endif
-                                    </div>
-                                </div>
-
-                                @endif
-                                @endforeach
-                            </div>
-                        </div>
-
-                        <div class="tab-content-item" id="category_4">
-                            <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container"
-                                data-items="5" data-loop="false" data-nav="true" data-dots="false"
-                                data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
-
-                                @foreach ($products as $product)
-                                @if ($product->category_id == 4)
-                                <div class="product product-style-2 equal-elem ">
-                                    <div class="product-thumnail">
-                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                            title="{{ $product->nama_produk }}">
-                                            <figure><img
-                                                    src="{{ asset('/assets/images/products') }}/{{ $product->image }}"
-                                                    width="800" height="800" alt="{{ $product->nama_produk }}">
-                                            </figure>
-                                        </a>
-                                        <div class="wrap-btn">
-                                            <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                                class="function-link">Lihat Detail</a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                            class="product-name"><span>{{ $product->category_id }} - {{
-                                                $product->nama_produk
-                                                }}</span></a>
-                                        @if (isset($product->harga_diskon))
-                                        <div class="wrap-price">
-                                            <ins>
-                                                <p class="product-price">Rp{{ $product->harga_normal }}</p>
-                                            </ins>
-                                            <del>
-                                                <p class="product-price">Rp{{ $product->harga_diskon }}</p>
-                                            </del>
-                                        </div>
-                                        @else
-                                        <div class="wrap-price"><span class="product-price">Rp{{ $product->harga_normal
-                                                }}</span></div>
-                                        @endif
-                                    </div>
-                                </div>
-
-                                @endif
-                                @endforeach
-                            </div>
-                        </div>
-
-                        <div class="tab-content-item" id="category_5">
-                            <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container"
-                                data-items="5" data-loop="false" data-nav="true" data-dots="false"
-                                data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
-
-                                @foreach ($products as $product)
-                                @if ($product->category_id == 5)
-                                <div class="product product-style-2 equal-elem ">
-                                    <div class="product-thumnail">
-                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                            title="{{ $product->nama_produk }}">
-                                            <figure><img
-                                                    src="{{ asset('/assets/images/products') }}/{{ $product->image }}"
-                                                    width="800" height="800" alt="{{ $product->nama_produk }}">
-                                            </figure>
-                                        </a>
-                                        <div class="wrap-btn">
-                                            <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                                class="function-link">Lihat Detail</a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                            class="product-name"><span>{{ $product->category_id }} - {{
-                                                $product->nama_produk
-                                                }}</span></a>
-                                        @if (isset($product->harga_diskon))
-                                        <div class="wrap-price">
-                                            <ins>
-                                                <p class="product-price">Rp{{ $product->harga_normal }}</p>
-                                            </ins>
-                                            <del>
-                                                <p class="product-price">Rp{{ $product->harga_diskon }}</p>
-                                            </del>
-                                        </div>
-                                        @else
-                                        <div class="wrap-price"><span class="product-price">Rp{{ $product->harga_normal
-                                                }}</span></div>
-                                        @endif
-                                    </div>
-                                </div>
-
-                                @endif
-                                @endforeach
-                            </div>
-                        </div>
-
-                        <div class="tab-content-item" id="category_6">
-                            <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container"
-                                data-items="5" data-loop="false" data-nav="true" data-dots="false"
-                                data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
-
-                                @foreach ($products as $product)
-                                @if ($product->category_id == 6)
-                                <div class="product product-style-2 equal-elem ">
-                                    <div class="product-thumnail">
-                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                            title="{{ $product->nama_produk }}">
-                                            <figure><img
-                                                    src="{{ asset('/assets/images/products') }}/{{ $product->image }}"
-                                                    width="800" height="800" alt="{{ $product->nama_produk }}">
-                                            </figure>
-                                        </a>
-                                        <div class="wrap-btn">
-                                            <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                                class="function-link">Lihat Detail</a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                            class="product-name"><span>{{ $product->category_id }} - {{
-                                                $product->nama_produk
-                                                }}</span></a>
-                                        @if (isset($product->harga_diskon))
-                                        <div class="wrap-price">
-                                            <ins>
-                                                <p class="product-price">Rp{{ $product->harga_normal }}</p>
-                                            </ins>
-                                            <del>
-                                                <p class="product-price">Rp{{ $product->harga_diskon }}</p>
-                                            </del>
-                                        </div>
-                                        @else
-                                        <div class="wrap-price"><span class="product-price">Rp{{ $product->harga_normal
-                                                }}</span></div>
-                                        @endif
-                                    </div>
-                                </div>
-
-                                @endif
-                                @endforeach
-                            </div>
-                        </div>
-
-                        <div class="tab-content-item" id="category_7">
-                            <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container"
-                                data-items="5" data-loop="false" data-nav="true" data-dots="false"
-                                data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
-
-                                @foreach ($products as $product)
-                                @if ($product->category_id == 7)
-                                <div class="product product-style-2 equal-elem ">
-                                    <div class="product-thumnail">
-                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                            title="{{ $product->nama_produk }}">
-                                            <figure><img
-                                                    src="{{ asset('/assets/images/products') }}/{{ $product->image }}"
-                                                    width="800" height="800" alt="{{ $product->nama_produk }}">
-                                            </figure>
-                                        </a>
-                                        <div class="wrap-btn">
-                                            <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                                class="function-link">Lihat Detail</a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                            class="product-name"><span>{{ $product->category_id }} - {{
-                                                $product->nama_produk
-                                                }}</span></a>
-                                        @if (isset($product->harga_diskon))
-                                        <div class="wrap-price">
-                                            <ins>
-                                                <p class="product-price">Rp{{ $product->harga_normal }}</p>
-                                            </ins>
-                                            <del>
-                                                <p class="product-price">Rp{{ $product->harga_diskon }}</p>
-                                            </del>
-                                        </div>
-                                        @else
-                                        <div class="wrap-price"><span class="product-price">Rp{{ $product->harga_normal
-                                                }}</span></div>
-                                        @endif
-                                    </div>
-                                </div>
-
-                                @endif
-                                @endforeach
-                            </div>
-                        </div>
-
-                        <div class="tab-content-item" id="category_8">
-                            <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container"
-                                data-items="5" data-loop="false" data-nav="true" data-dots="false"
-                                data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
-
-                                @foreach ($products as $product)
-                                @if ($product->category_id == 8)
-                                <div class="product product-style-2 equal-elem ">
-                                    <div class="product-thumnail">
-                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                            title="{{ $product->nama_produk }}">
-                                            <figure><img
-                                                    src="{{ asset('/assets/images/products') }}/{{ $product->image }}"
-                                                    width="800" height="800" alt="{{ $product->nama_produk }}">
-                                            </figure>
-                                        </a>
-                                        <div class="wrap-btn">
-                                            <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                                class="function-link">Lihat Detail</a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                            class="product-name"><span>{{ $product->category_id }} - {{
-                                                $product->nama_produk
-                                                }}</span></a>
-                                        @if (isset($product->harga_diskon))
-                                        <div class="wrap-price">
-                                            <ins>
-                                                <p class="product-price">Rp{{ $product->harga_normal }}</p>
-                                            </ins>
-                                            <del>
-                                                <p class="product-price">Rp{{ $product->harga_diskon }}</p>
-                                            </del>
-                                        </div>
-                                        @else
-                                        <div class="wrap-price"><span class="product-price">Rp{{ $product->harga_normal
-                                                }}</span></div>
-                                        @endif
-                                    </div>
-                                </div>
-
-                                @endif
-                                @endforeach
-                            </div>
-                        </div>
-
-                        <div class="tab-content-item" id="category_9">
-                            <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container"
-                                data-items="5" data-loop="false" data-nav="true" data-dots="false"
-                                data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
-
-                                @foreach ($products as $product)
-                                @if ($product->category_id == 9)
-                                <div class="product product-style-2 equal-elem ">
-                                    <div class="product-thumnail">
-                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                            title="{{ $product->nama_produk }}">
-                                            <figure><img
-                                                    src="{{ asset('/assets/images/products') }}/{{ $product->image }}"
-                                                    width="800" height="800" alt="{{ $product->nama_produk }}">
-                                            </figure>
-                                        </a>
-                                        <div class="wrap-btn">
-                                            <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                                class="function-link">Lihat Detail</a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                            class="product-name"><span>{{ $product->category_id }} - {{
-                                                $product->nama_produk
-                                                }}</span></a>
-                                        @if (isset($product->harga_diskon))
-                                        <div class="wrap-price">
-                                            <ins>
-                                                <p class="product-price">Rp{{ $product->harga_normal }}</p>
-                                            </ins>
-                                            <del>
-                                                <p class="product-price">Rp{{ $product->harga_diskon }}</p>
-                                            </del>
-                                        </div>
-                                        @else
-                                        <div class="wrap-price"><span class="product-price">Rp{{ $product->harga_normal
-                                                }}</span></div>
-                                        @endif
-                                    </div>
-                                </div>
-
-                                @endif
-                                @endforeach
-                            </div>
-                        </div>
-
-                        <div class="tab-content-item" id="category_10">
-                            <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container"
-                                data-items="5" data-loop="false" data-nav="true" data-dots="false"
-                                data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
-
-                                @foreach ($products as $product)
-                                @if ($product->category_id == 10)
-                                <div class="product product-style-2 equal-elem ">
-                                    <div class="product-thumnail">
-                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                            title="{{ $product->nama_produk }}">
-                                            <figure><img
-                                                    src="{{ asset('/assets/images/products') }}/{{ $product->image }}"
-                                                    width="800" height="800" alt="{{ $product->nama_produk }}">
-                                            </figure>
-                                        </a>
-                                        <div class="wrap-btn">
-                                            <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                                class="function-link">Lihat Detail</a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
-                                            class="product-name"><span>{{ $product->category_id }} - {{
-                                                $product->nama_produk
-                                                }}</span></a>
-                                        @if (isset($product->harga_diskon))
-                                        <div class="wrap-price">
-                                            <ins>
-                                                <p class="product-price">Rp{{ $product->harga_normal }}</p>
-                                            </ins>
-                                            <del>
-                                                <p class="product-price">Rp{{ $product->harga_diskon }}</p>
-                                            </del>
-                                        </div>
-                                        @else
-                                        <div class="wrap-price"><span class="product-price">Rp{{ $product->harga_normal
-                                                }}</span></div>
-                                        @endif
-                                    </div>
-                                </div>
-
-                                @endif
-                                @endforeach
-                            </div>
-                        </div>
+                        @endforeach
 
                     </div>
                 </div>
