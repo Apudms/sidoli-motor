@@ -29,7 +29,7 @@
                             {{ Session::get('message') }}
                         </div>
                         @endif
-                        <table class="table table-striped">
+                        <table class="table-striped table">
                             <thead>
                                 <tr>
                                     <th>ID</th>

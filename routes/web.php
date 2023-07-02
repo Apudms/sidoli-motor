@@ -8,6 +8,7 @@ use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\AdminEditCategoryComponent;
 use App\Http\Livewire\Admin\AdminEditHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminEditProductComponent;
+use App\Http\Livewire\Admin\AdminHomeCategoryComponent;
 use App\Http\Livewire\Admin\AdminHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminProductComponent;
 use App\Http\Livewire\CartComponent;
@@ -69,6 +70,9 @@ Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function () 
     Route::get('/admin/slider', AdminHomeSliderComponent::class)->name('admin.slider');
     Route::get('/admin/slider/tambah', AdminAddHomeSliderComponent::class)->name('admin.tambahslider');
     Route::get('/admin/slider/ubah/id={id}', AdminEditHomeSliderComponent::class)->name('admin.ubahslider');
+    Route::get('/admin/home-kategori', AdminHomeCategoryComponent::class)->name('admin.manajemenkategori');
+    // Route::get('/admin/home-kategori/tambah', AdminHomeCategoryComponent::class)->name('admin.tambahhome-kategori');
+    // Route::get('/admin/home-kategori/ubah/id={id}', AdminHomeCategoryComponent::class)->name('admin.ubahhome-kategori');
 
     // Route::get('/admin/brands', AdminBrandComponent::class)->name('admin.brands');
     // Route::get('/admin/brands/add', AdminAddBrandComponent::class)->name('admin.addbrands');
