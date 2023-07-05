@@ -21,6 +21,12 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('/assets/css') }}/chosen.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('/assets/css') }}/style.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('/assets/css') }}/color-01.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.css"
+        integrity="sha512-KRrxEp/6rgIme11XXeYvYRYY/x6XPGwk0RsIC6PyMRc072vj2tcjBzFmn939xzjeDhj0aDO7TDMd7Rbz3OEuBQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
     @livewireStyles
 </head>
 
@@ -83,14 +89,19 @@
                                             <a title="Dashboard" href="{{ route('admin.dashboard') }}">Dashboard</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a title="Kategori" href="{{ route('admin.kategori') }}">Kategori</a>
-                                        </li>
-                                        {{-- <li class="menu-item">
-                                            <a title="Brand" href="{{ route('admin.brands') }}">Brand</a>
+                                            <a title="Kategori" href="{{ route('admin.kategori') }}">Data Kategori</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a title="Produk" href="{{ route('admin.brands') }}">Produk</a>
-                                        </li> --}}
+                                            <a title="Produk" href="{{ route('admin.produk') }}">Data Produk</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a title="Manajemen Slider" href="{{ route('admin.slider') }}">Manajemen
+                                                Slider</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a title="Manajemen Kategori"
+                                                href="{{ route('admin.manajemenkategori') }}">Manajemen Kategori</a>
+                                        </li>
                                         <li class="menu-item">
                                             <a title="Logout" href="{{ route('admin.dashboard') }}"
                                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Keluar</a>
@@ -275,7 +286,15 @@
     <script src="{{ asset('/assets/js') }}/jquery.countdown.min.js"></script>
     <script src="{{ asset('/assets/js') }}/jquery.sticky.js"></script>
     <script src="{{ asset('/assets/js') }}/functions.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"
+        integrity="sha512-EnXkkBUGl2gBm/EIZEgwWpQNavsnBbeMtjklwAa7jLj60mJk932aqzXFmdPKCG6ge/i8iOCK0Uwl1Qp+S0zowg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     @livewireScripts
+
+    @stack('scripts')
+
 </body>
 
 </html>

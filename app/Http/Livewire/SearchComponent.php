@@ -17,11 +17,17 @@ class SearchComponent extends Component
     public $product_cat;
     public $product_cat_id;
 
+    public $min_price;
+    public $max_price;
+
     public function mount()
     {
         $this->sorting = "default";
         $this->pageSize = 12;
         $this->fill(request()->only('search', 'product_cat', 'product_cat_id'));
+
+        $this->min_price = 100;
+        $this->max_price = 10000000;
     }
 
     public function store($product_id, $product_name, $product_price)
@@ -36,13 +42,13 @@ class SearchComponent extends Component
     public function render()
     {
         if ($this->sorting == 'date') {
-            $products = Product::where('name', 'like', '%' . $this->search . '%')->where('category_id', 'like', '%' . $this->product_cat_id . '%')->orderBy('created_at', 'DESC')->paginate($this->pageSize);
+            $products = Product::where('nama_produk', 'like', '%' . $this->search . '%')->where('category_id', 'like', '%' . $this->product_cat_id . '%')->whereBetween('harga_normal', [$this->min_price, $this->max_price])->orderBy('created_at', 'DESC')->paginate($this->pageSize);
         } elseif ($this->sorting == 'price') {
-            $products = Product::where('name', 'like', '%' . $this->search . '%')->where('category_id', 'like', '%' . $this->product_cat_id . '%')->orderBy('regular_price', 'ASC')->paginate($this->pageSize);
+            $products = Product::where('nama_produk', 'like', '%' . $this->search . '%')->where('category_id', 'like', '%' . $this->product_cat_id . '%')->whereBetween('harga_normal', [$this->min_price, $this->max_price])->orderBy('harga_normal', 'ASC')->paginate($this->pageSize);
         } elseif ($this->sorting == 'price-desc') {
-            $products = Product::where('name', 'like', '%' . $this->search . '%')->where('category_id', 'like', '%' . $this->product_cat_id . '%')->orderBy('regular_price', 'DESC')->paginate($this->pageSize);
+            $products = Product::where('nama_produk', 'like', '%' . $this->search . '%')->where('category_id', 'like', '%' . $this->product_cat_id . '%')->whereBetween('harga_normal', [$this->min_price, $this->max_price])->orderBy('harga_normal', 'DESC')->paginate($this->pageSize);
         } else {
-            $products = Product::where('name', 'like', '%' . $this->search . '%')->where('category_id', 'like', '%' . $this->product_cat_id . '%')->paginate($this->pageSize);
+            $products = Product::where('nama_produk', 'like', '%' . $this->search . '%')->where('category_id', 'like', '%' . $this->product_cat_id . '%')->whereBetween('harga_normal', [$this->min_price, $this->max_price])->paginate($this->pageSize);
         }
 
         $categories = Category::all();

@@ -28,10 +28,12 @@
                         </div>
                         <div class="product-name">
                             <a class="link-to-product"
-                                href="{{ route('produk.detail',['slug'=>$item->model->slug]) }}">{{ $item->name }}</a>
+                                href="{{ route('produk.detail',['slug'=>$item->model->slug]) }}">{{
+                                $item->model->nama_produk
+                                }}</a>
                         </div>
                         <div class="price-field produtc-price">
-                            <p class="price">Rp{{ $item->model->regular_price }}</p>
+                            <p class="price">Rp{{ $item->model->harga_normal }}</p>
                         </div>
                         <div class="quantity">
                             <div class="quantity-input">

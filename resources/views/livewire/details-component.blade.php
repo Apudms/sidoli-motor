@@ -26,11 +26,11 @@
                         </div>
                     </div>
                     <div class="detail-info">
-                        <h2 class="product-name"><b>{{ $product->name }}</b></h2>
-                        <div class="wrap-price"><span class="product-price">Rp{{ $product->regular_price }}</span></div>
+                        <h2 class="product-name"><b>{{ $product->nama_produk }}</b></h2>
+                        <div class="wrap-price"><span class="product-price">Rp{{ $product->harga_normal }}</span></div>
                         <div class="stock-info in-stock">
                             <br>
-                            <p class="availability">Stok: <b>{{ $product->quantity }}</b></p>
+                            <p class="availability">Stok: <b>{{ $product->jumlah_stok }}</b></p>
                         </div>
                         <div class="quantity">
                             <span>Jumlah:</span>
@@ -43,7 +43,7 @@
                         </div>
                         <div class="wrap-butons">
                             <a href="#" class="btn add-to-cart"
-                                wire:click.prevent="store({{ $product->id }},'{{ $product->name }}',{{ $product->regular_price }})">Tambahkan
+                                wire:click.prevent="store('{{ $product->id }}','{{ $product->nama_produk }}',{{ $product->harga_normal }})">Tambahkan
                                 keranjang</a>
                             <div class="wrap-btn">
                                 <a href="#" class="btn btn-wishlist">Tambahkan disukai</a>
@@ -58,7 +58,7 @@
                         </div>
                         <div class="tab-contents">
                             <div class="tab-content-item active" id="description">
-                                <p>{{ $product->description }}</p>
+                                <p>{{ $product->deskripsi }}</p>
                             </div>
                             {{-- <div class="tab-content-item " id="add_infomation">
                                 <table class="shop_attributes">
@@ -176,7 +176,7 @@
 
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sitebar">
                 <div class="widget mercado-widget widget-product">
-                    <h2 class="widget-title">Produk Populer</h2>
+                    <h2 class="widget-title">Produk Terkait</h2>
                     <div class="widget-content">
                         <ul class="products">
 
@@ -186,7 +186,7 @@
                                 <div class="product product-widget-style">
                                     <div class="thumbnnail">
                                         <a href="{{ route('produk.detail', ['slug' => $popular->slug]) }}"
-                                            title="{{ $popular->name }}">
+                                            title="{{ $popular->nama_produk }}">
                                             <figure><img
                                                     src="{{ asset('/assets/images/products') }}/{{ $popular->image }}"
                                                     alt="{{ asset('/assets/images/products') }}/{{ $popular->image }}">
@@ -195,8 +195,9 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="{{ route('produk.detail', ['slug' => $popular->slug]) }}"
-                                            title="{{ $popular->name }}"><span>{{ $popular->name }}</span></a>
-                                        <div class="wrap-price"><span class="product-price">Rp{{ $popular->regular_price
+                                            title="{{ $popular->nama_produk }}"><span>{{ $popular->nama_produk
+                                                }}</span></a>
+                                        <div class="wrap-price"><span class="product-price">Rp{{ $popular->harga_normal
                                                 }}
                                             </span>
                                         </div>
@@ -215,7 +216,7 @@
 
             <div class="single-advance-box col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="wrap-show-advance-info-box style-1 box-in-site">
-                    <h3 class="title-box">Produk Terkait</h3>
+                    <h3 class="title-box">Kategori Terkait</h3>
                     <div class="wrap-products">
                         <div class="products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5"
                             data-loop="false" data-nav="true" data-dots="false"
@@ -226,7 +227,7 @@
                             <div class="product product-style-2 equal-elem ">
                                 <div class="product-thumnail">
                                     <a href="{{ route('produk.detail', ['slug' => $related->slug]) }}"
-                                        title="{{ $related->name }}">
+                                        title="{{ $related->nama_produk }}">
                                         <figure><img src="{{ asset('/assets/images/products') }}/{{ $related->image }}"
                                                 width="214" height="214"
                                                 alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
@@ -237,14 +238,15 @@
                                     </div>
                                     <div class="wrap-btn">
                                         <a href="{{ route('produk.detail', ['slug' => $related->slug]) }}"
-                                            title="{{ $related->name }}" class="function-link">Selengkapnya</a>
+                                            title="{{ $related->nama_produk }}" class="function-link">Selengkapnya</a>
                                     </div>
                                 </div>
                                 <div class="product-info">
                                     <a href="{{ route('produk.detail', ['slug' => $related->slug]) }}"
-                                        title="{{ $related->name }}" class="product-name"><span>{{ $related->name
+                                        title="{{ $related->nama_produk }}" class="product-name"><span>{{
+                                            $related->nama_produk
                                             }}</span></a>
-                                    <div class="wrap-price"><span class="product-price">Rp{{ $related->regular_price }}
+                                    <div class="wrap-price"><span class="product-price">Rp{{ $related->harga_normal }}
                                         </span></div>
                                 </div>
                             </div>
@@ -268,11 +270,11 @@
                                     </div>
                                 </div>
                                 <div class="product-info">
-                                    <a href="#" class="product-name"><span>{{ $product->name }}</span></a>
+                                    <a href="#" class="product-name"><span>{{ $product->nama_produk }}</span></a>
                                     <div class="wrap-price"><ins>
-                                            <p class="product-price">Rp{{ $product->regular_price }}</p>
+                                            <p class="product-price">Rp{{ $product->harga_normal }}</p>
                                         </ins> <del>
-                                            <p class="product-price">Rp{{ $product->regular_price }}</p>
+                                            <p class="product-price">Rp{{ $product->harga_normal }}</p>
                                         </del></div>
                                 </div>
                             </div>
@@ -294,11 +296,11 @@
                                     </div>
                                 </div>
                                 <div class="product-info">
-                                    <a href="#" class="product-name"><span>{{ $product->name }}</span></a>
+                                    <a href="#" class="product-name"><span>{{ $product->nama_produk }}</span></a>
                                     <div class="wrap-price"><ins>
-                                            <p class="product-price">Rp{{ $product->regular_price }}</p>
+                                            <p class="product-price">Rp{{ $product->harga_normal }}</p>
                                         </ins> <del>
-                                            <p class="product-price">Rp{{ $product->regular_price }}</p>
+                                            <p class="product-price">Rp{{ $product->harga_normal }}</p>
                                         </del></div>
                                 </div>
                             </div>
@@ -319,8 +321,8 @@
                                     </div>
                                 </div>
                                 <div class="product-info">
-                                    <a href="#" class="product-name"><span>{{ $product->name }}</span></a>
-                                    <div class="wrap-price"><span class="product-price">Rp{{ $product->regular_price }}
+                                    <a href="#" class="product-name"><span>{{ $product->nama_produk }}</span></a>
+                                    <div class="wrap-price"><span class="product-price">Rp{{ $product->harga_normal }}
                                         </span></div>
                                 </div>
                             </div>
@@ -338,8 +340,8 @@
                                     </div>
                                 </div>
                                 <div class="product-info">
-                                    <a href="#" class="product-name"><span>{{ $product->name }}</span></a>
-                                    <div class="wrap-price"><span class="product-price">Rp{{ $product->regular_price
+                                    <a href="#" class="product-name"><span>{{ $product->nama_produk }}</span></a>
+                                    <div class="wrap-price"><span class="product-price">Rp{{ $product->harga_normal
                                             }}</span></div>
                                 </div>
                             </div>
@@ -360,11 +362,11 @@
                                     </div>
                                 </div>
                                 <div class="product-info">
-                                    <a href="#" class="product-name"><span>{{ $product->name }}</span></a>
+                                    <a href="#" class="product-name"><span>{{ $product->nama_produk }}</span></a>
                                     <div class="wrap-price"><ins>
                                             <p class="product-price">Rp{{ $product->sale_price }}</p>
                                         </ins> <del>
-                                            <p class="product-price">Rp{{ $product->regular_price }}</p>
+                                            <p class="product-price">Rp{{ $product->harga_normal }}</p>
                                         </del></div>
                                 </div>
                             </div>
@@ -385,8 +387,8 @@
                                     </div>
                                 </div>
                                 <div class="product-info">
-                                    <a href="#" class="product-name"><span>{{ $product->name }}</span></a>
-                                    <div class="wrap-price"><span class="product-price">Rp{{ $product->regular_price
+                                    <a href="#" class="product-name"><span>{{ $product->nama_produk }}</span></a>
+                                    <div class="wrap-price"><span class="product-price">Rp{{ $product->harga_normal
                                             }}</span></div>
                                 </div>
                             </div>
@@ -407,8 +409,8 @@
                                     </div>
                                 </div>
                                 <div class="product-info">
-                                    <a href="#" class="product-name"><span>{{ $product->name }}</span></a>
-                                    <div class="wrap-price"><span class="product-price">Rp{{ $product->regular_price
+                                    <a href="#" class="product-name"><span>{{ $product->nama_produk }}</span></a>
+                                    <div class="wrap-price"><span class="product-price">Rp{{ $product->harga_normal
                                             }}</span></div>
                                 </div>
                             </div>
