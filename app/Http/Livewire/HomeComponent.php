@@ -27,7 +27,7 @@ class HomeComponent extends Component
             //     ->where('status', 1)
             //     ->get(),
 
-            'sliders' => $sliders, 'lproducts' => $lproducts, 'categories' => $categories, 'no_of_products' => $no_of_products
+            'sliders' => $sliders, 'lproducts' => $lproducts, 'categories' => $categories, 'category' => $category, 'no_of_products' => $no_of_products
         ])->layout('layouts.main');
     }
 }
