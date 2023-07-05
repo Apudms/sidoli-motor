@@ -22,6 +22,10 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('/assets/css') }}/style.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('/assets/css') }}/color-01.css">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.css"
+        integrity="sha512-KRrxEp/6rgIme11XXeYvYRYY/x6XPGwk0RsIC6PyMRc072vj2tcjBzFmn939xzjeDhj0aDO7TDMd7Rbz3OEuBQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
     @livewireStyles
 </head>
@@ -283,6 +287,9 @@
     <script src="{{ asset('/assets/js') }}/jquery.sticky.js"></script>
     <script src="{{ asset('/assets/js') }}/functions.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"
+        integrity="sha512-EnXkkBUGl2gBm/EIZEgwWpQNavsnBbeMtjklwAa7jLj60mJk932aqzXFmdPKCG6ge/i8iOCK0Uwl1Qp+S0zowg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     @livewireScripts
 

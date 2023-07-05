@@ -23,14 +23,20 @@
                                 <label for="" class="col-md-4 control-label">Nama Kategori</label>
                                 <div class="col-md-4">
                                     <input type="text" class="form-control input-md" placeholder="Nama Kategori"
-                                        wire:model="nama_kategori" wire:keyup="generateslug">
+                                        wire:model="nama_kategori" wire:keyup="generateslug" required>
+                                    @error('nama_kategori')
+                                    <p class="text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="" class="col-md-4 control-label">Slug Kategori</label>
                                 <div class="col-md-4">
                                     <input type="text" class="form-control input-md" placeholder="Slug Kategori"
-                                        disabled readonly wire:model="slug">
+                                        disabled readonly wire:model="slug" required>
+                                    @error('slug')
+                                    <p class="text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group">

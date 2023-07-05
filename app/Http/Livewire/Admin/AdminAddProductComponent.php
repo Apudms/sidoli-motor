@@ -36,30 +36,38 @@ class AdminAddProductComponent extends Component
         $this->slug = Str::slug($this->nama_produk);
     }
 
+    public function updated($field)
+    {
+        $this->validateOnly([
+            'nama_produk' => 'required',
+            'slug' => 'required|unique:products',
+            'deskripsi_singkat' => 'required',
+            'deskripsi' => 'required',
+            'harga_normal' => 'required|numeric',
+            'harga_diskon' => 'numeric',
+            'SKU' => 'required',
+            'status_stok' => 'required',
+            'jumlah_stok' => 'required|unique',
+            'image' => 'required|mimes:jpeg,jpg,png',
+            'category_id' => 'required',
+        ]);
+    }
+
     public function storeProduct()
     {
-        // $validasi = $request->validate([
-        //     'name' => 'required|max:255',
-        //     'price' => 'required',
-        //     'berat' => 'required|max:255',
-        //     'stok' => 'required|max:255',
-        //     'quantity' => 'required',
-        //     'jnsKulit' => 'required|max:255',
-        //     'masaSimpan' => 'required|max:255',
-        //     'deskripsi' => 'required',
-        //     'fotoProduk' => 'nullable',
-        // ]);
-
-        // if ($request->hasFile('fotoProduk')) {
-        //     $file = $request->file('fotoProduk');
-        //     $imagemimes = ['mimes:png,jpg,jpeg'];
-
-        //     if (in_array($file->getMimeType(), $imagemimes)) {
-        //         $validasi['fotoProduk'] = 'mimes:png,jpg,jpeg|file|max:5120';
-        //     }
-
-        //     $validasi['fotoProduk'] = $request->file('fotoProduk')->store('foto-products');
-        // }
+        $this->validate([
+            'nama_produk' => 'required',
+            'slug' => 'required|unique:products',
+            'deskripsi_singkat' => 'required',
+            'deskripsi' => 'required',
+            'harga_normal' => 'required|numeric',
+            'harga_diskon' => 'numeric',
+            'SKU' => 'required',
+            'status_stok' => 'required',
+            'jumlah_stok' => 'required|unique',
+            'image' => 'required|mimes:jpeg,jpg,png',
+            'category_id' => 'required',
+        ]);
 
         $product = new Product();
         $product->nama_produk = $this->nama_produk;
