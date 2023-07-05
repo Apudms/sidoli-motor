@@ -52,7 +52,7 @@ class AdminEditProductComponent extends Component
 
     public function updated($field)
     {
-        $this->validateOnly([
+        $this->validateOnly($field, [
             'nama_produk' => 'required',
             'slug' => 'required|unique:products',
             'deskripsi_singkat' => 'required',

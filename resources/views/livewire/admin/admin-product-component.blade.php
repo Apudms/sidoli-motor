@@ -58,9 +58,9 @@
                                         <a href="{{ route('admin.ubahproduk', ['id' => $product->id]) }}"><i
                                                 class="fa fa-edit fa-2x"></i>
                                         </a>
-                                        <a href="#" wire:click.prevent="deleteProduct('{{ $product->id }}')"
-                                            style="margin-left:10px; "
-                                            onclick="return confirm('Yakin ingin menghapus {{ $product->nama_produk }}?')"><i
+                                        <a href="#" style="margin-left:10px; "
+                                            onclick="confirm('Yakin ingin menghapus {{ $product->nama_produk }}?') || event.stopImmediatePropragation()"
+                                            wire:click.prevent="deleteProduct('{{ $product->id }}')"><i
                                                 class="fa fa-trash fa-2x text-danger"></i>
                                         </a>
                                     </td>

@@ -54,9 +54,9 @@
                                         <a href="{{ route('admin.ubahslider', ['id' => $slider->id]) }}"><i
                                                 class="fa fa-edit fa-2x"></i>
                                         </a>
-                                        <a href="#" wire:click.prevent="deleteSlider('{{ $slider->id }}')"
-                                            style="margin-left:10px; "
-                                            onclick="return confirm('Yakin ingin menghapus {{ $slider->nama_slider }}?')"><i
+                                        <a href="#" style="margin-left:10px; "
+                                            onclick="confirm('Yakin ingin menghapus {{ $slider->nama_slider }}?') || event.stopImmediatePropragation()"
+                                            wire:click.prevent="deleteSlider('{{ $slider->id }}')"><i
                                                 class="fa fa-trash fa-2x text-danger"></i>
                                         </a>
                                     </td>
