@@ -14,11 +14,17 @@ class CategoryComponent extends Component
     public $pageSize;
     public $category_slug;
 
+    public $min_price;
+    public $max_price;
+
     public function mount($category_slug)
     {
         $this->sorting = "default";
         $this->pageSize = 12;
         $this->category_slug = $category_slug;
+
+        $this->min_price = 100;
+        $this->max_price = 10000000;
     }
 
     public function store($product_id, $product_name, $product_price)
@@ -37,13 +43,13 @@ class CategoryComponent extends Component
         $category_name = $category->nama_kategori;
 
         if ($this->sorting == 'date') {
-            $products = Product::where('category_id', $category_id)->orderBy('created_at', 'DESC')->paginate($this->pageSize);
+            $products = Product::where('category_id', $category_id)->orderBy('created_at', 'DESC')->whereBetween('harga_normal', [$this->min_price, $this->max_price])->paginate($this->pageSize);
         } elseif ($this->sorting == 'price') {
-            $products = Product::where('category_id', $category_id)->orderBy('harga_normal', 'ASC')->paginate($this->pageSize);
+            $products = Product::where('category_id', $category_id)->orderBy('harga_normal', 'ASC')->whereBetween('harga_normal', [$this->min_price, $this->max_price])->paginate($this->pageSize);
         } elseif ($this->sorting == 'price-desc') {
-            $products = Product::where('category_id', $category_id)->orderBy('harga_normal', 'DESC')->paginate($this->pageSize);
+            $products = Product::where('category_id', $category_id)->orderBy('harga_normal', 'DESC')->whereBetween('harga_normal', [$this->min_price, $this->max_price])->paginate($this->pageSize);
         } else {
-            $products = Product::where('category_id', $category_id)->paginate($this->pageSize);
+            $products = Product::where('category_id', $category_id)->whereBetween('harga_normal', [$this->min_price, $this->max_price])->paginate($this->pageSize);
         }
 
         $categories = Category::all();

@@ -24,7 +24,10 @@
                                 <label for="" class="col-md-4 control-label">Nama Produk</label>
                                 <div class="col-md-4">
                                     <input type="text" class="form-control input-md" placeholder="Nama Produk"
-                                        wire:model="nama_produk" wire:keyup="generateslug">
+                                        wire:model="nama_produk" wire:keyup="generateslug" required>
+                                    @error('nama_produk')
+                                    <p class="text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -32,7 +35,10 @@
                                 <label for="" class="col-md-4 control-label">Slug</label>
                                 <div class="col-md-4">
                                     <input type="text" class="form-control input-md" placeholder="Slug" disabled
-                                        readonly wire:model="slug">
+                                        readonly wire:model="slug" required>
+                                    @error('slug')
+                                    <p class="text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -40,7 +46,10 @@
                                 <label for="" class="col-md-4 control-label">Harga Normal</label>
                                 <div class="col-md-4">
                                     <input type="text" class="form-control input-md" placeholder=""
-                                        wire:model="harga_normal">
+                                        wire:model="harga_normal" required>
+                                    @error('harga_normal')
+                                    <p class="text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -55,7 +64,11 @@
                             <div class="form-group">
                                 <label for="" class="col-md-4 control-label">SKU</label>
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control input-md" placeholder="SKU" wire:model="SKU">
+                                    <input type="text" class="form-control input-md" placeholder="SKU" wire:model="SKU"
+                                        required>
+                                    @error('SKU')
+                                    <p class="text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -66,6 +79,9 @@
                                         <option value="Tersedia">Tersedia</option>
                                         <option value="Kosong">Kosong</option>
                                     </select>
+                                    @error('status_stok')
+                                    <p class="text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -83,31 +99,40 @@
                                 <label for="" class="col-md-4 control-label">Jumlah Stok</label>
                                 <div class="col-md-4">
                                     <input type="number" class="form-control input-md" placeholder=""
-                                        wire:model="jumlah_stok">
+                                        wire:model="jumlah_stok" required>
+                                    @error('jumlah_stok')
+                                    <p class="text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="" class="col-md-4 control-label">Foto</label>
                                 <div class="col-md-4">
-                                    <input type="file" class="input-file" wire:model="image">
+                                    <input type="file" class="input-file" wire:model="image" required>
                                     @if ($image)
                                     <div class="col col-md-12 mt-5"><img src="{{ $image->temporaryUrl() }}" alt=""
                                             width="120">
                                     </div>
                                     @endif
+                                    @error('image')
+                                    <p class="text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="" class="col-md-4 control-label">Kategori</label>
                                 <div class="col-md-4">
-                                    <select class="form-control" wire:model="category_id">
+                                    <select class="form-control" wire:model="category_id" required>
                                         <option value="">Pilih Kategori</option>
                                         @foreach ($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->nama_kategori }}</option>
                                         @endforeach
                                     </select>
+                                    @error('category_id')
+                                    <p class="text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -115,7 +140,10 @@
                                 <label for="" class="col-md-4 control-label">Deskripsi Singkat</label>
                                 <div class="col-md-4">
                                     <textarea class="form-control input-md" placeholder="Deskripsi Singkat"
-                                        wire:model="deskripsi_singkat"></textarea>
+                                        wire:model="deskripsi_singkat" required></textarea>
+                                    @error('deskripsi_singkat')
+                                    <p class="text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -123,7 +151,10 @@
                                 <label for="" class="col-md-4 control-label">Deskripsi</label>
                                 <div class="col-md-4">
                                     <textarea rows="10" class="form-control input-md" placeholder="Deskripsi"
-                                        wire:model="deskripsi"></textarea>
+                                        wire:model="deskripsi" required></textarea>
+                                    @error('deskripsi')
+                                    <p class="text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
 

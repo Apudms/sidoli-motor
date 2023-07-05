@@ -25,6 +25,9 @@
                                 <div class="col-md-4">
                                     <input type="text" class="form-control input-md" placeholder="Nama Slider"
                                         wire:model="nama_slider" required>
+                                    @error('nama_slider')
+                                    <p class="text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -39,6 +42,9 @@
                                     <br>
                                     <img src="{{ asset('assets/images/sliders') }}/{{ $foto }}" width="120">
                                     @endif
+                                    @error('newImage')
+                                    <p class="text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
 

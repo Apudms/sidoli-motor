@@ -21,16 +21,20 @@ class AdminAddHomeSliderComponent extends Component
         $this->status = 0;
     }
 
+    public function updated($field)
+    {
+        $this->validateOnly([
+            'nama_slider' => 'required',
+            'foto' => 'required|mimes:jpeg,jpg,png',
+        ]);
+    }
+
     public function storeSlide()
     {
-        // $idgenerate = Helper::IDGenerator(new HomeSlider, 'slider_id', 4, 'HS');
-        // $slider = new HomeSlider();
-        // $slider->slider_id = $idgenerate;
-        // $slider->nama_slider = $this->nama_slider;
-        // $namafoto = Carbon::now()->timestamp . '.' . $this->foto->extension();
-        // $this->foto->storeAs('sliders', $namafoto);
-        // $slider->foto = $namafoto;
-        // $slider->status = $this->status;
+        $this->validate([
+            'nama_slider' => 'required',
+            'foto' => 'required|mimes:jpeg,jpg,png',
+        ]);
 
         $slider = new HomeSlider();
         $slider->nama_slider = $this->nama_slider;

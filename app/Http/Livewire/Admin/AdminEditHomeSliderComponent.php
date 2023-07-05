@@ -25,8 +25,21 @@ class AdminEditHomeSliderComponent extends Component
         $this->slider_id = $slider->id;
     }
 
+    public function updated($field)
+    {
+        $this->validateOnly([
+            'nama_slider' => 'required',
+            'newImage' => 'required|mimes:jpeg,jpg,png',
+        ]);
+    }
+
     public function updateSlider()
     {
+        $this->validate([
+            'nama_slider' => 'required',
+            'newImage' => 'required|mimes:jpeg,jpg,png',
+        ]);
+
         $slider = HomeSlider::find($this->slider_id);
         $slider->nama_slider = $this->nama_slider;
         $slider->foto = $this->foto;

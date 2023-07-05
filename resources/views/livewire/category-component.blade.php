@@ -102,40 +102,18 @@
                     <div class="widget-content">
                         <ul class="list-category">
 
-                            {{-- <li class="category-item has-child-cate">
-                                <a href="#" class="cate-link">Ban</a>
-                                <span class="toggle-control">+</span>
-                                <ul class="sub-cate">
-                                    <li class="category-item"><a href="#" class="cate-link">Dalam (6)</a></li>
-                                    <li class="category-item"><a href="#" class="cate-link">Luar (23)</a></li>
-                                </ul>
-                            </li>
-                            <li class="category-item has-child-cate">
-                                <a href="#" class="cate-link">Oli</a>
-                                <span class="toggle-control">+</span>
-                                <ul class="sub-cate">
-                                    <li class="category-item"><a href="#" class="cate-link">Gardan (4)</a></li>
-                                    <li class="category-item"><a href="#" class="cate-link">Mesin (15)</a></li>
-                                    <li class="category-item"><a href="#" class="cate-link">Rem (8)</a></li>
-                                </ul>
-                            </li>
-                            <li class="category-item has-child-cate">
-                                <a href="#" class="cate-link">Handle Rem</a>
-                            </li>
-                            <li class="category-item has-child-cate">
-                                <a href="#" class="cate-link">Knalpot</a>
-                            </li> --}}
                             @foreach ($categories as $category)
                             <li class="category-item has-child-cate active">
                                 <a href="{{ route('produk.kategori',['category_slug' => $category->slug]) }}"
                                     class="cate-link">{{ $category->nama_kategori }}</a>
                             </li>
                             @endforeach
+
                         </ul>
                     </div>
                 </div><!-- Categories widget-->
 
-                {{--
+
                 <hr>
 
                 <div class="widget mercado-widget filter-widget brand-widget">
@@ -161,61 +139,16 @@
 
                 <hr>
 
-                <div class="widget mercado-widget widget-product">
-                    <h2 class="widget-title">Produk Populer</h2>
-                    <div class="widget-content">
-                        <ul class="products">
-                            <li class="product-item">
-                                <div class="product product-widget-style">
-                                    <div class="thumbnnail">
-                                        <a href="detail.html"
-                                            title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
-                                            <figure><img src="{{ asset('/assets') }}/images/products/barang_1.jpg"
-                                                    alt=""></figure>
-                                        </a>
-                                    </div>
-                                    <div class="product-info">
-                                        <a href="#" class="product-name"><span>Nama Produk</span></a>
-                                        <div class="wrap-price"><span class="product-price">Rp123</span></div>
-                                    </div>
-                                </div>
-                            </li>
+                <div class="widget mercado-widget filter-widget price-filter">
+                    <h2 class="widget-title">Harga: <span class="text-info">Rp{{ $min_price }} - Rp{{ $max_price
+                            }}</span>
+                    </h2>
+                    <div class="widget-content" style="padding: 10px 5px 40px 5px;">
+                        <div id="slider" wire:ignore>
 
-                            <li class="product-item">
-                                <div class="product product-widget-style">
-                                    <div class="thumbnnail">
-                                        <a href="detail.html"
-                                            title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
-                                            <figure><img src="{{ asset('/assets') }}/images/products/produk.jpg" alt="">
-                                            </figure>
-                                        </a>
-                                    </div>
-                                    <div class="product-info">
-                                        <a href="#" class="product-name"><span>Nama Produk</span></a>
-                                        <div class="wrap-price"><span class="product-price">Rp123</span></div>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li class="product-item">
-                                <div class="product product-widget-style">
-                                    <div class="thumbnnail">
-                                        <a href="detail.html"
-                                            title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
-                                            <figure><img src="{{ asset('/assets') }}/images/products/produk.jpg" alt="">
-                                            </figure>
-                                        </a>
-                                    </div>
-                                    <div class="product-info">
-                                        <a href="#" class="product-name"><span>Nama Produk</span></a>
-                                        <div class="wrap-price"><span class="product-price">Rp123</span></div>
-                                    </div>
-                                </div>
-                            </li>
-
-                        </ul>
+                        </div>
                     </div>
-                </div><!-- brand widget--> --}}
+                </div><!-- Price-->
 
             </div>
             <!--end sitebar-->
@@ -227,3 +160,27 @@
     <!--end container-->
 
 </main>
+
+@push('scripts')
+<script>
+    var slider = document.getElementById('slider');
+    noUiSlider.create(slider,{
+        start : [100,10000000],
+        connect : true,
+        range : {
+            'min' : 100,
+            'max' : 10000000,
+        },
+        pips : {
+            mode : 'steps',
+            stepped : true,
+            density : 4
+        }
+    });
+
+    slider.noUiSlider.on('update', function(value) {
+        @this.set('min_price', value[0]);
+        @this.set('max_price', value[1]);
+    });
+</script>
+@endpush
