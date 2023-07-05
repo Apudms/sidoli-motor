@@ -6,8 +6,8 @@ use App\Models\Category;
 use App\Models\HomeCategory;
 use App\Models\HomeSlider;
 use App\Models\Product;
-use Illuminate\Support\Facades\DB;
 use Livewire\Component;
+// use Illuminate\Support\Facades\DB;
 
 class HomeComponent extends Component
 {

@@ -27,7 +27,7 @@ class AdminEditHomeSliderComponent extends Component
 
     public function updated($field)
     {
-        $this->validateOnly([
+        $this->validateOnly($field, [
             'nama_slider' => 'required',
             'newImage' => 'required|mimes:jpeg,jpg,png',
         ]);

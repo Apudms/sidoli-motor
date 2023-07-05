@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Banner;
 use App\Models\Category;
+use App\Models\HomeCategory;
 use App\Models\HomeSlider;
 use App\Models\Product;
 use App\Models\User;
@@ -114,6 +115,7 @@ class DatabaseSeeder extends Seeder
 
         //Category::factory(7)->create();
         Product::factory(73)->create();
+        HomeCategory::factory(1)->create();
         //HomeSlider::factory(3)->create();
     }
 }
