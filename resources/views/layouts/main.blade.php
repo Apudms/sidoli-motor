@@ -220,14 +220,6 @@
                                 <li class="menu-item">
                                     <a href="#" class="link-term mercado-item-title">Transaksi</a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="{{ route('admin.slider') }}" class="link-term mercado-item-title">Manajemen
-                                        Slider</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="{{ route('admin.manajemenkategori') }}"
-                                        class="link-term mercado-item-title">Manajemen Kategori</a>
-                                </li>
                                 @elseif (Auth::user()->utype === 'ADM')
                                 <li class="menu-item">
                                     <a href="{{ route('admin.kategori') }}"
@@ -239,14 +231,6 @@
                                 </li>
                                 <li class="menu-item">
                                     <a href="#" class="link-term mercado-item-title">Transaksi</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="{{ route('admin.slider') }}" class="link-term mercado-item-title">Manajemen
-                                        Slider</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="{{ route('admin.manajemenkategori') }}"
-                                        class="link-term mercado-item-title">Manajemen Kategori</a>
                                 </li>
                                 @elseif (Auth::user()->utype === 'USR')
                                 <li class="menu-item">
