@@ -210,29 +210,43 @@
                                 @auth
                                 @if (Auth::user()->utype === 'OWN')
                                 <li class="menu-item">
-                                    <a href="/toko" class="link-term mercado-item-title">PRODUK</a>
+                                    <a href="{{ route('admin.kategori') }}"
+                                        class="link-term mercado-item-title">Kategori</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="/keranjang" class="link-term mercado-item-title">INCOMING</a>
+                                    <a href="{{ route('admin.produk') }}"
+                                        class="link-term mercado-item-title">Produk</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="/checkout" class="link-term mercado-item-title">OUTGOING</a>
+                                    <a href="#" class="link-term mercado-item-title">Transaksi</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="/checkout" class="link-term mercado-item-title">WILAYAH</a>
+                                    <a href="{{ route('admin.slider') }}" class="link-term mercado-item-title">Manajemen
+                                        Slider</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{{ route('admin.manajemenkategori') }}"
+                                        class="link-term mercado-item-title">Manajemen Kategori</a>
                                 </li>
                                 @elseif (Auth::user()->utype === 'ADM')
                                 <li class="menu-item">
-                                    <a href="/toko" class="link-term mercado-item-title">PRODUK</a>
+                                    <a href="{{ route('admin.kategori') }}"
+                                        class="link-term mercado-item-title">Kategori</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="/keranjang" class="link-term mercado-item-title">WILAYAH</a>
+                                    <a href="{{ route('admin.produk') }}"
+                                        class="link-term mercado-item-title">Produk</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="/keranjang" class="link-term mercado-item-title">CUSTOMER</a>
+                                    <a href="#" class="link-term mercado-item-title">Transaksi</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="/checkout" class="link-term mercado-item-title">INCOMING</a>
+                                    <a href="{{ route('admin.slider') }}" class="link-term mercado-item-title">Manajemen
+                                        Slider</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{{ route('admin.manajemenkategori') }}"
+                                        class="link-term mercado-item-title">Manajemen Kategori</a>
                                 </li>
                                 @elseif (Auth::user()->utype === 'USR')
                                 <li class="menu-item">
