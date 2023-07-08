@@ -121,7 +121,10 @@ class DatabaseSeeder extends Seeder
         );
 
         //Category::factory(7)->create();
-        Product::factory(73)->create();
+        //Product::factory(73)->create();
+
+        Product::factory(166)->create();
+
         HomeCategory::factory(1)->create();
         //HomeSlider::factory(3)->create();
     }

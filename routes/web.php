@@ -54,8 +54,6 @@ Route::get('/cari', SearchComponent::class)->name('produk.cari');
 //For Owner
 Route::middleware(['auth:sanctum', 'verified', 'authowner'])->group(function () {
     Route::get('/owner/dashboard', OwnerDashboardComponent::class)->name('owner.dashboard');
-    // Route::get('/owner/brands', OwnerBrandComponent::class)->name('owner.brands');
-    // Route::get('/owner/brands/add', OwnerAddBrandComponent::class)->name('owner.addbrands');
 });
 
 //For Admin
@@ -71,11 +69,6 @@ Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function () 
     Route::get('/admin/slider/tambah', AdminAddHomeSliderComponent::class)->name('admin.tambahslider');
     Route::get('/admin/slider/ubah/id={id}', AdminEditHomeSliderComponent::class)->name('admin.ubahslider');
     Route::get('/admin/home-kategori', AdminHomeCategoryComponent::class)->name('admin.manajemenkategori');
-    // Route::get('/admin/home-kategori/tambah', AdminHomeCategoryComponent::class)->name('admin.tambahhome-kategori');
-    // Route::get('/admin/home-kategori/ubah/id={id}', AdminHomeCategoryComponent::class)->name('admin.ubahhome-kategori');
-
-    // Route::get('/admin/brands', AdminBrandComponent::class)->name('admin.brands');
-    // Route::get('/admin/brands/add', AdminAddBrandComponent::class)->name('admin.addbrands');
 });
 
 //For User or Customer
