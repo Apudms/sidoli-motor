@@ -172,6 +172,9 @@
                                 <li class="menu-item" @if(Request::is('toko')) style="background: #ff2832" @endif>
                                     <a href="/toko" class="link-term mercado-item-title">TOKO</a>
                                 </li>
+                                <li class="menu-item" @if(Request::is('keranjang')) style="background: #ff2832" @endif>
+                                    <a href="/keranjang" class="link-term mercado-item-title">KERANJANG</a>
+                                </li>
                                 @endguest
                                 @if (Route::has('login'))
                                 @auth
