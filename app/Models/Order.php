@@ -11,9 +11,9 @@ class Order extends Model
 
     protected $table = "orders";
 
-    public function reseller()
+    public function user()
     {
-        return $this->belongsTo(Reseller::class);
+        return $this->belongsTo(User::class);
     }
 
     public function detailOrders()
