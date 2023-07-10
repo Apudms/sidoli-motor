@@ -35,8 +35,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeComponent::class);
 Route::get('/toko', ShopComponent::class);
+
+/*
+|--------------------------------------------------------------------------
+| LaravelShoppingcart
+|--------------------------------------------------------------------------
+|
+| https://github.com/bumbummen99/LaravelShoppingcart
+|
+*/
+
 Route::get('/keranjang', CartComponent::class)->name('produk.keranjang');
-Route::get('/checkout', CheckoutComponent::class);
+Route::get('/checkout', CheckoutComponent::class)->name('checkout');
 Route::get('/produk/{slug}', DetailsComponent::class)->name('produk.detail');
 Route::get('/kategori-produk/{category_slug}', CategoryComponent::class)->name('produk.kategori');
 Route::get('/cari', SearchComponent::class)->name('produk.cari');

@@ -65,12 +65,6 @@
                                         <li class="menu-item">
                                             <a title="Dashboard" href="{{ route('owner.dashboard') }}">Dashboard</a>
                                         </li>
-                                        {{-- <li class="menu-item">
-                                            <a title="Brand" href="{{ route('owner.brands') }}">Brand</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a title="Produk" href="{{ route('owner.brands') }}">Produk</a>
-                                        </li> --}}
                                         <li class="menu-item">
                                             <a title="Logout" href="{{ route('owner.dashboard') }}"
                                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Keluar</a>
@@ -85,7 +79,8 @@
                                     <a title="{{ Auth::user()->name }}" href="#">{{ Auth::user()->name }}<i
                                             class="fa fa-angle-down" aria-hidden="true"></i></a>
                                     <ul class="submenu curency">
-                                        <li class="menu-item">
+                                        <li class="menu-item" @if(Request::is('admin.dashboard')) style="color: red;"
+                                            @endif>
                                             <a title="Dashboard" href="{{ route('admin.dashboard') }}">Dashboard</a>
                                         </li>
                                         <li class="menu-item">
@@ -117,9 +112,6 @@
                                         Auth::user()->name }})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                     <ul class="submenu curency">
                                         <li class="menu-item">
-                                            <a title="Dashboard" href="{{ route('user.dashboard') }}">Dashboard</a>
-                                        </li>
-                                        <li class="menu-item">
                                             <a title="Logout" href="{{ route('user.dashboard') }}"
                                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Keluar</a>
                                         </li>
@@ -150,11 +142,8 @@
 
                         @livewire('header-search-component')
 
-                        @if (Route::has('login'))
-                        @auth
-                        @if (Auth::user()->utype === 'USR')
+                        @if (Auth::guest() || Auth::user()->utype === 'USR')
                         <div class="wrap-icon right-section">
-
                             @livewire('cart-count-component')
 
                             <div class="wrap-icon-section show-up-after-1024">
@@ -166,8 +155,6 @@
                             </div>
                         </div>
                         @endif
-                        @endif
-                        @endif
 
                     </div>
                 </div>
@@ -176,62 +163,61 @@
                     <div class="primary-nav-section">
                         <div class="container">
                             <ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu">
-                                <li class="menu-item home-icon">
+                                <li class="menu-item home-icon" @if(Request::is('/')) style="background: #ff2832" @else
+                                    style="background: none" @endif>
                                     <a href="/" class="link-term mercado-item-title"><i class="fa fa-home"
                                             aria-hidden="true"></i></a>
                                 </li>
-                                {{-- <li class="menu-item home-icon" style="background: none">
-                                    <a href="/" class="link-term mercado-item-title"><i class="fa fa-home"
-                                            aria-hidden="true"></i></a>
-                                </li> --}}
                                 @guest
-                                <li class="menu-item">
+                                <li class="menu-item" @if(Request::is('toko')) style="background: #ff2832" @endif>
                                     <a href="/toko" class="link-term mercado-item-title">TOKO</a>
                                 </li>
                                 @endguest
                                 @if (Route::has('login'))
                                 @auth
                                 @if (Auth::user()->utype === 'OWN')
-                                <li class="menu-item">
+                                <li class="menu-item" @if(Request::is('admin.kategori')) style="background: #ff2832"
+                                    @endif>
                                     <a href="{{ route('admin.kategori') }}"
                                         class="link-term mercado-item-title">Kategori</a>
                                 </li>
-                                <li class="menu-item">
+                                <li class="menu-item" @if(Request::is('admin.produk')) style="background: #ff2832"
+                                    @endif>
                                     <a href="{{ route('admin.produk') }}"
                                         class="link-term mercado-item-title">Produk</a>
                                 </li>
-                                <li class="menu-item">
+                                <li class="menu-item" @if(Request::is('#')) style="background: #ff2832" @endif>
                                     <a href="#" class="link-term mercado-item-title">Transaksi</a>
                                 </li>
                                 @elseif (Auth::user()->utype === 'ADM')
-                                <li class="menu-item">
+                                <li class="menu-item" @if(Request::is('admin.kategori')) style="background: #ff2832"
+                                    @endif>
                                     <a href="{{ route('admin.kategori') }}"
                                         class="link-term mercado-item-title">Kategori</a>
                                 </li>
-                                <li class="menu-item">
+                                <li class="menu-item" @if(Request::is('admin.produk')) style="background: #ff2832"
+                                    @endif>
                                     <a href="{{ route('admin.produk') }}"
                                         class="link-term mercado-item-title">Produk</a>
                                 </li>
-                                <li class="menu-item">
+                                <li class="menu-item" @if(Request::is('#')) style="background: #ff2832" @endif>
                                     <a href="#" class="link-term mercado-item-title">Transaksi</a>
                                 </li>
                                 @elseif (Auth::user()->utype === 'USR')
-                                <li class="menu-item">
+                                <li class="menu-item" @if(Request::is('toko')) style="background: #ff2832" @endif>
                                     <a href="/toko" class="link-term mercado-item-title">TOKO</a>
                                 </li>
-                                <li class="menu-item">
+                                <li class="menu-item" @if(Request::is('keranjang') || Request::is('checkout'))
+                                    style="background: #ff2832" @endif>
                                     <a href="/keranjang" class="link-term mercado-item-title">KERANJANG</a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="/checkout" class="link-term mercado-item-title">CHECKOUT</a>
+                                <li class="menu-item" @if(Request::is('user/dashboard')) style="background: #ff2832"
+                                    @endif>
+                                    <a href="/user/dashboard" class="link-term mercado-item-title">TRANSAKSI</a>
                                 </li>
                                 @endif
                                 @endif
                                 @endif
-                                {{-- <li class="menu-item">
-                                    <a href="/checkout" class="link-term mercado-item-title"
-                                        style="background: #ff2832">Checkout</a>
-                                </li> --}}
                             </ul>
                         </div>
                     </div>
