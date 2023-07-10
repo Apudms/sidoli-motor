@@ -52,7 +52,7 @@
                                     <td>{{ $product->nama_produk }}</td>
                                     <td>{{ $product->jumlah_stok }}</td>
                                     <td>{{ $product->harga_normal }}</td>
-                                    <td>{{ $product->category->name }}</td>
+                                    <td>{{ $product->category->nama_kategori }}</td>
                                     <td>{{ $product->created_at }}</td>
                                     <td>
                                         <a href="{{ route('admin.ubahproduk', ['id' => $product->id]) }}"><i

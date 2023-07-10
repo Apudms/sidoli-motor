@@ -12,6 +12,7 @@ use Livewire\WithFileUploads;
 class AdminAddProductComponent extends Component
 {
     use WithFileUploads;
+
     public $nama_produk;
     public $slug;
     public $deskripsi_singkat;
@@ -47,7 +48,7 @@ class AdminAddProductComponent extends Component
             'harga_diskon' => 'numeric',
             'SKU' => 'required',
             'status_stok' => 'required',
-            'jumlah_stok' => 'required|unique',
+            'jumlah_stok' => 'required',
             'image' => 'required|mimes:jpeg,jpg,png',
             'category_id' => 'required',
         ]);
@@ -64,9 +65,24 @@ class AdminAddProductComponent extends Component
             'harga_diskon' => 'numeric',
             'SKU' => 'required',
             'status_stok' => 'required',
-            'jumlah_stok' => 'required|unique',
+            'jumlah_stok' => 'required',
             'image' => 'required|mimes:jpeg,jpg,png',
             'category_id' => 'required',
+        ], [
+            'nama_produk.required' => 'Nama produk harus diisi.',
+            'slug.required' => 'Slug harus diisi.',
+            'slug.unique' => 'Slug sudah digunakan.',
+            'deskripsi_singkat.required' => 'Deskripsi singkat harus diisi.',
+            'deskripsi.required' => 'Deskripsi harus diisi.',
+            'harga_normal.required' => 'Harga normal harus diisi.',
+            'harga_normal.numeric' => 'Harga normal harus berupa angka.',
+            'harga_diskon.numeric' => 'Harga diskon harus berupa angka.',
+            'SKU.required' => 'SKU harus diisi.',
+            'status_stok.required' => 'Status stok harus diisi.',
+            'jumlah_stok.required' => 'Jumlah stok harus diisi.',
+            'image.required' => 'Gambar harus diunggah.',
+            'image.mimes' => 'Gambar harus berformat jpeg, jpg, atau png.',
+            'category_id.required' => 'Kategori harus dipilih.',
         ]);
 
         $product = new Product();
