@@ -51,7 +51,7 @@
                                     </td>
                                     <td>{{ $product->nama_produk }}</td>
                                     <td>{{ $product->jumlah_stok }}</td>
-                                    <td>{{ $product->harga_normal }}</td>
+                                    <td>{{ number_format($product->harga_normal, 0, '.', '.') }}</td>
                                     <td>{{ $product->category->nama_kategori }}</td>
                                     <td>{{ $product->created_at }}</td>
                                     <td>
