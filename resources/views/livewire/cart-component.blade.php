@@ -34,7 +34,7 @@
                                 }}</a>
                         </div>
                         <div class="price-field produtc-price">
-                            <p class="price">Rp{{ $item->model->harga_normal }}</p>
+                            <p class="price">Rp{{ number_format($item->model->harga_normal, 0, '.', '.') }}</p>
                         </div>
                         <div class="quantity">
                             <div class="quantity-input">
@@ -47,7 +47,8 @@
                             </div>
                         </div>
                         <div class="price-field sub-total">
-                            <p class="price">Rp{{ $item->subtotal }}</p>
+                            <p class="price">Rp{{ number_format($item->subtotal, 0, '.', '.') }}
+                            </p>
                         </div>
                         <div class="delete">
                             <a href="#" wire:click.prevent="destroy('{{ $item->rowId }}')" class="btn btn-delete"
@@ -70,11 +71,9 @@
                     <h4 class="title-box">Ringkasan Pesanan</h4>
                     <p class="summary-info"><span class="title">Subtotal</span><b class="index">Rp{{ Cart::subtotal()
                             }}</b></p>
-                    <p class="summary-info"><span class="title">Subtotal</span><b class="index">Rp{{ Cart::tax()
-                            }}</b></p>
                     <p class="summary-info"><span class="title">Ongkir</span><b class="index">Gratis Ongkir</b></p>
                     <p class="summary-info total-info "><span class="title">Total</span><b class="index">Rp{{
-                            Cart::total()
+                            Cart::subtotal()
                             }}</b></p>
                 </div>
                 <div class="checkout-info">

@@ -62,12 +62,12 @@ Route::get('/cari', SearchComponent::class)->name('produk.cari');
 // });
 
 //For Owner
-Route::middleware(['auth:sanctum', 'verified', 'authowner'])->group(function () {
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/owner/dashboard', OwnerDashboardComponent::class)->name('owner.dashboard');
 });
 
 //For Admin
-Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function () {
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
     Route::get('/admin/kategori', AdminCategoryComponent::class)->name('admin.kategori');
     Route::get('/admin/kategori/tambah', AdminAddCategoryComponent::class)->name('admin.tambahkategori');

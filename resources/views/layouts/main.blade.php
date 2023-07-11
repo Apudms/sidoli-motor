@@ -163,12 +163,12 @@
                     <div class="primary-nav-section">
                         <div class="container">
                             <ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu">
+                                @guest
                                 <li class="menu-item home-icon" @if(Request::is('/')) style="background: #ff2832" @else
                                     style="background: none" @endif>
                                     <a href="/" class="link-term mercado-item-title"><i class="fa fa-home"
                                             aria-hidden="true"></i></a>
                                 </li>
-                                @guest
                                 <li class="menu-item" @if(Request::is('toko')) style="background: #ff2832" @endif>
                                     <a href="/toko" class="link-term mercado-item-title">TOKO</a>
                                 </li>
@@ -179,12 +179,17 @@
                                 @if (Route::has('login'))
                                 @auth
                                 @if (Auth::user()->utype === 'OWN')
-                                <li class="menu-item" @if(Request::is('admin.kategori')) style="background: #ff2832"
-                                    @endif>
+                                <li class="menu-item home-icon" @if(Request::routeIs('admin.dashboard'))
+                                    style="background: #ff2832" @else style="background: none" @endif>
+                                    <a href="{{ route('admin.dashboard') }}" class="link-term mercado-item-title"><i
+                                            class="fa fa-home" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="menu-item" @if(Request::routeIs('admin.kategori'))
+                                    style="background: #ff2832" @endif>
                                     <a href="{{ route('admin.kategori') }}"
                                         class="link-term mercado-item-title">Kategori</a>
                                 </li>
-                                <li class="menu-item" @if(Request::is('admin.produk')) style="background: #ff2832"
+                                <li class="menu-item" @if(Request::routeIs('admin.produk')) style="background: #ff2832"
                                     @endif>
                                     <a href="{{ route('admin.produk') }}"
                                         class="link-term mercado-item-title">Produk</a>
@@ -193,12 +198,17 @@
                                     <a href="#" class="link-term mercado-item-title">Transaksi</a>
                                 </li>
                                 @elseif (Auth::user()->utype === 'ADM')
-                                <li class="menu-item" @if(Request::is('admin.kategori')) style="background: #ff2832"
-                                    @endif>
+                                <li class="menu-item home-icon" @if(Request::routeIs('admin.dashboard'))
+                                    style="background: #ff2832" @else style="background: none" @endif>
+                                    <a href="{{ route('admin.dashboard') }}" class="link-term mercado-item-title"><i
+                                            class="fa fa-home" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="menu-item" @if(Request::routeIs('admin.kategori'))
+                                    style="background: #ff2832" @endif>
                                     <a href="{{ route('admin.kategori') }}"
                                         class="link-term mercado-item-title">Kategori</a>
                                 </li>
-                                <li class="menu-item" @if(Request::is('admin.produk')) style="background: #ff2832"
+                                <li class="menu-item" @if(Request::routeIs('admin.produk')) style="background: #ff2832"
                                     @endif>
                                     <a href="{{ route('admin.produk') }}"
                                         class="link-term mercado-item-title">Produk</a>
@@ -219,7 +229,7 @@
                                     <a href="/user/dashboard" class="link-term mercado-item-title">TRANSAKSI</a>
                                 </li>
                                 @endif
-                                @endif
+                                @endauth
                                 @endif
                             </ul>
                         </div>
