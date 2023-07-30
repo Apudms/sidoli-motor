@@ -55,29 +55,34 @@ class CartComponent extends Component
         //     'total' => (Cart::instance('cart')->total() * 1000) + 20000,
         // ]);
 
-        $subtotal = Cart::instance('cart')->subtotal();
-        $ongkir = 20000;
-        $tax = intval(Cart::instance('cart')->tax());
-        $total = Cart::instance('cart')->total();
+        // $subtotal = Cart::instance('cart')->subtotal();
+        // $ongkir = 20000;
+        // $tax = intval(Cart::instance('cart')->tax());
+        // $total = Cart::instance('cart')->total();
 
-        // Pastikan nilai subtotal, tax, dan total valid sebagai angka sebelum menggunakan number_format()
-        if (is_numeric($subtotal) && is_numeric($tax) && is_numeric($total)) {
-            $subtotal = number_format($subtotal, 0, '', '');
-            $tax = number_format($tax, 0, '', '');
-            $total = number_format($total, 0, '', '');
-        } else {
-            // Penanganan jika nilai tidak valid
-            // Misalnya, memberikan nilai default atau menampilkan pesan kesalahan
-            $subtotal = 0;
-            $tax = 0;
-            $total = 0;
+        // // Pastikan nilai subtotal, tax, dan total valid sebagai angka sebelum menggunakan number_format()
+        // if (is_numeric($subtotal) && is_numeric($tax) && is_numeric($total)) {
+        //     $subtotal = number_format($subtotal, 0, '', '');
+        //     $tax = number_format($tax, 0, '', '');
+        //     $total = number_format($total, 0, '', '');
+        // } else {
+        //     // Penanganan jika nilai tidak valid
+        //     // Misalnya, memberikan nilai default atau menampilkan pesan kesalahan
+        //     $subtotal = 0;
+        //     $tax = 0;
+        //     $total = 0;
+        // }
+
+        if (!Cart::instance('cart')->count() > 0) {
+            session()->forget('checkout');
+            return;
         }
 
         session()->put('checkout', [
-            'subtotal' => $subtotal,
-            'ongkir' => $ongkir,
-            'tax' => $tax,
-            'total' => $total,
+            'subtotal' => Cart::instance('cart')->subtotal(),
+            'ongkir' => 20000,
+            'tax' => intval(Cart::instance('cart')->tax()),
+            'total' => Cart::instance('cart')->total(),
         ]);
     }
 

@@ -217,7 +217,13 @@
                                     <a href="#" class="link-term mercado-item-title">Transaksi</a>
                                 </li>
                                 @elseif (Auth::user()->utype === 'USR')
-                                <li class="menu-item" @if(Request::is('toko')) style="background: #ff2832" @endif>
+                                <li class="menu-item home-icon" @if(Request::is('/')) style="background: #ff2832" @else
+                                    style="background: none" @endif>
+                                    <a href="/" class="link-term mercado-item-title"><i class="fa fa-home"
+                                            aria-hidden="true"></i></a>
+                                </li>
+                                <li class="menu-item" @if(Request::is('toko') || Request::routeIs('produk.detail'))
+                                    style="background: #ff2832" @endif>
                                     <a href="/toko" class="link-term mercado-item-title">TOKO</a>
                                 </li>
                                 <li class="menu-item" @if(Request::is('keranjang') || Request::is('checkout'))

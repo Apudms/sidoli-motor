@@ -5641,6 +5641,20 @@ table.shop_attributes tbody {
 	margin-right: 30px;
 }
 
+.wrap-address-billing .row-in-form select {
+	font-size: 13px;
+	line-height: 19px;
+	display: inline-block;
+	height: 43px;
+	padding: 2px 20px;
+	width: 100%;
+	border: 1px solid #e6e6e6;
+	background-color: #fff;
+	/* Background color for select element */
+	color: #555555;
+	/* Text color for select element */
+}
+
 .summary-checkout {
 	background-color: #fdfdfd;
 	width: 100%;
