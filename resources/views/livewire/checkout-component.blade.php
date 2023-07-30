@@ -9,272 +9,126 @@
                 <li class="item-link"><span>Checkout</span></li>
             </ul>
         </div>
-        <div class=" main-content-area">
-            <div class="wrap-address-billing">
-                <h3 class="box-title">Alamat Pengiriman</h3>
-                <form action="#" method="get" name="frm-billing">
-                    <p class="row-in-form">
-                        <label for="fname">Nama Depan<span>*</span></label>
-                        <input id="fname" type="text" name="fname" value="" placeholder="Nama Depan">
-                    </p>
-                    <p class="row-in-form">
-                        <label for="lname">Nama Belakang<span>*</span></label>
-                        <input id="lname" type="text" name="lname" value="" placeholder="Nama Belakang">
-                    </p>
-                    <p class="row-in-form">
-                        <label for="email">Alamat Email:</label>
-                        <input id="email" type="email" name="email" value="" placeholder="Email">
-                    </p>
-                    <p class="row-in-form">
-                        <label for="phone">Nomor Telepon<span>*</span></label>
-                        <input id="phone" type="number" name="phone" value="" placeholder="08123456789">
-                    </p>
-                    <p class="row-in-form">
-                        <label for="add">Alamat:</label>
-                        <input id="add" type="text" name="add" value=""
-                            placeholder="Jl. Nama jalan, RT/RW, Nomor rumah">
-                    </p>
-                    <p class="row-in-form">
-                        <label for="add">Kecamatan:</label>
-                        <input id="add" type="text" name="add" value="" placeholder="Way Kandis">
-                    </p>
-
-                    {{-- <div class="row-in-form">
-                        <label for="add">Kecamatan<span>*</span></label>
-                        <div class="d-flex p-0 py-0 px-0 m-0 ms-0 mt-0">
-                            <div class="form-control justify-content-start"
-                                style="font-size: 13px; line-height: 19px; display: inline-block; height: 43px; padding: 12px; width: 100%; border: 1px solid #e6e6e6; border-radius: 0; outline: none; box-shadow: none;">
-                                <select class="form-control align-items-center" id="add">
-                                    <option value="1">Bumi Waras</option>
-                                    <option value="2">Enggal</option>
-                                    <option value="3">Kedamaian</option>
-                                    <option value="4">Kedaton</option>
-                                    <option value="5">Kemiling</option>
-                                    <option value="6">Labuhan Ratu</option>
-                                    <option value="7">Langkapura</option>
-                                    <option value="8">Panjang</option>
-                                    <option value="9">Rajabasa</option>
-                                    <option value="10">Sukabumi</option>
-                                    <option value="11">Sukarame</option>
-                                    <option value="12">Tanjung Senang</option>
-                                    <option value="13">Tanjung Karang Barat</option>
-                                    <option value="14">Tanjung Karang Pusat</option>
-                                    <option value="15">Tanjung Karang Timur</option>
-                                    <option value="16">Teluk Betung Barat</option>
-                                    <option value="17">Teluk Betung Selatan</option>
-                                    <option value="18">Teluk Betung Timur</option>
-                                    <option value="19">Teluk Betung Utara</option>
-                                    <option value="20">Way Halim</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div> --}}
-
-                    <p class="row-in-form fill-wife">
-                        <label class="checkbox-field">
-                            <input name="different-add" id="different-add" value="forever" type="checkbox">
-                            <span>Kirim ke alamat lain?</span>
-                        </label>
-                    </p>
-                </form>
-            </div>
-            <div class="summary summary-checkout">
-                <div class="summary-item payment-method">
-                    <h4 class="title-box">Metode Pembayaran</h4>
-                    <p class="summary-info"><span class="title">*Nomor rekening akan muncul di menu Transaksi.</span>
-                    <div class="choose-payment-methods">
-                        <label class="payment-method">
-                            <input name="payment-method" id="payment-method-bank" value="bank" type="radio">
-                            <span>Transfer Bank</span>
-                            <span class="payment-desc">Silahkan transfer ke nomor rekening berikut: 123 456 7</span>
-                        </label>
-                    </div>
-                    <p class="summary-info grand-total"><span>Total Keseluruhan</span> <span
-                            class="grand-total-price">Rp 123.000</span></p>
-                    <a href="thankyou.html" class="btn btn-medium">Pesan Sekarang</a>
-                </div>
-            </div>
-
-            {{-- <div class="wrap-show-advance-info-box style-1 box-in-site">
-                <h3 class="title-box">Most Viewed Products</h3>
-                <div class="wrap-products">
-                    <div class="products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5"
-                        data-loop="false" data-nav="true" data-dots="false"
-                        data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"3"},"1200":{"items":"5"}}'>
-
-                        <div class="product product-style-2 equal-elem ">
-                            <div class="product-thumnail">
-                                <a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                    <figure><img src="assets/images/products/digital_04.jpg" width="214" height="214"
-                                            alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
-                                </a>
-                                <div class="group-flash">
-                                    <span class="flash-item new-label">new</span>
-                                </div>
-                                <div class="wrap-btn">
-                                    <a href="#" class="function-link">quick view</a>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker
-                                        [White]</span></a>
-                                <div class="wrap-price"><span class="product-price">$250.00</span></div>
-                            </div>
-                        </div>
-
-                        <div class="product product-style-2 equal-elem ">
-                            <div class="product-thumnail">
-                                <a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                    <figure><img src="assets/images/products/digital_17.jpg" width="214" height="214"
-                                            alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
-                                </a>
-                                <div class="group-flash">
-                                    <span class="flash-item sale-label">sale</span>
-                                </div>
-                                <div class="wrap-btn">
-                                    <a href="#" class="function-link">quick view</a>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker
-                                        [White]</span></a>
-                                <div class="wrap-price"><ins>
-                                        <p class="product-price">$168.00</p>
-                                    </ins> <del>
-                                        <p class="product-price">$250.00</p>
-                                    </del></div>
-                            </div>
-                        </div>
-
-                        <div class="product product-style-2 equal-elem ">
-                            <div class="product-thumnail">
-                                <a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                    <figure><img src="assets/images/products/digital_15.jpg" width="214" height="214"
-                                            alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
-                                </a>
-                                <div class="group-flash">
-                                    <span class="flash-item new-label">new</span>
-                                    <span class="flash-item sale-label">sale</span>
-                                </div>
-                                <div class="wrap-btn">
-                                    <a href="#" class="function-link">quick view</a>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker
-                                        [White]</span></a>
-                                <div class="wrap-price"><ins>
-                                        <p class="product-price">$168.00</p>
-                                    </ins> <del>
-                                        <p class="product-price">$250.00</p>
-                                    </del></div>
-                            </div>
-                        </div>
-
-                        <div class="product product-style-2 equal-elem ">
-                            <div class="product-thumnail">
-                                <a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                    <figure><img src="assets/images/products/digital_01.jpg" width="214" height="214"
-                                            alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
-                                </a>
-                                <div class="group-flash">
-                                    <span class="flash-item bestseller-label">Bestseller</span>
-                                </div>
-                                <div class="wrap-btn">
-                                    <a href="#" class="function-link">quick view</a>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker
-                                        [White]</span></a>
-                                <div class="wrap-price"><span class="product-price">$250.00</span></div>
-                            </div>
-                        </div>
-
-                        <div class="product product-style-2 equal-elem ">
-                            <div class="product-thumnail">
-                                <a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                    <figure><img src="assets/images/products/digital_21.jpg" width="214" height="214"
-                                            alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
-                                </a>
-                                <div class="wrap-btn">
-                                    <a href="#" class="function-link">quick view</a>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker
-                                        [White]</span></a>
-                                <div class="wrap-price"><span class="product-price">$250.00</span></div>
-                            </div>
-                        </div>
-
-                        <div class="product product-style-2 equal-elem ">
-                            <div class="product-thumnail">
-                                <a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                    <figure><img src="assets/images/products/digital_03.jpg" width="214" height="214"
-                                            alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
-                                </a>
-                                <div class="group-flash">
-                                    <span class="flash-item sale-label">sale</span>
-                                </div>
-                                <div class="wrap-btn">
-                                    <a href="#" class="function-link">quick view</a>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker
-                                        [White]</span></a>
-                                <div class="wrap-price"><ins>
-                                        <p class="product-price">$168.00</p>
-                                    </ins> <del>
-                                        <p class="product-price">$250.00</p>
-                                    </del></div>
-                            </div>
-                        </div>
-
-                        <div class="product product-style-2 equal-elem ">
-                            <div class="product-thumnail">
-                                <a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                    <figure><img src="assets/images/products/digital_04.jpg" width="214" height="214"
-                                            alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
-                                </a>
-                                <div class="group-flash">
-                                    <span class="flash-item new-label">new</span>
-                                </div>
-                                <div class="wrap-btn">
-                                    <a href="#" class="function-link">quick view</a>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker
-                                        [White]</span></a>
-                                <div class="wrap-price"><span class="product-price">$250.00</span></div>
-                            </div>
-                        </div>
-
-                        <div class="product product-style-2 equal-elem ">
-                            <div class="product-thumnail">
-                                <a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                    <figure><img src="assets/images/products/digital_05.jpg" width="214" height="214"
-                                            alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
-                                </a>
-                                <div class="group-flash">
-                                    <span class="flash-item bestseller-label">Bestseller</span>
-                                </div>
-                                <div class="wrap-btn">
-                                    <a href="#" class="function-link">quick view</a>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker
-                                        [White]</span></a>
-                                <div class="wrap-price"><span class="product-price">$250.00</span></div>
+        <div class="main-content-area">
+            <form wire:submit.prevent="placeOrder">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="wrap-address-billing">
+                            <h3 class="box-title">Alamat Pengiriman</h3>
+                            <div class="billing-address">
+                                <p class="row-in-form">
+                                    <label for="nama_depan">Nama Depan<span>*</span></label>
+                                    <input type="text" name="nama_depan" wire:model="nama_depan">
+                                    @error('nama_depan') <span class="text-danger">{{ $message }}</span> @enderror
+                                </p>
+                                <p class="row-in-form">
+                                    <label for="nama_belakang">Nama Belakang<span>*</span></label>
+                                    <input type="text" name="nama_belakang" wire:model="nama_belakang">
+                                    @error('nama_belakang') <span class="text-danger">{{ $message }}</span> @enderror
+                                </p>
+                                <p class="row-in-form">
+                                    <label for="email">Alamat Email:</label>
+                                    <input type="email" name="email" wire:model="email">
+                                    @error('email') <span class="text-danger">{{ $message }}</span> @enderror
+                                </p>
+                                <p class="row-in-form">
+                                    <label for="no_telp">Nomor Telepon<span>*</span></label>
+                                    <input type="number" name="no_telp" wire:model="no_telp">
+                                    @error('no_telp') <span class="text-danger">{{ $message }}</span> @enderror
+                                </p>
+                                <p class="row-in-form">
+                                    <label for="alamat">Alamat:<span>*</span></label>
+                                    <input type="text" name="alamat" placeholder="Jl. Nama jalan, RT/RW, Nomor rumah"
+                                        wire:model="alamat">
+                                    @error('alamat') <span class="text-danger">{{ $message }}</span> @enderror
+                                </p>
+                                <p class="row-in-form">
+                                    <label for="kecamatan">Kecamatan:<span>*</span></label>
+                                    <select name="kecamatan" wire:model="kecamatan">
+                                        <option>Pilih Kecamatan</option>
+                                        <option value="Bumi Waras">Bumi Waras</option>
+                                        <option value="Enggal">Enggal</option>
+                                        <option value="Kedamaian">Kedamaian</option>
+                                        <option value="Kedaton">Kedaton</option>
+                                        <option value="Kemiling">Kemiling</option>
+                                        <option value="Labuhan Ratu">Labuhan Ratu</option>
+                                        <option value="Langkapura">Langkapura</option>
+                                        <option value="Panjang">Panjang</option>
+                                        <option value="Rajabasa">Rajabasa</option>
+                                        <option value="Sukabumi">Sukabumi</option>
+                                        <option value="Sukarame">Sukarame</option>
+                                        <option value="Tanjung Senang">Tanjung Senang</option>
+                                        <option value="Tanjung Karang Barat">Tanjung Karang Barat</option>
+                                        <option value="Tanjung Karang Pusat">Tanjung Karang Pusat</option>
+                                        <option value="Tanjung Karang Timur">Tanjung Karang Timur</option>
+                                        <option value="Teluk Betung Barat">Teluk Betung Barat</option>
+                                        <option value="Teluk Betung Selatan">Teluk Betung Selatan</option>
+                                        <option value="Teluk Betung Timur">Teluk Betung Timur</option>
+                                        <option value="Teluk Betung Utara">Teluk Betung Utara</option>
+                                        <option value="Way Halim">Way Halim</option>
+                                    </select>
+                                    @error('kecamatan') <span class="text-danger">{{ $message }}</span> @enderror
+                                </p>
+                                <p class="row-in-form">
+                                    <label for="kabupaten">Kabupaten / Kota:</label>
+                                    <input type="text" name="kabupaten" @if ($kecamatan) value="Kota Bandar Lampung"
+                                        @endif wire:model="kabupaten">
+                                    @error('kabupaten') <span class="text-danger">{{ $message }}</span> @enderror
+                                </p>
+                                <p class="row-in-form">
+                                    <label for="provinsi">Provinsi:</label>
+                                    <input type="text" name="provinsi" @if ($kecamatan) value="Lampung" @endif
+                                        wire:model="provinsi">
+                                    @error('provinsi') <span class="text-danger">{{ $message }}</span> @enderror
+                                </p>
+                                <p class="row-in-form">
+                                    <label for="kode_pos">Kode Pos:<span>*</span></label>
+                                    <input type="number" name="kode_pos" wire:model="kode_pos">
+                                    @error('kode_pos') <span class="text-danger">{{ $message }}</span> @enderror
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--End wrap-products-->
-            </div> --}}
+                <div class="summary summary-checkout">
+                    <div class="summary-item payment-method">
+                        <h4 class="title-box">Metode Pembayaran</h4>
+                        <p class="summary-info"><span class="title">*Nomor rekening akan muncul di menu
+                                Transaksi.</span>
+                        <div class="choose-payment-methods">
+                            <label class="payment-method">
+                                <input name="payment-method" id="payment-method-bank" value="Bank" type="radio"
+                                    wire:model="transfer">
+                                <span>Bank Mandiri</span>
+                                <span class="payment-desc">Silahkan transfer ke nomor rekening berikut: 123 456 7
+                                    <br><br></span>
+                            </label>
+                            <label class="payment-method">
+                                <input name="payment-method" id="payment-method-bank" value="Dana" type="radio"
+                                    wire:model="transfer">
+                                <span>Dana</span>
+                                <span class="payment-desc">Silahkan transfer ke nomor rekening berikut: 123 456 7
+                                    <br><br></span>
+                            </label>
+                            <label class="payment-method">
+                                <input name="payment-method" id="payment-method-bank" value="Shopeepay" type="radio"
+                                    wire:model="transfer">
+                                <span>Shopeepay</span>
+                                <span class="payment-desc">Silahkan transfer ke nomor rekening berikut: 123 456 7
+                                    <br><br></span>
+                            </label>
+                            @error('transfer') <span class="text-danger">{{ $message }}</span> @enderror
+                        </div>
+                        @if (Session::has('checkout'))
+                        <p class="summary-info grand-total">
+                            <span>Total Keseluruhan</span>
+                            <span class="grand-total-price">Rp {{ Session::get('checkout')['subtotal'] }}</span>
+                        </p>
+                        @endif
+                        <button type="submit" class="btn btn-medium">Pesan Sekarang</button>
+                    </div>
+                </div>
+            </form>
         </div>
         <!--end main content area-->
     </div>

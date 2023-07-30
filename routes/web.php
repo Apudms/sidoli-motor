@@ -19,6 +19,7 @@ use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\Owner\OwnerDashboardComponent;
 use App\Http\Livewire\SearchComponent;
 use App\Http\Livewire\ShopComponent;
+use App\Http\Livewire\ThankYouComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use Illuminate\Support\Facades\Route;
 
@@ -50,6 +51,7 @@ Route::get('/checkout', CheckoutComponent::class)->name('checkout');
 Route::get('/produk/{slug}', DetailsComponent::class)->name('produk.detail');
 Route::get('/kategori-produk/{category_slug}', CategoryComponent::class)->name('produk.kategori');
 Route::get('/cari', SearchComponent::class)->name('produk.cari');
+Route::get('/terimakasih', ThankYouComponent::class)->name('terimakasih');
 
 // Route::middleware([
 //     'auth:sanctum',
