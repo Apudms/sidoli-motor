@@ -48,41 +48,13 @@ class CartComponent extends Component
 
     public function setAmountforCheckout()
     {
-        // session()->put('checkout', [
-        //     'subtotal' => Cart::instance('cart')->subtotal() * 1000,
-        //     'ongkir' => 20000,
-        //     'priceTotal' => Cart::instance('cart')->priceTotal(),
-        //     'total' => (Cart::instance('cart')->total() * 1000) + 20000,
-        // ]);
-
-        // $subtotal = Cart::instance('cart')->subtotal();
-        // $ongkir = 20000;
-        // $tax = intval(Cart::instance('cart')->tax());
-        // $total = Cart::instance('cart')->total();
-
-        // // Pastikan nilai subtotal, tax, dan total valid sebagai angka sebelum menggunakan number_format()
-        // if (is_numeric($subtotal) && is_numeric($tax) && is_numeric($total)) {
-        //     $subtotal = number_format($subtotal, 0, '', '');
-        //     $tax = number_format($tax, 0, '', '');
-        //     $total = number_format($total, 0, '', '');
-        // } else {
-        //     // Penanganan jika nilai tidak valid
-        //     // Misalnya, memberikan nilai default atau menampilkan pesan kesalahan
-        //     $subtotal = 0;
-        //     $tax = 0;
-        //     $total = 0;
-        // }
-
         if (!Cart::instance('cart')->count() > 0) {
             session()->forget('checkout');
             return;
         }
 
         if (Cart::instance('cart')->subtotal() >= number_format(
-            500000,
-            0,
-            ',',
-            '.'
+            500000
         )) {
             $ongkir = 0;
         } else {
