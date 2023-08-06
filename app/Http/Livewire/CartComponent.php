@@ -78,11 +78,21 @@ class CartComponent extends Component
             return;
         }
 
+        if (Cart::instance('cart')->subtotal() >= number_format(
+            500000,
+            0,
+            ',',
+            '.'
+        )) {
+            $ongkir = 0;
+        } else {
+            $ongkir = 10000;
+        }
+
         session()->put('checkout', [
-            'subtotal' => Cart::instance('cart')->subtotal(),
-            'ongkir' => 20000,
-            'tax' => intval(Cart::instance('cart')->tax()),
-            'total' => Cart::instance('cart')->total(),
+            'subtotal' => Cart::instance('cart')->subtotal() * 1000,
+            'ongkir' => $ongkir,
+            'total' => (Cart::instance('cart')->total() * 1000) + $ongkir,
         ]);
     }
 

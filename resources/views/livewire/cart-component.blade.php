@@ -71,7 +71,12 @@
                     <h4 class="title-box">Ringkasan Pesanan</h4>
                     <p class="summary-info"><span class="title">Subtotal</span><b class="index">Rp{{ Cart::subtotal()
                             }}</b></p>
+                    @if (Cart::subtotal() >= number_format(500000))
                     <p class="summary-info"><span class="title">Ongkir</span><b class="index">Gratis Ongkir</b></p>
+                    @else
+                    <p class="summary-info"><span class="title">Ongkir</span><b class="index">Rp{{ number_format(10000,
+                            0, ',','.') }}</b></p>
+                    @endif
                     <p class="summary-info total-info "><span class="title">Total</span><b class="index">Rp{{
                             Cart::subtotal()
                             }}</b></p>
@@ -80,12 +85,12 @@
                     <a class="btn btn-checkout title-box" href="#" wire:click.prevent="checkout">
                         Checkout
                     </a>
-                    <a class="link-to-shop" href="shop.html">Lanjutkan berbelanja<i class="fa fa-arrow-circle-right"
+                    <a class="link-to-shop" href="/toko">Lanjutkan berbelanja<i class="fa fa-arrow-circle-right"
                             aria-hidden="true"></i></a>
                 </div>
                 <div class="update-clear">
                     <a class="btn btn-clear" href="#" wire:click.prevent="destroyAll()">Hapus Keranjang Belanja</a>
-                    <a class="btn btn-update" href="#">Perbarui Keranjang Belanja</a>
+                    {{-- <a class="btn btn-update" href="#">Perbarui Keranjang Belanja</a> --}}
                 </div>
             </div>
             @else
