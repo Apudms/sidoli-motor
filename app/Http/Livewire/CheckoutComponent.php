@@ -104,7 +104,7 @@ class CheckoutComponent extends Component
             $transaksi->status = 'menunggu';
             $transaksi->save();
         }
-
+        // dd($order->subtotal);
         $this->terimakasih = 1;
         Cart::instance('cart')->destroy();
         session()->forget('checkout');
@@ -123,6 +123,9 @@ class CheckoutComponent extends Component
 
     public function render()
     {
+        // $order = new Order();
+        // $order->subtotal = session()->get('checkout')['subtotal'];
+        // dd($order->subtotal);
         $this->verifyForCheckout();
         return view('livewire.checkout-component')->layout('layouts.main');
     }
