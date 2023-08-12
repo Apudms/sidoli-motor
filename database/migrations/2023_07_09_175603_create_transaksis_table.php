@@ -14,9 +14,9 @@ class CreateTransaksisTable extends Migration
     public function up()
     {
         Schema::create('transaksis', function (Blueprint $table) {
-            $table->id();
+            $table->string('id')->primary();
             $table->bigInteger('user_id')->unsigned();
-            $table->bigInteger('order_id')->unsigned();
+            $table->string('order_id', 36);
             $table->enum('transfer', ['Bank', 'Dana', 'Shopeepay'])->default('Bank');
             $table->enum('status', ['menunggu', 'disetujui', 'ditolak', 'dikembalikan'])->default('menunggu');
             $table->timestamps();

@@ -122,7 +122,8 @@
                         @if (Session::has('checkout'))
                         <p class="summary-info grand-total">
                             <span>Total Keseluruhan</span>
-                            <span class="grand-total-price">Rp {{ Session::get('checkout')['subtotal'] }}</span>
+                            <span class="grand-total-price">Rp {{ number_format(Session::get('checkout')['subtotal'],
+                                0, ',','.') }}</span>
                         </p>
                         @endif
                         <button type="submit" class="btn btn-medium">Pesan Sekarang</button>

@@ -69,17 +69,34 @@
             <div class="summary">
                 <div class="order-summary">
                     <h4 class="title-box">Ringkasan Pesanan</h4>
-                    <p class="summary-info"><span class="title">Subtotal</span><b class="index">Rp{{ Cart::subtotal()
+                    <p class="summary-info"><span class="title">Subtotal</span><b class="index">Rp{{
+                            number_format($subtotal,
+                            0, ',','.')
                             }}</b></p>
-                    @if (Cart::subtotal() >= number_format(500000))
+                    @if (Cart::subtotal() >= number_format(500000,
+                    0, ',','.'))
                     <p class="summary-info"><span class="title">Ongkir</span><b class="index">Gratis Ongkir</b></p>
                     @else
                     <p class="summary-info"><span class="title">Ongkir</span><b class="index">Rp{{ number_format(10000,
                             0, ',','.') }}</b></p>
                     @endif
-                    <p class="summary-info total-info "><span class="title">Total</span><b class="index">Rp{{
-                            Cart::subtotal()
-                            }}</b></p>
+                    <p class="summary-info total-info "><span class="title">Total</span>
+                        @if (Cart::subtotal() >= number_format(500000,
+                        0, ',','.'))
+                        <b class="index">
+                            Rp{{
+                            Cart::total()
+                            }}
+                        </b>
+                        @else
+                        <b class="index">
+                            Rp{{
+                            number_format($total,
+                            0, ',','.')
+                            }}
+                        </b>
+                        @endif
+                    </p>
                 </div>
                 <div class="checkout-info">
                     <a class="btn btn-checkout title-box" href="#" wire:click.prevent="checkout">
