@@ -48,7 +48,12 @@ Primary use:    Ecommerce
 
 -------------------------------------------------------------------*/
 
-
+#footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+}
 
 body {
 	font-family: 'Open Sans', sans-serif;

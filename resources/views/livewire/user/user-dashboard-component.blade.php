@@ -20,25 +20,73 @@
                         </div>
                     </div>
                     <div class="panel-body">
-                        @if (Session::has('message'))
-                        <div class="alert alert-success" role="alert">
-                            {{ Session::get('message') }}
-                        </div>
-                        @endif
+                        @if ($orders)
                         <table class="table-striped table">
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Jumlah Produk</th>
                                     <th>Total Harga</th>
-                                    <th>Status</th>
+                                    <th>Ongkos Kirim</th>
+                                    <th class="text-center">Status</th>
                                     <th>Tanggal</th>
-                                    <th>Aksi</th>
+                                    <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($orders as $order)
+                                <tr>
+                                    <td>{{ $order->id }}</td>
+                                    <td>Rp{{ number_format($order->subtotal,
+                                        0, ',','.') }}</td>
+                                    <td>
+                                        @if (!$order->ongkir)
+                                        <span style="padding: 2px 4pt 0;background: #08ad7c;color: #fff;">
+                                            Gratis Ongkir
+                                        </span>
+                                        @else
+                                        Rp{{ number_format($order->ongkir,
+                                        0, ',','.') }}
+                                        @endif
+                                    </td>
+                                    <td class="text-center">
+                                        @if ($order->status == 'dibatalkan')
+                                        <span style="padding: 2px 4pt 0;background: #d74b4b;color: #fff;">
+                                            <i class="fa fa-times"></i>
+                                            Gagal
+                                        </span>
+
+                                        @elseif ($order->status == 'memesan')
+                                        <span style="padding: 2px 4pt 0;background: #ffc107;">
+                                            <i class="fa fa-hourglass-half"></i>
+                                            Menunggu Persetujuan
+                                        </span>
+
+                                        @else
+                                        <span style="padding: 2px 4pt 0;background: #08ad7c;color: #fff;">
+                                            <i class="fa fa-check"></i>
+                                            Selesai
+                                        </span>
+
+                                        @endif
+                                    </td>
+                                    <td>{{ $order->created_at }}</td>
+                                    <td class="text-center">
+                                        <a href="" class="text-dark"><i class="fa fa-file-text"></i> Periksa
+                                            Rincian
+                                        </a>
+                                    </td>
+                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
+                        {{ $orders->links() }}
+
+                        @else
+                        <div class="text-center text-danger mt-4 mb-4">
+                            <b>Anda belum memiliki riwayat transaksi!</b>
+                        </div>
+
+                        @endif
                     </div>
                 </div>
             </div>

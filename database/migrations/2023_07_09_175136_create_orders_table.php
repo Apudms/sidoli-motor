@@ -14,7 +14,7 @@ class CreateOrdersTable extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->id();
+            $table->string('id')->primary();
             $table->bigInteger('user_id')->unsigned();
             $table->decimal('subtotal', $precision = 15, $scale = 0);
             $table->decimal('ongkir', $precision = 15, $scale = 0);

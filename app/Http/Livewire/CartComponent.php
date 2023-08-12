@@ -61,17 +61,30 @@ class CartComponent extends Component
             $ongkir = 10000;
         }
 
+        $subtotal = Cart::instance('cart')->subtotal() * 1000;
+        $ongkir = $ongkir;
+        $total = (Cart::instance('cart')->total() * 1000) + $ongkir;
+
+        //dd($total);
         session()->put('checkout', [
-            'subtotal' => Cart::instance('cart')->subtotal() * 1000,
+            'subtotal' => $subtotal,
             'ongkir' => $ongkir,
-            'total' => (Cart::instance('cart')->total() * 1000) + $ongkir,
+            'total' => $total,
         ]);
     }
 
     public function render()
     {
         $this->setAmountforCheckout();
-
-        return view('livewire.cart-component')->layout('layouts.main');
+        if (Cart::instance('cart')->subtotal() >= number_format(
+            500000
+        )) {
+            $ongkir = 0;
+        } else {
+            $ongkir = 10000;
+        }
+        $subtotal = Cart::instance('cart')->subtotal() * 1000;
+        $total = (Cart::total() * 1000) + $ongkir;
+        return view('livewire.cart-component', ['total' => $total, 'subtotal' => $subtotal])->layout('layouts.main');
     }
 }

@@ -14,8 +14,8 @@ class CreateDetailOrdersTable extends Migration
     public function up()
     {
         Schema::create('detail_orders', function (Blueprint $table) {
-            $table->id();
-            $table->bigInteger('order_id')->unsigned();
+            $table->string('id')->primary();
+            $table->string('order_id', 36);
             $table->string('product_id', 36);
             $table->decimal('price', $precision = 15, $scale = 0);
             $table->integer('quantity');

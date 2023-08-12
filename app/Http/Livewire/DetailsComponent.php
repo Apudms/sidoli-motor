@@ -32,7 +32,6 @@ class DetailsComponent extends Component
     public function decreaseQuantity()
     {
         if ($this->qty > 1) {
-            # code...
             $this->qty--;
         }
     }

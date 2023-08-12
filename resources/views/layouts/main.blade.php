@@ -90,6 +90,10 @@
                                             <a title="Produk" href="{{ route('admin.produk') }}">Data Produk</a>
                                         </li>
                                         <li class="menu-item">
+                                            <a title="Transaksi" href="{{ route('admin.manajemenTransaksi') }}">Data
+                                                Transaksi</a>
+                                        </li>
+                                        <li class="menu-item">
                                             <a title="Manajemen Slider" href="{{ route('admin.slider') }}">Manajemen
                                                 Slider</a>
                                         </li>
@@ -111,8 +115,12 @@
                                     <a title="Akun Saya ({{ Auth::user()->name }})" href="#">Akun Saya ({{
                                         Auth::user()->name }})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                     <ul class="submenu curency">
+                                        <li class="menu-item" @if(Request::is('user.dashboard')) style="color: red;"
+                                            @endif>
+                                            <a title="Dashboard" href="{{ route('user.dashboard') }}">Dashboard</a>
+                                        </li>
                                         <li class="menu-item">
-                                            <a title="Logout" href="{{ route('user.dashboard') }}"
+                                            <a title="Logout" href="#"
                                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Keluar</a>
                                         </li>
                                         <form id="logout-form" method="POST" action="{{ route('logout') }}">
@@ -194,8 +202,10 @@
                                     <a href="{{ route('admin.produk') }}"
                                         class="link-term mercado-item-title">Produk</a>
                                 </li>
-                                <li class="menu-item" @if(Request::is('#')) style="background: #ff2832" @endif>
-                                    <a href="#" class="link-term mercado-item-title">Transaksi</a>
+                                <li class="menu-item" @if(Request::RouteIs('admin.manajemenTransaksi'))
+                                    style="background: #ff2832" @endif>
+                                    <a href="{{ route('admin.manajemenTransaksi') }}"
+                                        class="link-term mercado-item-title">Transaksi</a>
                                 </li>
                                 @elseif (Auth::user()->utype === 'ADM')
                                 <li class="menu-item home-icon" @if(Request::routeIs('admin.dashboard'))
@@ -213,8 +223,10 @@
                                     <a href="{{ route('admin.produk') }}"
                                         class="link-term mercado-item-title">Produk</a>
                                 </li>
-                                <li class="menu-item" @if(Request::is('#')) style="background: #ff2832" @endif>
-                                    <a href="#" class="link-term mercado-item-title">Transaksi</a>
+                                <li class="menu-item" @if(Request::RouteIs('admin.manajemenTransaksi'))
+                                    style="background: #ff2832" @endif>
+                                    <a href="{{ route('admin.manajemenTransaksi') }}"
+                                        class="link-term mercado-item-title">Transaksi</a>
                                 </li>
                                 @elseif (Auth::user()->utype === 'USR')
                                 <li class="menu-item home-icon" @if(Request::is('/')) style="background: #ff2832" @else
@@ -248,17 +260,13 @@
     {{ $slot }}
 
     <footer id="footer">
-        <div class="wrap-footer-content footer-style-1">
-
-            <div class="coppy-right-box">
-                <div class="container d-flex">
-                    <div class="coppy-right-item">
-                        <strong>Copyright &copy;<script>
-                                document.write(new Date().getFullYear());
-                            </script> All rights reserved | <a href="/">Sidoli Motor</a></strong>
-                    </div>
+        <div class="coppy-right-box">
+            <div class="container d-flex">
+                <div class="coppy-right-item">
+                    <strong>Copyright &copy;<script>
+                            document.write(new Date().getFullYear());
+                        </script> All rights reserved | <a href="/">Sidoli Motor</a></strong>
                 </div>
-                <div class="clearfix"></div>
             </div>
         </div>
     </footer>

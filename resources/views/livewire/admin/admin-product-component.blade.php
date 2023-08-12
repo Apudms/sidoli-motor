@@ -35,7 +35,7 @@
                                     <th>ID</th>
                                     <th>Foto</th>
                                     <th>Nama Produk</th>
-                                    <th>Status</th>
+                                    <th>Stok</th>
                                     <th>Harga</th>
                                     <th>Kategori</th>
                                     <th>Tanggal</th>
