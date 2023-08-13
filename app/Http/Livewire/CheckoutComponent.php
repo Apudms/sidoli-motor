@@ -82,11 +82,11 @@ class CheckoutComponent extends Component
             $detailOrders->save();
         }
 
-        if ($this->transfer == 'Bank') {
+        if ($this->transfer == 'Transfer Bank') {
             $transaksi = new Transaksi();
             $transaksi->user_id = Auth::user()->id;
             $transaksi->order_id = $order->id;
-            $transaksi->transfer = 'Bank';
+            $transaksi->transfer = 'Transfer Bank';
             $transaksi->status = 'menunggu';
             $transaksi->save();
         } else if ($this->transfer == 'Dana') {

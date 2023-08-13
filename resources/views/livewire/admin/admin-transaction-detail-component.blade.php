@@ -167,9 +167,13 @@
                                 <a href="{{ route('admin.manajemenTransaksi') }}" class="btn btn-primary"><i
                                         class="fa fa-arrow-left me-2"></i>
                                     Kembali</a>
-                                <a href="#" type="submit" class="btn btn-danger float-end"><i
+                                <a href="#" type="submit" class="btn btn-danger float-end"
+                                    onclick="confirm('Yakin ingin menolak pesanan?') || event.stopImmediatePropragation()"
+                                    wire:click.prevent="updateStatusRejected('{{ $transaksi->id }}')"><i
                                         class="fa fa-times me-2"></i> Tolak</a>
-                                <a href="#" type="submit" class="btn btn-success float-end ms-4"><i
+                                <a href="#" type="submit" class="btn btn-success float-end ms-4"
+                                    onclick="confirm('Apakah bukti transfer sudah benar?') || event.stopImmediatePropragation()"
+                                    wire:click.prevent="updateStatusConfirmed('{{ $transaksi->id }}')"><i
                                         class="fa fa-check me-2"></i>
                                     Konfirmasi</a>
                             </div>

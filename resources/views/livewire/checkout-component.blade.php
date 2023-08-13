@@ -97,9 +97,9 @@
                                 Transaksi.</span>
                         <div class="choose-payment-methods">
                             <label class="payment-method">
-                                <input name="payment-method" id="payment-method-bank" value="Bank" type="radio"
+                                <input name="payment-method" id="payment-method-bank" value="Transfer Bank" type="radio"
                                     wire:model="transfer">
-                                <span>Bank Mandiri</span>
+                                <span>Transfer Bank</span>
                                 <span class="payment-desc">Silahkan transfer ke nomor rekening berikut: 123 456 7
                                     <br><br></span>
                             </label>
