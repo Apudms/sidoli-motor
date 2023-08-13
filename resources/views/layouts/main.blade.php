@@ -234,17 +234,18 @@
                                     <a href="/" class="link-term mercado-item-title"><i class="fa fa-home"
                                             aria-hidden="true"></i></a>
                                 </li>
-                                <li class="menu-item" @if(Request::is('toko') || Request::routeIs('produk.detail'))
+                                <li class="menu-item" @if(Request::is('toko') || Request::RouteIs('produk.detail'))
                                     style="background: #ff2832" @endif>
                                     <a href="/toko" class="link-term mercado-item-title">TOKO</a>
                                 </li>
-                                <li class="menu-item" @if(Request::is('keranjang') || Request::is('checkout'))
-                                    style="background: #ff2832" @endif>
+                                <li class="menu-item" @if(Request::is('keranjang') || Request::is('checkout') ||
+                                    Request::is('terimakasih')) style="background: #ff2832" @endif>
                                     <a href="/keranjang" class="link-term mercado-item-title">KERANJANG</a>
                                 </li>
-                                <li class="menu-item" @if(Request::is('user/dashboard')) style="background: #ff2832"
-                                    @endif>
-                                    <a href="/user/dashboard" class="link-term mercado-item-title">TRANSAKSI</a>
+                                <li class="menu-item" @if(Request::RouteIs('user.dashboard') ||
+                                    Request::RouteIs('user.detailTransaksi')) style="background: #ff2832" @endif>
+                                    <a href="{{ route('user.dashboard') }}"
+                                        class="link-term mercado-item-title">TRANSAKSI</a>
                                 </li>
                                 @endif
                                 @endauth

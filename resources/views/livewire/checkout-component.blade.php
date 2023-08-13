@@ -122,7 +122,7 @@
                         @if (Session::has('checkout'))
                         <p class="summary-info grand-total">
                             <span>Total Keseluruhan</span>
-                            <span class="grand-total-price">Rp {{ number_format(Session::get('checkout')['subtotal'],
+                            <span class="grand-total-price">Rp {{ number_format(Session::get('checkout')['total'],
                                 0, ',','.') }}</span>
                         </p>
                         @endif
