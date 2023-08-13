@@ -12,6 +12,7 @@ use App\Http\Livewire\Admin\AdminHomeCategoryComponent;
 use App\Http\Livewire\Admin\AdminHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminProductComponent;
 use App\Http\Livewire\Admin\AdminTransactionComponent;
+use App\Http\Livewire\Admin\AdminTransactionDetailComponent;
 use App\Http\Livewire\CartComponent;
 use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\CheckoutComponent;
@@ -22,6 +23,7 @@ use App\Http\Livewire\SearchComponent;
 use App\Http\Livewire\ShopComponent;
 use App\Http\Livewire\ThankYouComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
+use App\Http\Livewire\User\UserTransactionDetailComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -84,9 +86,11 @@ Route::middleware(['auth:sanctum', 'verified', 'check.utype:ADM'])->group(functi
     Route::get('/admin/home-kategori', AdminHomeCategoryComponent::class)->name('admin.manajemenkategori');
 
     Route::get('/admin/transaksi', AdminTransactionComponent::class)->name('admin.manajemenTransaksi');
+    Route::get('/admin/transaksi/id={order_id}', AdminTransactionDetailComponent::class)->name('admin.manajemenDetailTransaksi');
 });
 
 //For User or Customer
 Route::middleware(['auth:sanctum', 'verified', 'check.utype:USR'])->group(function () {
-    Route::get('/user/dashboard', UserDashboardComponent::class)->name('user.dashboard');
+    Route::get('/user/transaksi', UserDashboardComponent::class)->name('user.dashboard');
+    Route::get('/user/transaksi/id={order_id}', UserTransactionDetailComponent::class)->name('user.detailTransaksi');
 });

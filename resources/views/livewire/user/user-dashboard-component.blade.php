@@ -20,7 +20,7 @@
                         </div>
                     </div>
                     <div class="panel-body">
-                        @if ($orders)
+                        @if ($orders && count($orders) > 0)
                         <table class="table-striped table">
                             <thead>
                                 <tr>
@@ -35,7 +35,7 @@
                             <tbody>
                                 @foreach ($orders as $order)
                                 <tr>
-                                    <td>{{ $order->id }}</td>
+                                    <td>{{ $order->orderId }}</td>
                                     <td>Rp{{ number_format($order->subtotal,
                                         0, ',','.') }}</td>
                                     <td>
@@ -71,7 +71,8 @@
                                     </td>
                                     <td>{{ $order->created_at }}</td>
                                     <td class="text-center">
-                                        <a href="" class="text-dark"><i class="fa fa-file-text"></i> Periksa
+                                        <a href="{{ route('user.detailTransaksi', ['order_id' => $order->id]) }}"
+                                            class="text-dark"><i class="fa fa-file-text"></i> Periksa
                                             Rincian
                                         </a>
                                     </td>
@@ -85,7 +86,6 @@
                         <div class="text-center text-danger mt-4 mb-4">
                             <b>Anda belum memiliki riwayat transaksi!</b>
                         </div>
-
                         @endif
                     </div>
                 </div>

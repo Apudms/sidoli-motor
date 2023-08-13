@@ -25,41 +25,77 @@
                             {{ Session::get('message') }}
                         </div>
                         @endif
+                        @if ($orders)
                         <table class="table-striped table">
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>ID Pelanggan</th>
-                                    <th>Nama Pelanggan</th>
-                                    <th>Total Pembelian</th>
-                                    <th>Status</th>
-                                    <th>Aksi</th>
+                                    <th>ID Pembeli</th>
+                                    <th>Nama Pembeli</th>
+                                    <th>Total Harga</th>
+                                    <th>Ongkos Kirim</th>
+                                    <th class="text-center">Status</th>
+                                    <th>Tanggal</th>
+                                    <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach ($products as $product) --}}
+                                @foreach ($orders as $order)
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td><span class="bg-danger"><i class="fa fa-times text-white"></i> Gagal</span></td>
-                                    <td><span class="bg-success"><i class="fa fa-check text-white"></i> Selesai</span>
-                                    </td>
-                                    <td><span class="bg-info"><i class="fa fa-filter text-white"></i> Menunggu</span>
-                                    </td>
+                                    <td>{{ $order->orderId }}</td>
+                                    <td>{{ $order->user_id }}</td>
+                                    <td>{{ $order->nama_depan }} {{ $order->nama_belakang }}</td>
+                                    <td>Rp{{ number_format($order->subtotal,
+                                        0, ',','.') }}</td>
                                     <td>
-                                        <a href="" class="text-dark"><i class="fa fa-file-text"></i> Periksa
+                                        @if (!$order->ongkir)
+                                        <span style="padding: 2px 4pt 0;background: #08ad7c;color: #fff;">
+                                            Gratis Ongkir
+                                        </span>
+                                        @else
+                                        Rp{{ number_format($order->ongkir,
+                                        0, ',','.') }}
+                                        @endif
+                                    </td>
+                                    <td class="text-center">
+                                        @if ($order->status == 'dibatalkan')
+                                        <span style="padding: 2px 4pt 0;background: #d74b4b;color: #fff;">
+                                            <i class="fa fa-times"></i>
+                                            Gagal
+                                        </span>
+
+                                        @elseif ($order->status == 'memesan')
+                                        <span style="padding: 2px 4pt 0;background: #ffc107;">
+                                            <i class="fa fa-hourglass-half"></i>
+                                            Menunggu Persetujuan
+                                        </span>
+
+                                        @else
+                                        <span style="padding: 2px 4pt 0;background: #08ad7c;color: #fff;">
+                                            <i class="fa fa-check"></i>
+                                            Selesai
+                                        </span>
+
+                                        @endif
+                                    </td>
+                                    <td>{{ $order->created_at }}</td>
+                                    <td class="text-center">
+                                        <a href="{{ route('admin.manajemenDetailTransaksi', ['order_id' => $order->orderId]) }}"
+                                            class="text-dark"><i class="fa fa-file-text"></i> Periksa
                                             Rincian
                                         </a>
                                     </td>
                                 </tr>
-
-                                {{-- @endforeach --}}
+                                @endforeach
                             </tbody>
                         </table>
-                        {{-- <div class="text-center text-danger mt-4 mb-4">
-                            <b>Tidak ada data yang ditemukan.</b>
-                        </div> --}}
-                        {{-- {{ $products->links() }} --}}
+                        {{ $orders->links() }}
+
+                        @else
+                        <div class="text-center text-danger mt-4 mb-4">
+                            <b>Belum ada riwayat transaksi!</b>
+                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
