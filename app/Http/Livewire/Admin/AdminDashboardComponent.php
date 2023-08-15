@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Admin;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\Transaksi;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
@@ -12,42 +13,65 @@ class AdminDashboardComponent extends Component
 {
     public function render()
     {
-        $orders = Order::orderBy('created_at', 'DESC')->get()->take(10);
-        $totalCost = Order::where('status', '!=', 'dibatalkan')->sum('total');
-        $totalPurchase = Order::where('status', '!=', 'dibatalkan')->count();
+        // Mendapatkan tanggal hari ini
+        $today = Carbon::now()->toDateString();
+
+        // dd($today);
+        // Mendapatkan total pendapatan harian dari pesanan yang diterima
+        $incomePerDay = Order::whereDate('created_at', $today)
+            ->where('status', 'dikirim')
+            ->sum('subtotal');
+
+        // dd($incomePerDay);
+        $orders = Order::orderBy('created_at', 'DESC')->where('status', '=', 'memesan')->get()->take(10);
+        $totalIncome = Order::where('status', '=', 'diterima')->sum('subtotal');
+        $totalPurchase = Order::where('status', '=', 'dikirim')->count();
         $totalDelivered = Order::where('status', '!=', 'delivered')->count();
         $totalDibatalkan = Order::where('status', '=', 'dibatalkan')->count();
 
-        $transaksi = DB::table('orders')
+        $transaksi = DB::table('transaksis')
+            ->leftJoin('orders', function ($join) {
+                $join->on('orders.id', '=', 'transaksis.order_id');
+            })
             ->leftJoin('users', function ($join) {
                 $join->on('users.id', '=', 'orders.user_id');
             })
             ->selectRaw('orders.created_at')
+            ->selectRaw('transaksis.created_at')
+            ->selectRaw('transaksis.id as transaksiId')
+            ->selectRaw('transaksis.order_id as transaksiId')
             ->selectRaw('orders.id as orderId')
+            ->selectRaw('transaksis.user_id as transaksi_user_id')
             ->selectRaw('orders.user_id')
+            ->selectRaw('orders.nama_depan')
+            ->selectRaw('orders.nama_belakang')
             ->selectRaw('users.id as custId')
             ->selectRaw('users.name')
             ->selectRaw('orders.alamat')
-            ->selectRaw('orders.status')
+            ->selectRaw('transaksis.status as transaksiStatus')
+            ->selectRaw('orders.status as orderStatus')
             ->selectRaw('orders.subtotal')
             ->selectRaw('orders.total')
             ->selectRaw('orders.bukti_transfer')
-            ->latest()->get();
+            ->where('transaksis.status', '=', 'menunggu')
+            ->whereDate('transaksis.created_at', $today)
+            ->get();
 
         // dd($transaksi);
 
         //$transaksi = Transaksi::where('status', '=', 'menunggu')->orderBy('created_at', 'DESC')->get()->take(3);
-        $totalTransaksi = Transaksi::where('status', '!=', 'ditolak')->count();
+        $totalTransaksiBerhasil = Order::where('status', '=', 'diterima')->count();
         $products = Product::orderBy('created_at', 'DESC')->get()->take(3);
 
         return view('livewire.admin.admin-dashboard-component', [
             'orders' => $orders,
-            'totalCost' => $totalCost,
+            'totalIncome' => $totalIncome,
+            'incomePerDay' => $incomePerDay,
             'totalPurchase' => $totalPurchase,
             'totalDelivered' => $totalDelivered,
             'totalDibatalkan' => $totalDibatalkan,
             'transaksi' => $transaksi,
-            'totalTransaksi' => $totalTransaksi,
+            'totalTransaksiBerhasil' => $totalTransaksiBerhasil,
             'products' => $products,
         ])->layout('layouts.main');
     }

@@ -73,7 +73,7 @@
                     <div class="row">
                         <div class="col-xs-8 text-left">
                             <span class="icon-stat-label">Menunggu Persetujuan</span>
-                            <span class="icon-stat-value">0</span>
+                            <span class="icon-stat-value">{{ $totalPurchase }}</span>
                         </div>
                         <div class="col-xs-4 text-center">
                             <i class="fa fa-hourglass-half icon-stat-visual" style="background: #ffc107;"></i>
@@ -89,7 +89,7 @@
                     <div class="row">
                         <div class="col-xs-8 text-left">
                             <span class="icon-stat-label">Transaksi Berhasil</span>
-                            <span class="icon-stat-value">{{ $totalTransaksi }}</span>
+                            <span class="icon-stat-value">{{ $totalTransaksiBerhasil }}</span>
                         </div>
                         <div class="col-xs-4 text-center">
                             <i class="fa fa-handshake-o icon-stat-visual" style="background: #1395ff; color: #fff"></i>
@@ -105,7 +105,7 @@
                     <div class="row">
                         <div class="col-xs-8 text-left">
                             <span class="icon-stat-label">Pendapatan Hari ini</span>
-                            <span class="icon-stat-value">Rp{{ number_format(875400,
+                            <span class="icon-stat-value">Rp{{ number_format($incomePerDay,
                                 0, ',','.') }}</span>
                         </div>
                         <div class="col-xs-4 text-center">
@@ -122,7 +122,7 @@
                     <div class="row">
                         <div class="col-xs-8 text-left">
                             <span class="icon-stat-label">Total Pendapatan</span>
-                            <span class="icon-stat-value">Rp{{ number_format($totalCost,
+                            <span class="icon-stat-value">Rp{{ number_format($totalIncome,
                                 0, ',','.') }}</span>
                         </div>
                         <div class="col-xs-4 text-center">
@@ -143,7 +143,7 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-md-6">
-                                Data Transaksi
+                                Transaksi Terbaru
                             </div>
                         </div>
                     </div>
@@ -153,6 +153,7 @@
                             {{ Session::get('message') }}
                         </div>
                         @endif
+                        @if ($transaksi && count($transaksi) > 0)
                         <table class="table-striped table">
                             <thead>
                                 <tr>
@@ -166,18 +167,18 @@
                             <tbody>
                                 @foreach ($transaksi as $tran)
                                 <tr>
-                                    <td>{{ $tran->orderId }}</td>
-                                    <td>{{ $tran->status }}</td>
-                                    <td class="text-right">Rp{{ number_format($tran->total,
+                                    <td>{{ $tran->transaksiId }}</td>
+                                    <td>{{ $tran->nama_depan }} {{ $tran->nama_belakang }}</td>
+                                    <td>Rp{{ number_format($tran->total,
                                         0, ',','.') }}</td>
                                     <td class="text-center">
-                                        @if ($tran->status == 'dibatalkan')
+                                        @if ($tran->orderStatus == 'dibatalkan')
                                         <span style="padding: 2px 4pt 0;background: #d74b4b;color: #fff;">
                                             <i class="fa fa-times"></i>
                                             Gagal
                                         </span>
 
-                                        @elseif ($tran->status == 'memesan')
+                                        @elseif ($tran->orderStatus == 'memesan')
                                         <span style="padding: 2px 4pt 0;background: #ffc107;">
                                             <i class="fa fa-hourglass-half"></i>
                                             Menunggu Persetujuan
@@ -192,7 +193,8 @@
                                         @endif
                                     </td>
                                     <td class="text-center">
-                                        <a href="" class="text-dark"><i class="fa fa-file-text"></i> Periksa
+                                        <a href="{{ route('admin.manajemenDetailTransaksi', ['order_id' => $tran->transaksiId]) }}"
+                                            class="text-dark"><i class="fa fa-file-text"></i> Periksa
                                             Rincian
                                         </a>
                                     </td>
@@ -201,6 +203,11 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        @else
+                        <div class="text-center text-danger mt-4 mb-4">
+                            <b>Tidak ada transaksi yang masuk!</b>
+                        </div>
+                        @endif
                         {{-- <div class="text-center text-danger mt-4 mb-4">
                             <b>Tidak ada data yang ditemukan.</b>
                         </div> --}}
