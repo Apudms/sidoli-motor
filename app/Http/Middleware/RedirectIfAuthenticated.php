@@ -23,9 +23,26 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
+                // Mendapatkan nilai utype dari pengguna yang sedang login
+                $utype = Auth::guard($guard)->user()->utype;
+
+                // dd($utype);
+                // Mengarahkan pengguna ke rute yang sesuai berdasarkan nilai utype
+                if ($utype === 'ADM') {
+                    return redirect()->routeIs('admin.dashboard');
+                } elseif ($utype === 'OWN') {
+                    return redirect()->route('owner.dashboard');
+                } else {
+                    return redirect(RouteServiceProvider::HOME);
+                }
             }
         }
+
+        // foreach ($guards as $guard) {
+        //     if (Auth::guard($guard)->check()) {
+        //         return redirect(RouteServiceProvider::HOME);
+        //     }
+        // }
 
         return $next($request);
     }
