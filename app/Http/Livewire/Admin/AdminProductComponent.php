@@ -19,7 +19,7 @@ class AdminProductComponent extends Component
 
     public function render()
     {
-        $products = Product::latest()->paginate(10);
+        $products = Product::orderBy('jumlah_stok', 'ASC')->latest()->paginate(10);
         return view('livewire.admin.admin-product-component', ['products' => $products])->layout('layouts.main');
     }
 }

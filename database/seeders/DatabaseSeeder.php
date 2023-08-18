@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Banner;
 use App\Models\Category;
+use App\Models\HomeCategory;
 use App\Models\HomeSlider;
 use App\Models\Product;
 use App\Models\User;
@@ -44,64 +45,36 @@ class DatabaseSeeder extends Seeder
 
         Category::create(
             [
-                'nama_kategori' => 'Honda',
-                'slug' => 'honda'
+                'nama_kategori' => 'Suku Cadang',
+                'slug' => 'suku-cadang'
             ]
         );
 
         Category::create(
             [
-                'nama_kategori' => 'Yamaha',
-                'slug' => 'yamaha'
+                'nama_kategori' => 'Variasi',
+                'slug' => 'variasi'
             ]
         );
 
         Category::create(
             [
-                'nama_kategori' => 'Suzuki',
-                'slug' => 'suzuki'
+                'nama_kategori' => 'V-belt',
+                'slug' => 'v-belt'
             ]
         );
 
         Category::create(
             [
-                'nama_kategori' => 'Kawasaki',
-                'slug' => 'kawasaki'
+                'nama_kategori' => 'Lampu Motor',
+                'slug' => 'lampu-motor'
             ]
         );
 
         Category::create(
             [
-                'nama_kategori' => 'TDR',
-                'slug' => 'tdr'
-            ]
-        );
-
-        Category::create(
-            [
-                'nama_kategori' => 'Kawahara',
-                'slug' => 'kawahara'
-            ]
-        );
-
-        Category::create(
-            [
-                'nama_kategori' => 'Michelin',
-                'slug' => 'michelin'
-            ]
-        );
-
-        Category::create(
-            [
-                'nama_kategori' => 'Ring Velg',
-                'slug' => 'ring_velg'
-            ]
-        );
-
-        Category::create(
-            [
-                'nama_kategori' => 'Ban Tubeless',
-                'slug' => 'ban_tubeless'
+                'nama_kategori' => 'Ban',
+                'slug' => 'ban'
             ]
         );
 
@@ -112,8 +85,47 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
+        Category::create(
+            [
+                'nama_kategori' => 'Lampu LED',
+                'slug' => 'lampu_led'
+            ]
+        );
+
+        Category::create(
+            [
+                'nama_kategori' => 'Radiator Coolant',
+                'slug' => 'radiator-coolant'
+            ]
+        );
+
+        Category::create(
+            [
+                'nama_kategori' => 'Busi',
+                'slug' => 'busi'
+            ]
+        );
+
+        Category::create(
+            [
+                'nama_kategori' => 'Kampas Rem',
+                'slug' => 'kampas-rem'
+            ]
+        );
+
+        Category::create(
+            [
+                'nama_kategori' => 'Bearing',
+                'slug' => 'bearing'
+            ]
+        );
+
         //Category::factory(7)->create();
-        Product::factory(73)->create();
+        //Product::factory(73)->create();
+
+        Product::factory(164)->create();
+
+        HomeCategory::factory(1)->create();
         //HomeSlider::factory(3)->create();
     }
 }

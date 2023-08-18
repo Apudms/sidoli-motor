@@ -35,20 +35,38 @@
                         <div class="quantity">
                             <span>Jumlah:</span>
                             <div class="quantity-input">
-                                <input type="text" name="product-quantity" value="1" data-max="120" pattern="[0-9]*">
-
-                                <a class="btn btn-reduce" href="#"></a>
-                                <a class="btn btn-increase" href="#"></a>
+                                <input type="text" name="product-quantity" value="{{ $qty }}" data-max="120"
+                                    pattern="[0-9]*" wire:model="qty">
+                                <a class="btn btn-reduce" href="#" wire:click.prevent="decreaseQuantity"
+                                    wire:loading.attr="disabled"></a>
+                                <a class="btn btn-increase" href="#" wire:click.prevent="increaseQuantity"
+                                    wire:loading.attr="disabled"></a>
+                            </div>
+                        </div>
+                        @if(session()->has('error_message'))
+                        <div class="alert alert-danger mt-3" style="margin-top: 10px; margin-bottom: 0px">
+                            {{ session('error_message') }}
+                        </div>
+                        @endif
+                        <div class="wrap-butons">
+                            <a href="#" class="btn add-to-cart"
+                                wire:click.prevent="store('{{ $product->id }}','{{ $product->nama_produk }}',{{ $product->harga_normal }})"
+                                wire:loading.attr="disabled">Tambahkan keranjang</a>
+                        </div>
+                        {{-- <div class="quantity">
+                            <span>Jumlah:</span>
+                            <div class="quantity-input">
+                                <input type="text" name="product-quantity" value="1" data-max="120" pattern="[0-9]*"
+                                    wire:model="qty">
+                                <a class="btn btn-reduce" href="#" wire:click.prevent="decreaseQuantity"></a>
+                                <a class="btn btn-increase" href="#" wire:click.prevent="increaseQuantity"></a>
                             </div>
                         </div>
                         <div class="wrap-butons">
                             <a href="#" class="btn add-to-cart"
                                 wire:click.prevent="store('{{ $product->id }}','{{ $product->nama_produk }}',{{ $product->harga_normal }})">Tambahkan
                                 keranjang</a>
-                            <div class="wrap-btn">
-                                <a href="#" class="btn btn-wishlist">Tambahkan disukai</a>
-                            </div>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="advance-info">
                         <div class="tab-control normal">

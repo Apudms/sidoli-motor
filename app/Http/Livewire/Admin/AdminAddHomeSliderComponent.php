@@ -23,7 +23,7 @@ class AdminAddHomeSliderComponent extends Component
 
     public function updated($field)
     {
-        $this->validateOnly([
+        $this->validateOnly($field, [
             'nama_slider' => 'required',
             'foto' => 'required|mimes:jpeg,jpg,png',
         ]);

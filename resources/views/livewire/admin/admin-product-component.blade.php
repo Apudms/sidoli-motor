@@ -36,6 +36,7 @@
                                     <th>Foto</th>
                                     <th>Nama Produk</th>
                                     <th>Status</th>
+                                    <th>Stok</th>
                                     <th>Harga</th>
                                     <th>Kategori</th>
                                     <th>Tanggal</th>
@@ -50,20 +51,33 @@
                                             width="60" alt="{{ $product->nama_produk }}">
                                     </td>
                                     <td>{{ $product->nama_produk }}</td>
-                                    <td>{{ $product->jumlah_stok }}</td>
-                                    <td>{{ $product->harga_normal }}</td>
-                                    <td>{{ $product->category->name }}</td>
-                                    <td>{{ $product->created_at }}</td>
-                                    <td>
-                                        <a href="{{ route('admin.ubahproduk', ['id' => $product->id]) }}"><i
-                                                class="fa fa-edit fa-2x"></i>
-                                        </a>
-                                        <a href="#" wire:click.prevent="deleteProduct('{{ $product->id }}')"
-                                            style="margin-left:10px; "
-                                            onclick="return confirm('Yakin ingin menghapus {{ $product->nama_produk }}?')"><i
-                                                class="fa fa-trash fa-2x text-danger"></i>
-                                        </a>
-                                    </td>
+                                    @if ($product->status_stok === "Kosong") <td
+                                        style="padding: 2px 4pt 0;color: #ff0000;">
+                                        {{ $product->status_stok }}</td>
+                                    @else
+                                    <td>{{ $product->status_stok }}</td>
+                                    @endif
+                                    @if ($product->jumlah_stok < 1) <td style="padding: 2px 4pt 0;color: #ff0000;">
+                                        {{ $product->jumlah_stok }}</td>
+                                        @elseif ($product->jumlah_stok < 3) <td
+                                            style="padding: 2px 4pt 0;color: #ff0000;">
+                                            {{ $product->jumlah_stok }}</td>
+                                            @else
+                                            <td>{{ $product->jumlah_stok }}</td>
+                                            @endif
+                                            <td>{{ number_format($product->harga_normal, 0, '.', '.') }}</td>
+                                            <td>{{ $product->category->nama_kategori }}</td>
+                                            <td>{{ $product->created_at }}</td>
+                                            <td>
+                                                <a href="{{ route('admin.ubahproduk', ['id' => $product->id]) }}"><i
+                                                        class="fa fa-edit fa-2x"></i>
+                                                </a>
+                                                <a href="#" style="margin-left:10px; "
+                                                    onclick="confirm('Yakin ingin menghapus {{ $product->nama_produk }}?') || event.stopImmediatePropragation()"
+                                                    wire:click.prevent="deleteProduct('{{ $product->id }}')"><i
+                                                        class="fa fa-trash fa-2x text-danger"></i>
+                                                </a>
+                                            </td>
                                 </tr>
                                 @endforeach
                             </tbody>

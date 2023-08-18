@@ -64,15 +64,15 @@
                 <div class="icon-stat">
                     <div class="row">
                         <div class="col-xs-8 text-left">
-                            <span class="icon-stat-label">Total Revenue</span>
-                            <span class="icon-stat-value">$0</span>
+                            <span class="icon-stat-label">Produk Habis</span>
+                            <span class="icon-stat-value">{{ $products }}</span>
                         </div>
                         <div class="col-xs-4 text-center">
-                            <i class="fa fa-dollar icon-stat-visual bg-primary"></i>
+                            <i class="fa fa-hourglass-half icon-stat-visual" style="background: #ffc107;"></i>
                         </div>
                     </div>
                     <div class="icon-stat-footer">
-                        <i class="fa fa-clock-o"></i> Updated Now
+                        <i class="fa fa-clock-o"></i> Terbaru
                     </div>
                 </div>
             </div>
@@ -80,15 +80,15 @@
                 <div class="icon-stat">
                     <div class="row">
                         <div class="col-xs-8 text-left">
-                            <span class="icon-stat-label">Total Sales</span>
-                            <span class="icon-stat-value">0</span>
+                            <span class="icon-stat-label">Transaksi Berhasil</span>
+                            <span class="icon-stat-value">{{ $totalTransaksiBerhasil }}</span>
                         </div>
                         <div class="col-xs-4 text-center">
-                            <i class="fa fa-gift icon-stat-visual bg-secondary"></i>
+                            <i class="fa fa-handshake-o icon-stat-visual" style="background: #1395ff; color: #fff"></i>
                         </div>
                     </div>
                     <div class="icon-stat-footer">
-                        <i class="fa fa-clock-o"></i> Updated Now
+                        <i class="fa fa-clock-o"></i> Terbaru
                     </div>
                 </div>
             </div>
@@ -96,15 +96,16 @@
                 <div class="icon-stat">
                     <div class="row">
                         <div class="col-xs-8 text-left">
-                            <span class="icon-stat-label">Today Revenue</span>
-                            <span class="icon-stat-value">$0</span>
+                            <span class="icon-stat-label">Pendapatan Hari ini</span>
+                            <span class="icon-stat-value">Rp{{ number_format($incomePerDay,
+                                0, ',','.') }}</span>
                         </div>
                         <div class="col-xs-4 text-center">
-                            <i class="fa fa-dollar icon-stat-visual bg-primary"></i>
+                            <i class="fa fa-money icon-stat-visual" style="background: #08ad7c; color: #fff"></i>
                         </div>
                     </div>
                     <div class="icon-stat-footer">
-                        <i class="fa fa-clock-o"></i> Updated Now
+                        <i class="fa fa-clock-o"></i> Terbaru
                     </div>
                 </div>
             </div>
@@ -112,15 +113,16 @@
                 <div class="icon-stat">
                     <div class="row">
                         <div class="col-xs-8 text-left">
-                            <span class="icon-stat-label">Today Sales</span>
-                            <span class="icon-stat-value">0</span>
+                            <span class="icon-stat-label">Total Pendapatan</span>
+                            <span class="icon-stat-value">Rp{{ number_format($totalIncome,
+                                0, ',','.') }}</span>
                         </div>
                         <div class="col-xs-4 text-center">
-                            <i class="fa fa-gift icon-stat-visual bg-secondary"></i>
+                            <i class="fa fa-money icon-stat-visual" style="background: green; color: #fff"></i>
                         </div>
                     </div>
                     <div class="icon-stat-footer">
-                        <i class="fa fa-clock-o"></i> Updated Now
+                        <i class="fa fa-clock-o"></i> Terbaru
                     </div>
                 </div>
             </div>

@@ -6,7 +6,6 @@ use App\Models\Category;
 use App\Models\HomeCategory;
 use App\Models\HomeSlider;
 use App\Models\Product;
-use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class HomeComponent extends Component
@@ -21,13 +20,7 @@ class HomeComponent extends Component
         $no_of_products = $category->no_produk;
 
         return view('livewire.home-component', [
-            // // Database: Query Builder
-            // // Basic Where Clauses
-            // 'sliders' => DB::table('home_sliders')
-            //     ->where('status', 1)
-            //     ->get(),
-
-            'sliders' => $sliders, 'lproducts' => $lproducts, 'categories' => $categories, 'no_of_products' => $no_of_products
+            'sliders' => $sliders, 'lproducts' => $lproducts, 'categories' => $categories, 'category' => $category, 'no_of_products' => $no_of_products
         ])->layout('layouts.main');
     }
 }

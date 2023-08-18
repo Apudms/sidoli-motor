@@ -24,7 +24,7 @@
                                 <label for="" class="col-md-4 control-label">Nama Produk</label>
                                 <div class="col-md-4">
                                     <input type="text" class="form-control input-md" placeholder="Nama Produk"
-                                        wire:model="nama_produk" wire:keyup="generateslug" required>
+                                        wire:model="nama_produk" wire:keyup="generateslug">
                                     @error('nama_produk')
                                     <p class="text-danger">{{ $message }}</p>
                                     @enderror
@@ -35,7 +35,7 @@
                                 <label for="" class="col-md-4 control-label">Slug</label>
                                 <div class="col-md-4">
                                     <input type="text" class="form-control input-md" placeholder="Slug" disabled
-                                        readonly wire:model="slug" required>
+                                        readonly wire:model="slug">
                                     @error('slug')
                                     <p class="text-danger">{{ $message }}</p>
                                     @enderror
@@ -45,8 +45,8 @@
                             <div class="form-group">
                                 <label for="" class="col-md-4 control-label">Harga Normal</label>
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control input-md" placeholder=""
-                                        wire:model="harga_normal" required>
+                                    <input type="number" class="form-control input-md" placeholder=""
+                                        wire:model="harga_normal">
                                     @error('harga_normal')
                                     <p class="text-danger">{{ $message }}</p>
                                     @enderror
@@ -56,7 +56,7 @@
                             <div class="form-group">
                                 <label for="" class="col-md-4 control-label">Harga Sebelum Diskon</label>
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control input-md" placeholder=""
+                                    <input type="number" class="form-control input-md" placeholder=""
                                         wire:model="harga_diskon">
                                 </div>
                             </div>
@@ -95,7 +95,7 @@
                                 <label for="" class="col-md-4 control-label">Jumlah Stok</label>
                                 <div class="col-md-4">
                                     <input type="number" class="form-control input-md" placeholder=""
-                                        wire:model="jumlah_stok" required>
+                                        wire:model="jumlah_stok">
                                     @error('jumlah_stok')
                                     <p class="text-danger">{{ $message }}</p>
                                     @enderror

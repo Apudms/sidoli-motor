@@ -48,7 +48,12 @@ Primary use:    Ecommerce
 
 -------------------------------------------------------------------*/
 
-
+#footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+}
 
 body {
 	font-family: 'Open Sans', sans-serif;
@@ -5639,6 +5644,20 @@ table.shop_attributes tbody {
 
 .wrap-address-billing .row-in-form:nth-child(2n+1) {
 	margin-right: 30px;
+}
+
+.wrap-address-billing .row-in-form select {
+	font-size: 13px;
+	line-height: 19px;
+	display: inline-block;
+	height: 43px;
+	padding: 2px 20px;
+	width: 100%;
+	border: 1px solid #e6e6e6;
+	background-color: #fff;
+	/* Background color for select element */
+	color: #555555;
+	/* Text color for select element */
 }
 
 .summary-checkout {

@@ -65,12 +65,6 @@
                                         <li class="menu-item">
                                             <a title="Dashboard" href="{{ route('owner.dashboard') }}">Dashboard</a>
                                         </li>
-                                        {{-- <li class="menu-item">
-                                            <a title="Brand" href="{{ route('owner.brands') }}">Brand</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a title="Produk" href="{{ route('owner.brands') }}">Produk</a>
-                                        </li> --}}
                                         <li class="menu-item">
                                             <a title="Logout" href="{{ route('owner.dashboard') }}"
                                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Keluar</a>
@@ -85,7 +79,8 @@
                                     <a title="{{ Auth::user()->name }}" href="#">{{ Auth::user()->name }}<i
                                             class="fa fa-angle-down" aria-hidden="true"></i></a>
                                     <ul class="submenu curency">
-                                        <li class="menu-item">
+                                        <li class="menu-item" @if(Request::is('admin.dashboard')) style="color: red;"
+                                            @endif>
                                             <a title="Dashboard" href="{{ route('admin.dashboard') }}">Dashboard</a>
                                         </li>
                                         <li class="menu-item">
@@ -93,6 +88,10 @@
                                         </li>
                                         <li class="menu-item">
                                             <a title="Produk" href="{{ route('admin.produk') }}">Data Produk</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a title="Transaksi" href="{{ route('admin.manajemenTransaksi') }}">Data
+                                                Transaksi</a>
                                         </li>
                                         <li class="menu-item">
                                             <a title="Manajemen Slider" href="{{ route('admin.slider') }}">Manajemen
@@ -116,11 +115,12 @@
                                     <a title="Akun Saya ({{ Auth::user()->name }})" href="#">Akun Saya ({{
                                         Auth::user()->name }})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                     <ul class="submenu curency">
-                                        <li class="menu-item">
+                                        <li class="menu-item" @if(Request::is('user.dashboard')) style="color: red;"
+                                            @endif>
                                             <a title="Dashboard" href="{{ route('user.dashboard') }}">Dashboard</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a title="Logout" href="{{ route('user.dashboard') }}"
+                                            <a title="Logout" href="#"
                                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Keluar</a>
                                         </li>
                                         <form id="logout-form" method="POST" action="{{ route('logout') }}">
@@ -150,30 +150,10 @@
 
                         @livewire('header-search-component')
 
-                        @if (Route::has('login'))
-                        @auth
-                        @if (Auth::user()->utype === 'USR')
+                        @if (Auth::guest() || Auth::user()->utype === 'USR')
                         <div class="wrap-icon right-section">
-                            <div class="wrap-icon-section wishlist">
-                                <a href="#" class="link-direction">
-                                    <i class="fa fa-heart" aria-hidden="true"></i>
-                                    <div class="left-info">
-                                        <span class="index">0 produk</span>
-                                        <span class="title">Disukai</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="wrap-icon-section minicart">
-                                <a href="/keranjang" class="link-direction">
-                                    <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-                                    <div class="left-info">
-                                        @if (Cart::count() > 0)
-                                        <span class="index">{{ Cart::count() }} pcs</span>
-                                        @endif
-                                        <span class="title">Keranjang</span>
-                                    </div>
-                                </a>
-                            </div>
+                            @livewire('cart-count-component')
+
                             <div class="wrap-icon-section show-up-after-1024">
                                 <a href="#" class="mobile-navigation">
                                     <span></span>
@@ -183,8 +163,6 @@
                             </div>
                         </div>
                         @endif
-                        @endif
-                        @endif
 
                     </div>
                 </div>
@@ -193,64 +171,85 @@
                     <div class="primary-nav-section">
                         <div class="container">
                             <ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu">
-                                <li class="menu-item home-icon">
+                                @guest
+                                <li class="menu-item home-icon" @if(Request::is('/')) style="background: #ff2832" @else
+                                    style="background: none" @endif>
                                     <a href="/" class="link-term mercado-item-title"><i class="fa fa-home"
                                             aria-hidden="true"></i></a>
                                 </li>
-                                {{-- <li class="menu-item home-icon" style="background: none">
-                                    <a href="/" class="link-term mercado-item-title"><i class="fa fa-home"
-                                            aria-hidden="true"></i></a>
-                                </li> --}}
-                                @guest
-                                <li class="menu-item">
+                                <li class="menu-item" @if(Request::is('toko')) style="background: #ff2832" @endif>
                                     <a href="/toko" class="link-term mercado-item-title">TOKO</a>
+                                </li>
+                                <li class="menu-item" @if(Request::is('keranjang')) style="background: #ff2832" @endif>
+                                    <a href="/keranjang" class="link-term mercado-item-title">KERANJANG</a>
                                 </li>
                                 @endguest
                                 @if (Route::has('login'))
                                 @auth
                                 @if (Auth::user()->utype === 'OWN')
-                                <li class="menu-item">
-                                    <a href="/toko" class="link-term mercado-item-title">PRODUK</a>
+                                <li class="menu-item home-icon" @if(Request::routeIs('owner.dashboard'))
+                                    style="background: #ff2832" @else style="background: none" @endif>
+                                    <a href="{{ route('owner.dashboard') }}" class="link-term mercado-item-title"><i
+                                            class="fa fa-home" aria-hidden="true"></i></a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="/keranjang" class="link-term mercado-item-title">INCOMING</a>
+                                <li class="menu-item" @if(Request::routeIs('owner.produk')) style="background: #ff2832"
+                                    @endif>
+                                    <a href="{{ route('owner.produk') }}" class="link-term mercado-item-title">Data
+                                        Produk</a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="/checkout" class="link-term mercado-item-title">OUTGOING</a>
+                                <li class="menu-item" @if(Request::RouteIs('owner.transaksi') ||
+                                    Request::RouteIs('owner.detailtransaksi')) style="background: #ff2832" @endif>
+                                    <a href="{{ route('owner.transaksi') }}" class="link-term mercado-item-title">Data
+                                        Transaksi</a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="/checkout" class="link-term mercado-item-title">WILAYAH</a>
-                                </li>
+                                {{-- <li class="menu-item" @if(Request::routeIs('owner.salesreport'))
+                                    style="background: #ff2832" @endif>
+                                    <a href="{{ route('owner.salesreport') }}"
+                                        class="link-term mercado-item-title">Laporan Penjualan</a>
+                                </li> --}}
                                 @elseif (Auth::user()->utype === 'ADM')
-                                <li class="menu-item">
-                                    <a href="/toko" class="link-term mercado-item-title">PRODUK</a>
+                                <li class="menu-item home-icon" @if(Request::routeIs('admin.dashboard'))
+                                    style="background: #ff2832" @else style="background: none" @endif>
+                                    <a href="{{ route('admin.dashboard') }}" class="link-term mercado-item-title"><i
+                                            class="fa fa-home" aria-hidden="true"></i></a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="/keranjang" class="link-term mercado-item-title">WILAYAH</a>
+                                <li class="menu-item" @if(Request::routeIs('admin.kategori'))
+                                    style="background: #ff2832" @endif>
+                                    <a href="{{ route('admin.kategori') }}"
+                                        class="link-term mercado-item-title">Kategori</a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="/keranjang" class="link-term mercado-item-title">CUSTOMER</a>
+                                <li class="menu-item" @if(Request::routeIs('admin.produk')) style="background: #ff2832"
+                                    @endif>
+                                    <a href="{{ route('admin.produk') }}"
+                                        class="link-term mercado-item-title">Produk</a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="/checkout" class="link-term mercado-item-title">INCOMING</a>
+                                <li class="menu-item" @if(Request::RouteIs('admin.manajemenTransaksi'))
+                                    style="background: #ff2832" @endif>
+                                    <a href="{{ route('admin.manajemenTransaksi') }}"
+                                        class="link-term mercado-item-title">Transaksi</a>
                                 </li>
                                 @elseif (Auth::user()->utype === 'USR')
-                                <li class="menu-item">
+                                <li class="menu-item home-icon" @if(Request::is('/')) style="background: #ff2832" @else
+                                    style="background: none" @endif>
+                                    <a href="/" class="link-term mercado-item-title"><i class="fa fa-home"
+                                            aria-hidden="true"></i></a>
+                                </li>
+                                <li class="menu-item" @if(Request::is('toko') || Request::RouteIs('produk.detail'))
+                                    style="background: #ff2832" @endif>
                                     <a href="/toko" class="link-term mercado-item-title">TOKO</a>
                                 </li>
-                                <li class="menu-item">
+                                <li class="menu-item" @if(Request::is('keranjang') || Request::is('checkout') ||
+                                    Request::is('terimakasih')) style="background: #ff2832" @endif>
                                     <a href="/keranjang" class="link-term mercado-item-title">KERANJANG</a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="/checkout" class="link-term mercado-item-title">CHECKOUT</a>
+                                <li class="menu-item" @if(Request::RouteIs('user.dashboard') ||
+                                    Request::RouteIs('user.detailTransaksi')) style="background: #ff2832" @endif>
+                                    <a href="{{ route('user.dashboard') }}"
+                                        class="link-term mercado-item-title">TRANSAKSI</a>
                                 </li>
                                 @endif
+                                @endauth
                                 @endif
-                                @endif
-                                {{-- <li class="menu-item">
-                                    <a href="/checkout" class="link-term mercado-item-title"
-                                        style="background: #ff2832">Checkout</a>
-                                </li> --}}
                             </ul>
                         </div>
                     </div>
@@ -262,17 +261,13 @@
     {{ $slot }}
 
     <footer id="footer">
-        <div class="wrap-footer-content footer-style-1">
-
-            <div class="coppy-right-box">
-                <div class="container d-flex">
-                    <div class="coppy-right-item">
-                        <strong>Copyright &copy;<script>
-                                document.write(new Date().getFullYear());
-                            </script> All rights reserved | <a href="/">Sidoli Motor</a></strong>
-                    </div>
+        <div class="coppy-right-box">
+            <div class="container d-flex">
+                <div class="coppy-right-item">
+                    <strong>Copyright &copy;<script>
+                            document.write(new Date().getFullYear());
+                        </script> All rights reserved | <a href="/">Sidoli Motor</a></strong>
                 </div>
-                <div class="clearfix"></div>
             </div>
         </div>
     </footer>

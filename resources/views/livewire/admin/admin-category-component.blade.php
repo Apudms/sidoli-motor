@@ -48,9 +48,9 @@
                                         <a href="{{ route('admin.ubahkategori', ['id' => $category->id]) }}"><i
                                                 class="fa fa-edit fa-2x"></i>
                                         </a>
-                                        <a href="#" wire:click.prevent="deleteCategory('{{ $category->id }}')"
-                                            style="margin-left:10px; "
-                                            onclick="return confirm('Yakin ingin menghapus {{ $category->nama_kategori }}?')"><i
+                                        <a href="#" style="margin-left:10px;"
+                                            onclick="confirm('Yakin ingin menghapus {{ $category->nama_kategori }}?') || event.stopImmediatePropragation()"
+                                            wire:click.prevent="deleteCategory('{{ $category->id }}')"><i
                                                 class="fa fa-trash fa-2x text-danger"></i>
                                         </a>
                                     </td>

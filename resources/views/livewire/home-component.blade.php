@@ -86,8 +86,6 @@
 
     <!--Product Categories-->
     @if (isset($category))
-
-    @endif
     <div class="wrap-show-advance-info-box style-1">
         <h3 class="title-box">Kategori Produk</h3>
         <div class="wrap-products">
@@ -163,5 +161,6 @@
         </div>
 
     </div>
+    @endif
 
 </main>

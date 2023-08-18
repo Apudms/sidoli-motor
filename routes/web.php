@@ -11,15 +11,23 @@ use App\Http\Livewire\Admin\AdminEditProductComponent;
 use App\Http\Livewire\Admin\AdminHomeCategoryComponent;
 use App\Http\Livewire\Admin\AdminHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminProductComponent;
+use App\Http\Livewire\Admin\AdminTransactionComponent;
+use App\Http\Livewire\Admin\AdminTransactionDetailComponent;
 use App\Http\Livewire\CartComponent;
 use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\CheckoutComponent;
 use App\Http\Livewire\DetailsComponent;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\Owner\OwnerDashboardComponent;
+use App\Http\Livewire\Owner\OwnerProductDataComponent;
+use App\Http\Livewire\Owner\OwnerSalesReportComponent;
+use App\Http\Livewire\Owner\OwnerTransactionDataComponent;
+use App\Http\Livewire\Owner\OwnerTransactionDetailComponent;
 use App\Http\Livewire\SearchComponent;
 use App\Http\Livewire\ShopComponent;
+use App\Http\Livewire\ThankYouComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
+use App\Http\Livewire\User\UserTransactionDetailComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,31 +43,34 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeComponent::class);
 Route::get('/toko', ShopComponent::class);
+
+/*
+|--------------------------------------------------------------------------
+| LaravelShoppingcart
+|--------------------------------------------------------------------------
+|
+| https://github.com/bumbummen99/LaravelShoppingcart
+|
+*/
+
 Route::get('/keranjang', CartComponent::class)->name('produk.keranjang');
-Route::get('/checkout', CheckoutComponent::class);
+Route::get('/checkout', CheckoutComponent::class)->name('checkout');
 Route::get('/produk/{slug}', DetailsComponent::class)->name('produk.detail');
 Route::get('/kategori-produk/{category_slug}', CategoryComponent::class)->name('produk.kategori');
 Route::get('/cari', SearchComponent::class)->name('produk.cari');
-
-// Route::middleware([
-//     'auth:sanctum',
-//     config('jetstream.auth_session'),
-//     'verified'
-// ])->group(function () {
-//     Route::get('/dashboard', function () {
-//         return view('dashboard');
-//     })->name('dashboard');
-// });
+Route::get('/terimakasih', ThankYouComponent::class)->name('terimakasih');
 
 //For Owner
-Route::middleware(['auth:sanctum', 'verified', 'authowner'])->group(function () {
+Route::middleware(['auth:sanctum', 'verified', 'check.utype:OWN'])->group(function () {
     Route::get('/owner/dashboard', OwnerDashboardComponent::class)->name('owner.dashboard');
-    // Route::get('/owner/brands', OwnerBrandComponent::class)->name('owner.brands');
-    // Route::get('/owner/brands/add', OwnerAddBrandComponent::class)->name('owner.addbrands');
+    // Route::get('/owner/laporan-penjualan', OwnerSalesReportComponent::class)->name('owner.salesreport');
+    Route::get('/owner/data-produk', OwnerProductDataComponent::class)->name('owner.produk');
+    Route::get('/owner/data-transaksi', OwnerTransactionDataComponent::class)->name('owner.transaksi');
+    Route::get('/owner/data-transaksi/id={order_id}', OwnerTransactionDetailComponent::class)->name('owner.detailtransaksi');
 });
 
 //For Admin
-Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function () {
+Route::middleware(['auth:sanctum', 'verified', 'check.utype:ADM'])->group(function () {
     Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
     Route::get('/admin/kategori', AdminCategoryComponent::class)->name('admin.kategori');
     Route::get('/admin/kategori/tambah', AdminAddCategoryComponent::class)->name('admin.tambahkategori');
@@ -71,14 +82,12 @@ Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function () 
     Route::get('/admin/slider/tambah', AdminAddHomeSliderComponent::class)->name('admin.tambahslider');
     Route::get('/admin/slider/ubah/id={id}', AdminEditHomeSliderComponent::class)->name('admin.ubahslider');
     Route::get('/admin/home-kategori', AdminHomeCategoryComponent::class)->name('admin.manajemenkategori');
-    // Route::get('/admin/home-kategori/tambah', AdminHomeCategoryComponent::class)->name('admin.tambahhome-kategori');
-    // Route::get('/admin/home-kategori/ubah/id={id}', AdminHomeCategoryComponent::class)->name('admin.ubahhome-kategori');
-
-    // Route::get('/admin/brands', AdminBrandComponent::class)->name('admin.brands');
-    // Route::get('/admin/brands/add', AdminAddBrandComponent::class)->name('admin.addbrands');
+    Route::get('/admin/transaksi', AdminTransactionComponent::class)->name('admin.manajemenTransaksi');
+    Route::get('/admin/transaksi/id={order_id}', AdminTransactionDetailComponent::class)->name('admin.manajemenDetailTransaksi');
 });
 
 //For User or Customer
-Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::get('/user/dashboard', UserDashboardComponent::class)->name('user.dashboard');
+Route::middleware(['auth:sanctum', 'verified', 'check.utype:USR'])->group(function () {
+    Route::get('/user/transaksi', UserDashboardComponent::class)->name('user.dashboard');
+    Route::get('/user/transaksi/id={order_id}', UserTransactionDetailComponent::class)->name('user.detailTransaksi');
 });
