@@ -49,11 +49,10 @@ Clone the repo and install dependencies:
 git clone https://github.com/Apudms/sidoli-motor.git
 cd sidoli-motor
 composer update
-cp .env-example .env
+# Edit your .env file and all the credentials
 php artisan migrate --seed
 php artisan serve
 
-# Edit your .env file and all the credentials
 
 ```
 <br/>
