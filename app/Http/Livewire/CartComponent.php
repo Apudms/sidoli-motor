@@ -11,17 +11,21 @@ class CartComponent extends Component
     public function increaseQuantity($rowId)
     {
         $product = Cart::instance('cart')->get($rowId);
-        $qty = $product->qty + 1;
-        Cart::instance('cart')->update($rowId, $qty);
-        $this->emitTo('cart-count-component', 'refreshComponent');
+        if ($product->qty < $product->model->jumlah_stok) {
+            $qty = $product->qty + 1;
+            Cart::instance('cart')->update($rowId, $qty);
+            $this->emitTo('cart-count-component', 'refreshComponent');
+        }
     }
 
     public function decreaseQuantity($rowId)
     {
         $product = Cart::instance('cart')->get($rowId);
-        $qty = $product->qty - 1;
-        Cart::instance('cart')->update($rowId, $qty);
-        $this->emitTo('cart-count-component', 'refreshComponent');
+        if ($product->qty > 1) {
+            $qty = $product->qty - 1;
+            Cart::instance('cart')->update($rowId, $qty);
+            $this->emitTo('cart-count-component', 'refreshComponent');
+        }
     }
 
     public function destroy($rowId)
@@ -54,7 +58,10 @@ class CartComponent extends Component
         }
 
         if (Cart::instance('cart')->subtotal() >= number_format(
-            500000
+            500000,
+            0,
+            ',',
+            '.'
         )) {
             $ongkir = 0;
         } else {
@@ -77,14 +84,17 @@ class CartComponent extends Component
     {
         $this->setAmountforCheckout();
         if (Cart::instance('cart')->subtotal() >= number_format(
-            500000
+            500000,
+            0,
+            ',',
+            '.'
         )) {
             $ongkir = 0;
         } else {
             $ongkir = 10000;
         }
         $subtotal = Cart::instance('cart')->subtotal() * 1000;
-        $total = (Cart::total() * 1000) + $ongkir;
+        $total = (Cart::instance('cart')->total() * 1000) + $ongkir;
         return view('livewire.cart-component', ['total' => $total, 'subtotal' => $subtotal])->layout('layouts.main');
     }
 }

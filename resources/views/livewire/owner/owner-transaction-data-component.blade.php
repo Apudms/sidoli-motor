@@ -15,7 +15,7 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-md-6">
-                                Semua Transaksi
+                                <b>Data Transaksi</b>
                             </div>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                                     </td>
                                     <td>{{ $order->created_at }}</td>
                                     <td class="text-center">
-                                        <a href="{{ route('admin.manajemenDetailTransaksi', ['order_id' => $order->orderId]) }}"
+                                        <a href="{{ route('owner.detailtransaksi', ['order_id' => $order->orderId]) }}"
                                             class="text-dark"><i class="fa fa-file-text"></i> Periksa
                                             Rincian
                                         </a>

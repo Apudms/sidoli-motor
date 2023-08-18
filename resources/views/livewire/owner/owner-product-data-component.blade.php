@@ -15,11 +15,7 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-md-6">
-                                Semua Produk
-                            </div>
-                            <div class="col-md-6">
-                                <a href="{{ route('admin.tambahproduk') }}" class="btn btn-success pull-right">Tambah
-                                    Produk</a>
+                                <b>Data Produk</b>
                             </div>
                         </div>
                     </div>
@@ -39,8 +35,6 @@
                                     <th>Stok</th>
                                     <th>Harga</th>
                                     <th>Kategori</th>
-                                    <th>Tanggal</th>
-                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -67,17 +61,6 @@
                                             @endif
                                             <td>{{ number_format($product->harga_normal, 0, '.', '.') }}</td>
                                             <td>{{ $product->category->nama_kategori }}</td>
-                                            <td>{{ $product->created_at }}</td>
-                                            <td>
-                                                <a href="{{ route('admin.ubahproduk', ['id' => $product->id]) }}"><i
-                                                        class="fa fa-edit fa-2x"></i>
-                                                </a>
-                                                <a href="#" style="margin-left:10px; "
-                                                    onclick="confirm('Yakin ingin menghapus {{ $product->nama_produk }}?') || event.stopImmediatePropragation()"
-                                                    wire:click.prevent="deleteProduct('{{ $product->id }}')"><i
-                                                        class="fa fa-trash fa-2x text-danger"></i>
-                                                </a>
-                                            </td>
                                 </tr>
                                 @endforeach
                             </tbody>

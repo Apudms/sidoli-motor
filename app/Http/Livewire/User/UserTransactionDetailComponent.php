@@ -47,6 +47,21 @@ class UserTransactionDetailComponent extends Component
         session()->flash('success_message', 'Foto berhasil diunggah!');
     }
 
+    public function updateStatusConfirmed()
+    {
+        $transaksi = Transaksi::with(['order'])->where('order_id', $this->order_id)->whereAnd('user_id', auth()->user()->id)->first();
+
+        if ($transaksi->order->user_id !== auth()->user()->id) {
+            abort(403);
+        }
+
+        $order = Order::find($this->order_id);
+        $order->status = 'diterima';
+        $order->save();
+        session()->flash('success_message', 'Pesanan telah diterima, konfirmasi berhasil!');
+        return redirect()->route('user.dashboard');
+    }
+
     public function render()
     {
         $transaksi = Transaksi::with(['order'])->where('order_id', $this->order_id)->first();
@@ -54,6 +69,7 @@ class UserTransactionDetailComponent extends Component
         $detailProduk = Product::latest()->get();
         $order = Order::find($this->order_id)->get();
 
+        // dd($transaksi->order->status);
         return view('livewire.user.user-transaction-detail-component', [
             'transaksi' => $transaksi,
             'detail' => $detail,

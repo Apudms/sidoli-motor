@@ -24,12 +24,22 @@ class AdminTransactionDetailComponent extends Component
     public function updateStatusConfirmed()
     {
         $order = Order::find($this->order_id);
-        $order->status = 'dikirim';
+        $order->status = 'dikemas';
         $order->save();
 
         $transaksi = Transaksi::with(['order'])->where('order_id', $this->order_id)->first();
         $transaksi->status = 'disetujui';
         $transaksi->save();
+
+        session()->flash('success_message', 'Status telah dikonfirmasi!');
+        return redirect()->route('admin.manajemenTransaksi');
+    }
+
+    public function updateStatusShipped()
+    {
+        $order = Order::find($this->order_id);
+        $order->status = 'dikirim';
+        $order->save();
 
         session()->flash('success_message', 'Status telah dikonfirmasi!');
         return redirect()->route('admin.manajemenTransaksi');

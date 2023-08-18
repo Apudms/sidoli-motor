@@ -17,7 +17,7 @@ class AuthAdmin
     public function handle(Request $request, Closure $next)
     {
         if (session('utype') === 'ADM') {
-            return $next($request);
+            return redirect()->route('admin.dashboard');
         } else {
             // session()->flush();
             // return redirect()->route('login');

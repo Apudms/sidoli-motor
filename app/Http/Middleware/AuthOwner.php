@@ -17,7 +17,7 @@ class AuthOwner
     public function handle(Request $request, Closure $next)
     {
         if (session('utype') === 'OWN') {
-            return $next($request);
+            return redirect()->route('owner.dashboard');
         } else {
             // session()->flush();
             // return redirect()->route('login');

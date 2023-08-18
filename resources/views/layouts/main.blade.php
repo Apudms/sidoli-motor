@@ -187,26 +187,26 @@
                                 @if (Route::has('login'))
                                 @auth
                                 @if (Auth::user()->utype === 'OWN')
-                                <li class="menu-item home-icon" @if(Request::routeIs('admin.dashboard'))
+                                <li class="menu-item home-icon" @if(Request::routeIs('owner.dashboard'))
                                     style="background: #ff2832" @else style="background: none" @endif>
-                                    <a href="{{ route('admin.dashboard') }}" class="link-term mercado-item-title"><i
+                                    <a href="{{ route('owner.dashboard') }}" class="link-term mercado-item-title"><i
                                             class="fa fa-home" aria-hidden="true"></i></a>
                                 </li>
-                                <li class="menu-item" @if(Request::routeIs('admin.kategori'))
-                                    style="background: #ff2832" @endif>
-                                    <a href="{{ route('admin.kategori') }}"
-                                        class="link-term mercado-item-title">Kategori</a>
-                                </li>
-                                <li class="menu-item" @if(Request::routeIs('admin.produk')) style="background: #ff2832"
+                                <li class="menu-item" @if(Request::routeIs('owner.produk')) style="background: #ff2832"
                                     @endif>
-                                    <a href="{{ route('admin.produk') }}"
-                                        class="link-term mercado-item-title">Produk</a>
+                                    <a href="{{ route('owner.produk') }}" class="link-term mercado-item-title">Data
+                                        Produk</a>
                                 </li>
-                                <li class="menu-item" @if(Request::RouteIs('admin.manajemenTransaksi'))
+                                <li class="menu-item" @if(Request::RouteIs('owner.transaksi') ||
+                                    Request::RouteIs('owner.detailtransaksi')) style="background: #ff2832" @endif>
+                                    <a href="{{ route('owner.transaksi') }}" class="link-term mercado-item-title">Data
+                                        Transaksi</a>
+                                </li>
+                                {{-- <li class="menu-item" @if(Request::routeIs('owner.salesreport'))
                                     style="background: #ff2832" @endif>
-                                    <a href="{{ route('admin.manajemenTransaksi') }}"
-                                        class="link-term mercado-item-title">Transaksi</a>
-                                </li>
+                                    <a href="{{ route('owner.salesreport') }}"
+                                        class="link-term mercado-item-title">Laporan Penjualan</a>
+                                </li> --}}
                                 @elseif (Auth::user()->utype === 'ADM')
                                 <li class="menu-item home-icon" @if(Request::routeIs('admin.dashboard'))
                                     style="background: #ff2832" @else style="background: none" @endif>

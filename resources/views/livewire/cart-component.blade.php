@@ -38,12 +38,14 @@
                         </div>
                         <div class="quantity">
                             <div class="quantity-input">
-                                <input type="text" name="product-quatity" value="{{ $item->qty }}" data-max="120"
+                                <input type="text" name="product-quantity" value="{{ $item->qty }}" data-max="120"
                                     pattern="[0-9]*">
-                                <a class="btn btn-increase" href="#"
-                                    wire:click.prevent="increaseQuantity('{{ $item->rowId }}')"></a>
-                                <a class="btn btn-reduce" href="#"
-                                    wire:click.prevent="decreaseQuantity('{{ $item->rowId }}')"></a>
+                                <a class="btn btn-increase{{ $item->qty >= $item->model->jumlah_stok ? ' disabled' : '' }}"
+                                    href="#" wire:click.prevent="increaseQuantity('{{ $item->rowId }}')"
+                                    wire:loading.attr="disabled"></a>
+                                <a class="btn btn-reduce{{ $item->qty <= 1 ? ' disabled' : '' }}" href="#"
+                                    wire:click.prevent="decreaseQuantity('{{ $item->rowId }}')"
+                                    wire:loading.attr="disabled"></a>
                             </div>
                         </div>
                         <div class="price-field sub-total">
@@ -73,7 +75,7 @@
                             number_format($subtotal,
                             0, ',','.')
                             }}</b></p>
-                    @if (Cart::subtotal() >= number_format(500000,
+                    @if (Cart::instance('cart')->subtotal() >= number_format(500000,
                     0, ',','.'))
                     <p class="summary-info"><span class="title">Ongkir</span><b class="index">Gratis Ongkir</b></p>
                     @else
@@ -81,11 +83,11 @@
                             0, ',','.') }}</b></p>
                     @endif
                     <p class="summary-info total-info "><span class="title">Total</span>
-                        @if (Cart::subtotal() >= number_format(500000,
+                        @if (Cart::instance('cart')->subtotal() >= number_format(500000,
                         0, ',','.'))
                         <b class="index">
                             Rp{{
-                            Cart::total()
+                            Cart::instance('cart')->total()
                             }}
                         </b>
                         @else

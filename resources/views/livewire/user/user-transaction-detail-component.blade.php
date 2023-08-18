@@ -146,18 +146,72 @@
                                             </div>
                                         </div>
                                         <hr>
-                                        @if ($now >= $transaksi->order->created_at->addDay()->toDateTimeString() and
+                                        @if ($now >= $transaksi->order->created_at->addDay()->toDateTimeString() &&
                                         empty($transaksi->order->bukti_transfer))
                                         <div class="card mt-4">
                                             <div class="card-content">
-                                                <div class="card-body">
-                                                    <h5 class="text-danger">Pesanan sudah kadaluwarsa!</h5> *Silahkan
+                                                <div class="card-body" style="padding: 20px 0;">
+                                                    <h5 class="text-danger">Pesanan sudah
+                                                        kadaluwarsa!</h5> *Silahkan
                                                     pesan kembali!
                                                 </div>
                                             </div>
                                         </div>
-                                        @elseif ($transaksi->order->count('bukti_transfer') || $now <= $transaksi->
-                                            order->created_at->addDay()->toDateTimeString())
+                                        @elseif ($transaksi->order->status === 'dibatalkan')
+                                        <div class="card mt-4">
+                                            <div class="card-content">
+                                                <div class="card-body" style="padding: 20px 0;">
+                                                    <h5 class="text-danger">Pesanan ditolak!
+                                                    </h5> *Silahkan
+                                                    pesan kembali!
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @elseif ($transaksi->order->count('bukti_transfer') &&
+                                        $transaksi->order->status !== 'memesan')
+                                        <div class="card mt-4">
+                                            <div class="card-content">
+                                                <div class="card-body">
+                                                    <h4 style="padding: 10px 0;color: rgb(0, 0, 0)"><b>Alamat
+                                                            Pembayaran</b></h4>
+                                                    <div class="form-body mt-4">
+                                                        <div class="row">
+                                                            <div class="col-md-2 form-group">
+                                                                <label>Nama Pemilik</label>
+                                                            </div>
+                                                            <div class="col-md-10 col-xl-2 col-4 form-group">
+                                                                <label>a/n Sidoli Motor</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-2 form-group">
+                                                                <label>Nomor Rekening</label>
+                                                            </div>
+                                                            <div class="col-md-10 col-xl-2 col-4 form-group">
+                                                                <label>Mandiri 1376289523854838</label>
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                    </div>
+
+                                                    <div class="col-md-12" style="padding: 10px 0;">
+                                                        <label>Bukti Transfer</label>
+                                                    </div>
+                                                    <form wire:submit.prevent="updateBuktiTransfer">
+
+                                                        <div class="col-md-12" style="padding: 6px 0;">
+                                                            <div style="max-width: 400px;">
+                                                                <img src="{{ asset('assets/images/bukti_transfer/'. $transaksi->order->bukti_transfer) }}"
+                                                                    alt="{{ $transaksi->order->bukti_transfer }}"
+                                                                    class="img-fluid">
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @elseif ($transaksi->order->count('bukti_transfer') ||
+                                        $now <= $transaksi->order->created_at->addDay()->toDateTimeString())
                                             <div class="card mt-4">
                                                 <div class="card-content">
                                                     <div class="card-body">
@@ -169,7 +223,7 @@
                                                                     <label>Nama Pemilik</label>
                                                                 </div>
                                                                 <div class="col-md-10 col-xl-2 col-4 form-group">
-                                                                    <label>Sidoli Motor</label>
+                                                                    <label>a/n Sidoli Motor</label>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -177,7 +231,7 @@
                                                                     <label>Nomor Rekening</label>
                                                                 </div>
                                                                 <div class="col-md-10 col-xl-2 col-4 form-group">
-                                                                    <label>123 456 789</label>
+                                                                    <label>Mandiri 1376289523854838</label>
                                                                 </div>
                                                             </div>
                                                             <hr>
@@ -250,7 +304,7 @@
                                                                     <label>Nama Pemilik</label>
                                                                 </div>
                                                                 <div class="col-md-10 col-xl-2 col-4 form-group">
-                                                                    <label>Sidoli Motor</label>
+                                                                    <label>a/n Sidoli Motor</label>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -258,7 +312,7 @@
                                                                     <label>Nomor Rekening</label>
                                                                 </div>
                                                                 <div class="col-md-10 col-xl-2 col-4 form-group">
-                                                                    <label>123 456 789</label>
+                                                                    <label>Mandiri 1376289523854838</label>
                                                                 </div>
                                                             </div>
                                                             <hr>
@@ -281,6 +335,13 @@
                                 <a href="{{ route('user.dashboard') }}" class="btn btn-primary"><i
                                         class="fa fa-arrow-left me-2"></i>
                                     Kembali</a>
+                                @if ($transaksi->order->status === 'dikirim')
+                                <a href="#" type="submit" class="btn btn-success float-end ms-4"
+                                    onclick="confirm('Konfirmasi produk telah diterima?') || event.stopImmediatePropragation()"
+                                    wire:click.prevent="updateStatusConfirmed('{{ $transaksi->order_id }}')"><i
+                                        class="fa fa-check me-2"></i>
+                                    Konfirmasi</a>
+                                @endif
                             </div>
                         </div>
                     </section>

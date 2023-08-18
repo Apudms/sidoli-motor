@@ -172,16 +172,28 @@
                                     <td>Rp{{ number_format($tran->total,
                                         0, ',','.') }}</td>
                                     <td class="text-center">
-                                        @if ($tran->orderStatus == 'dibatalkan')
+                                        @if ($tran->orderStatus === 'dibatalkan')
                                         <span style="padding: 2px 4pt 0;background: #d74b4b;color: #fff;">
                                             <i class="fa fa-times"></i>
-                                            Gagal
+                                            Dibatalkan
                                         </span>
 
-                                        @elseif ($tran->orderStatus == 'memesan')
+                                        @elseif ($tran->orderStatus === 'memesan')
                                         <span style="padding: 2px 4pt 0;background: #ffc107;">
                                             <i class="fa fa-hourglass-half"></i>
                                             Menunggu Persetujuan
+                                        </span>
+
+                                        @elseif ($tran->orderStatus === 'dikemas')
+                                        <span style="padding: 2px 4pt 0;background: #ffc107;">
+                                            <i class="fa fa-hourglass-half"></i>
+                                            Dikemas
+                                        </span>
+
+                                        @elseif ($tran->orderStatus === 'dikirim')
+                                        <span style="padding: 2px 4pt 0;background: #ffc107;">
+                                            <i class="fa fa-hourglass-half"></i>
+                                            Dikirim
                                         </span>
 
                                         @else
@@ -208,10 +220,6 @@
                             <b>Tidak ada transaksi yang masuk!</b>
                         </div>
                         @endif
-                        {{-- <div class="text-center text-danger mt-4 mb-4">
-                            <b>Tidak ada data yang ditemukan.</b>
-                        </div> --}}
-                        {{-- {{ $products->links() }} --}}
                     </div>
                 </div>
             </div>

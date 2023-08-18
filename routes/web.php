@@ -19,6 +19,10 @@ use App\Http\Livewire\CheckoutComponent;
 use App\Http\Livewire\DetailsComponent;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\Owner\OwnerDashboardComponent;
+use App\Http\Livewire\Owner\OwnerProductDataComponent;
+use App\Http\Livewire\Owner\OwnerSalesReportComponent;
+use App\Http\Livewire\Owner\OwnerTransactionDataComponent;
+use App\Http\Livewire\Owner\OwnerTransactionDetailComponent;
 use App\Http\Livewire\SearchComponent;
 use App\Http\Livewire\ShopComponent;
 use App\Http\Livewire\ThankYouComponent;
@@ -56,19 +60,13 @@ Route::get('/kategori-produk/{category_slug}', CategoryComponent::class)->name('
 Route::get('/cari', SearchComponent::class)->name('produk.cari');
 Route::get('/terimakasih', ThankYouComponent::class)->name('terimakasih');
 
-// Route::middleware([
-//     'auth:sanctum',
-//     config('jetstream.auth_session'),
-//     'verified'
-// ])->group(function () {
-//     Route::get('/dashboard', function () {
-//         return view('dashboard');
-//     })->name('dashboard');
-// });
-
 //For Owner
 Route::middleware(['auth:sanctum', 'verified', 'check.utype:OWN'])->group(function () {
     Route::get('/owner/dashboard', OwnerDashboardComponent::class)->name('owner.dashboard');
+    // Route::get('/owner/laporan-penjualan', OwnerSalesReportComponent::class)->name('owner.salesreport');
+    Route::get('/owner/data-produk', OwnerProductDataComponent::class)->name('owner.produk');
+    Route::get('/owner/data-transaksi', OwnerTransactionDataComponent::class)->name('owner.transaksi');
+    Route::get('/owner/data-transaksi/id={order_id}', OwnerTransactionDetailComponent::class)->name('owner.detailtransaksi');
 });
 
 //For Admin
@@ -84,7 +82,6 @@ Route::middleware(['auth:sanctum', 'verified', 'check.utype:ADM'])->group(functi
     Route::get('/admin/slider/tambah', AdminAddHomeSliderComponent::class)->name('admin.tambahslider');
     Route::get('/admin/slider/ubah/id={id}', AdminEditHomeSliderComponent::class)->name('admin.ubahslider');
     Route::get('/admin/home-kategori', AdminHomeCategoryComponent::class)->name('admin.manajemenkategori');
-
     Route::get('/admin/transaksi', AdminTransactionComponent::class)->name('admin.manajemenTransaksi');
     Route::get('/admin/transaksi/id={order_id}', AdminTransactionDetailComponent::class)->name('admin.manajemenDetailTransaksi');
 });

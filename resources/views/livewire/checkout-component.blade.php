@@ -70,15 +70,19 @@
                                     @error('kecamatan') <span class="text-danger">{{ $message }}</span> @enderror
                                 </p>
                                 <p class="row-in-form">
-                                    <label for="kabupaten">Kabupaten / Kota:</label>
-                                    <input type="text" name="kabupaten" @if ($kecamatan) value="Kota Bandar Lampung"
-                                        @endif wire:model="kabupaten">
+                                    <label for="kabupaten">Kabupaten / Kota:<span>*</span></label>
+                                    <select name="kabupaten" wire:model="kabupaten">
+                                        <option>Pilih Kabupaten / Kota</option>
+                                        <option value="Kota Bandar Lampung">Kota Bandar Lampung</option>
+                                    </select>
                                     @error('kabupaten') <span class="text-danger">{{ $message }}</span> @enderror
                                 </p>
                                 <p class="row-in-form">
-                                    <label for="provinsi">Provinsi:</label>
-                                    <input type="text" name="provinsi" @if ($kecamatan) value="Lampung" @endif
-                                        wire:model="provinsi">
+                                    <label for="provinsi">Provinsi:<span>*</span></label>
+                                    <select name="provinsi" wire:model="provinsi">
+                                        <option>Pilih Provinsi</option>
+                                        <option value="Lampung">Lampung</option>
+                                    </select>
                                     @error('provinsi') <span class="text-danger">{{ $message }}</span> @enderror
                                 </p>
                                 <p class="row-in-form">
@@ -97,24 +101,24 @@
                                 Transaksi.</span>
                         <div class="choose-payment-methods">
                             <label class="payment-method">
-                                <input name="payment-method" id="payment-method-bank" value="Transfer Bank" type="radio"
+                                <input name="payment-method" id="payment-method-bank" value="Bank Mandiri" type="radio"
                                     wire:model="transfer">
-                                <span>Transfer Bank</span>
-                                <span class="payment-desc">Silahkan transfer ke nomor rekening berikut: 123 456 7
+                                <span>Bank Mandiri</span>
+                                <span class="payment-desc">Silahkan transfer ke nomor rekening berikut: 1370089523854838
                                     <br><br></span>
                             </label>
                             <label class="payment-method">
                                 <input name="payment-method" id="payment-method-bank" value="Dana" type="radio"
                                     wire:model="transfer">
                                 <span>Dana</span>
-                                <span class="payment-desc">Silahkan transfer ke nomor rekening berikut: 123 456 7
+                                <span class="payment-desc">Silahkan transfer ke nomor rekening berikut: 089523854838
                                     <br><br></span>
                             </label>
                             <label class="payment-method">
                                 <input name="payment-method" id="payment-method-bank" value="Shopeepay" type="radio"
                                     wire:model="transfer">
                                 <span>Shopeepay</span>
-                                <span class="payment-desc">Silahkan transfer ke nomor rekening berikut: 123 456 7
+                                <span class="payment-desc">Silahkan transfer ke nomor rekening berikut: 089523854838
                                     <br><br></span>
                             </label>
                             @error('transfer') <span class="text-danger">{{ $message }}</span> @enderror

@@ -17,8 +17,8 @@ class CreateTransaksisTable extends Migration
             $table->string('id')->primary();
             $table->bigInteger('user_id')->unsigned();
             $table->string('order_id', 36);
-            $table->enum('transfer', ['Transfer Bank', 'Dana', 'Shopeepay'])->default('Transfer Bank');
-            $table->enum('status', ['menunggu', 'disetujui', 'ditolak', 'dikembalikan'])->default('menunggu');
+            $table->enum('transfer', ['Bank Mandiri', 'Dana', 'Shopeepay'])->default('Bank Mandiri');
+            $table->enum('status', ['menunggu', 'disetujui', 'ditolak', 'dibatalkan', 'dikembalikan'])->default('menunggu');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');

@@ -25,7 +25,7 @@ class AdminDashboardComponent extends Component
         // dd($incomePerDay);
         $orders = Order::orderBy('created_at', 'DESC')->where('status', '=', 'memesan')->get()->take(10);
         $totalIncome = Order::where('status', '=', 'diterima')->sum('subtotal');
-        $totalPurchase = Order::where('status', '=', 'dikirim')->count();
+        $totalPurchase = Order::where('status', '=', 'memesan')->count();
         $totalDelivered = Order::where('status', '!=', 'delivered')->count();
         $totalDibatalkan = Order::where('status', '=', 'dibatalkan')->count();
 

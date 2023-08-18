@@ -19,6 +19,18 @@ class DetailsComponent extends Component
 
     public function store($product_id, $product_name, $product_price)
     {
+        $product = Product::find($product_id);
+
+        if ($this->qty <= 0) {
+            session()->flash('error_message', 'Jumlah produk tidak valid');
+            return;
+        }
+
+        if ($this->qty > $product->jumlah_stok) {
+            session()->flash('error_message', 'Stok produk tidak mencukupi');
+            return;
+        }
+
         Cart::instance('cart')->add($product_id, $product_name, $this->qty, $product_price)->associate('App\Models\Product');
         session()->flash('success_message', 'Produk berhasil ditambahkan ke keranjang');
         return redirect()->route('produk.keranjang');

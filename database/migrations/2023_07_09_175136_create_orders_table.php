@@ -29,7 +29,7 @@ class CreateOrdersTable extends Migration
             $table->string('provinsi');
             $table->string('kode_pos');
             $table->string('bukti_transfer')->nullable();
-            $table->enum('status', ['memesan', 'dibatalkan', 'dikirim', 'diterima'])->default('memesan');
+            $table->enum('status', ['memesan', 'dibatalkan', 'dikemas', 'dikirim', 'diterima'])->default('memesan');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });

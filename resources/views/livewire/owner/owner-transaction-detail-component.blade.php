@@ -164,27 +164,9 @@
                                 </div>
                             </div>
                             <div class="col-md-12" style="padding: 5px 0;">
-                                <a href="{{ route('admin.manajemenTransaksi') }}" class="btn btn-primary"><i
+                                <a href="{{ route('owner.transaksi') }}" class="btn btn-primary"><i
                                         class="fa fa-arrow-left me-2"></i>
                                     Kembali</a>
-                                @if ($transaksi->order->status === 'memesan')
-                                <a href="#" type="submit" class="btn btn-danger float-end"
-                                    onclick="confirm('Yakin ingin menolak pesanan?') || event.stopImmediatePropragation()"
-                                    wire:click.prevent="updateStatusRejected('{{ $transaksi->id }}')"><i
-                                        class="fa fa-times me-2"></i> Tolak</a>
-                                <a href="#" type="submit" class="btn btn-success float-end ms-4"
-                                    onclick="confirm('Apakah bukti transfer sudah benar?') || event.stopImmediatePropragation()"
-                                    wire:click.prevent="updateStatusConfirmed('{{ $transaksi->id }}')"><i
-                                        class="fa fa-check me-2"></i>
-                                    Konfirmasi</a>
-                                @endif
-                                @if ($transaksi->order->status === 'dikemas')
-                                <a href="#" type="submit" class="btn btn-success float-end ms-4"
-                                    onclick="confirm('Apakah bukti transfer sudah benar?') || event.stopImmediatePropragation()"
-                                    wire:click.prevent="updateStatusShipped('{{ $transaksi->id }}')"><i
-                                        class="fa fa-truck me-2"></i>
-                                    Kirim Barang</a>
-                                @endif
                             </div>
                         </div>
                     </section>

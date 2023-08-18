@@ -4,7 +4,9 @@ namespace App\Http\Livewire;
 
 use App\Models\DetailOrder;
 use App\Models\Order;
+use App\Models\Product;
 use App\Models\Transaksi;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Cart;
@@ -38,6 +40,26 @@ class CheckoutComponent extends Component
             'kode_pos' => 'required|numeric',
             'transfer' => 'required'
         ]);
+    }
+
+    public function cancelExpiredOrders()
+    {
+        $expiredOrders = Order::where('status', 'memesan')
+            ->whereNull('bukti_transfer')
+            // ->where('created_at', '<=', Carbon::now()->subMinutes(1440)) // 1440 menit = 1 hari
+            ->where('created_at', '<=', Carbon::now()->subDay())
+            ->get();
+
+        foreach ($expiredOrders as $order) {
+            $order->status = 'dibatalkan';
+            $order->save();
+
+            $transaksi = Transaksi::where('order_id', $order->id)->first();
+            if ($transaksi) {
+                $transaksi->status = 'dibatalkan';
+                $transaksi->save();
+            }
+        }
     }
 
     public function placeOrder()
@@ -74,19 +96,29 @@ class CheckoutComponent extends Component
         $order->save();
 
         foreach (Cart::instance('cart')->content() as $item) {
+            $product = Product::find($item->id);
+            $product->jumlah_stok -= $item->qty;
+            $product->save();
+
             $detailOrders = new DetailOrder();
             $detailOrders->product_id = $item->id;
             $detailOrders->order_id = $order->id;
             $detailOrders->price = $item->price;
             $detailOrders->quantity = $item->qty;
             $detailOrders->save();
+
+            // Check if stock becomes empty
+            if ($product->jumlah_stok <= 0) {
+                $product->status_stok = 'Kosong';
+                $product->save();
+            }
         }
 
-        if ($this->transfer == 'Transfer Bank') {
+        if ($this->transfer == 'Bank Mandiri') {
             $transaksi = new Transaksi();
             $transaksi->user_id = Auth::user()->id;
             $transaksi->order_id = $order->id;
-            $transaksi->transfer = 'Transfer Bank';
+            $transaksi->transfer = 'Bank Mandiri';
             $transaksi->status = 'menunggu';
             $transaksi->save();
         } else if ($this->transfer == 'Dana') {
@@ -104,6 +136,9 @@ class CheckoutComponent extends Component
             $transaksi->status = 'menunggu';
             $transaksi->save();
         }
+
+        // Setelah menyimpan order dan transaksi, panggil fungsi untuk membatalkan order yang kadaluwarsa
+        $this->cancelExpiredOrders();
         // dd($order->subtotal);
         $this->terimakasih = 1;
         Cart::instance('cart')->destroy();
@@ -126,6 +161,7 @@ class CheckoutComponent extends Component
         // $order = new Order();
         // $order->subtotal = session()->get('checkout')['subtotal'];
         // dd($order->subtotal);
+        // dd(session()->get('checkout')['ongkir']);
         $this->verifyForCheckout();
         return view('livewire.checkout-component')->layout('layouts.main');
     }
