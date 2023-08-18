@@ -48,6 +48,7 @@ Clone the repo and install dependencies:
 ```bash
 git clone https://github.com/Apudms/sidoli-motor.git
 cd sidoli-motor
+composer update
 cp .env-example .env
 php artisan migrate --seed
 php artisan serve
