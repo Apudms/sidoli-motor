@@ -169,7 +169,7 @@
                                 <tr>
                                     <td>{{ $tran->transaksiId }}</td>
                                     <td>{{ $tran->nama_depan }} {{ $tran->nama_belakang }}</td>
-                                    <td>Rp{{ number_format($tran->total,
+                                    <td>Rp{{ number_format($tran->subtotal,
                                         0, ',','.') }}</td>
                                     <td class="text-center">
                                         @if ($tran->orderStatus === 'dibatalkan')

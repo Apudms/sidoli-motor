@@ -16,17 +16,19 @@ class AdminDashboardComponent extends Component
         // Mendapatkan tanggal hari ini
         $today = Carbon::now()->toDateString();
 
-        // dd($today);
         // Mendapatkan total pendapatan harian dari pesanan yang diterima
         $incomePerDay = Order::whereDate('created_at', $today)
-            ->where('status', 'dikirim')
+            ->where(function ($query) {
+                $query->where('status', 'dikirim')
+                    ->orWhere('status', 'dikemas');
+            })
+            ->where('status', '!=', 'dibatalkan')
             ->sum('subtotal');
 
-        // dd($incomePerDay);
         $orders = Order::orderBy('created_at', 'DESC')->where('status', '=', 'memesan')->get()->take(10);
         $totalIncome = Order::where('status', '=', 'diterima')->sum('subtotal');
         $totalPurchase = Order::where('status', '=', 'memesan')->count();
-        $totalDelivered = Order::where('status', '!=', 'delivered')->count();
+        $totalDelivered = Order::where('status', '=', 'dikirim')->count();
         $totalDibatalkan = Order::where('status', '=', 'dibatalkan')->count();
 
         $transaksi = DB::table('transaksis')
@@ -54,7 +56,6 @@ class AdminDashboardComponent extends Component
             ->selectRaw('orders.total')
             ->selectRaw('orders.bukti_transfer')
             ->where('transaksis.status', '=', 'menunggu')
-            ->whereDate('transaksis.created_at', $today)
             ->get();
 
         // dd($transaksi);
