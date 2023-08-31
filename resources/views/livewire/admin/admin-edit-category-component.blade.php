@@ -10,7 +10,7 @@
                             </div>
                             <div class="col-md-6">
                                 <a href="{{ route('admin.kategori') }}" class="btn btn-success pull-right">Semua
-                                    Kategory</a>
+                                    Kategori</a>
                             </div>
                         </div>
                     </div>

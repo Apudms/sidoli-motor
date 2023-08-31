@@ -4,8 +4,10 @@ use App\Http\Livewire\Admin\AdminAddCategoryComponent;
 use App\Http\Livewire\Admin\AdminAddHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminAddProductComponent;
 use App\Http\Livewire\Admin\AdminCategoryComponent;
+use App\Http\Livewire\Admin\AdminCustomerComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\AdminEditCategoryComponent;
+use App\Http\Livewire\Admin\AdminEditCustomerComponent;
 use App\Http\Livewire\Admin\AdminEditHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminEditProductComponent;
 use App\Http\Livewire\Admin\AdminHomeCategoryComponent;
@@ -84,6 +86,8 @@ Route::middleware(['auth:sanctum', 'verified', 'check.utype:ADM'])->group(functi
     Route::get('/admin/home-kategori', AdminHomeCategoryComponent::class)->name('admin.manajemenkategori');
     Route::get('/admin/transaksi', AdminTransactionComponent::class)->name('admin.manajemenTransaksi');
     Route::get('/admin/transaksi/id={order_id}', AdminTransactionDetailComponent::class)->name('admin.manajemenDetailTransaksi');
+    Route::get('/admin/customer', AdminCustomerComponent::class)->name('admin.customer');
+    Route::get('/admin/customer/ubah/id={id}', AdminEditCustomerComponent::class)->name('admin.ubahcustomer');
 });
 
 //For User or Customer

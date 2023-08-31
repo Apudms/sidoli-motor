@@ -86,8 +86,6 @@
                                             <input class="frm-input " name="remember" id="rememberme" value="forever"
                                                 type="checkbox"><span>Ingat saya</span>
                                         </label>
-                                        <a class="link-function left-position" href="{{ route('password.request') }}"
-                                            title="Forgotten password?">Lupa password?</a>
                                     </fieldset>
                                     <input type="submit" class="btn btn-submit" value="Masuk" name="submit">
                                 </form>

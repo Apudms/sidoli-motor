@@ -102,6 +102,10 @@
                                                 href="{{ route('admin.manajemenkategori') }}">Manajemen Kategori</a>
                                         </li>
                                         <li class="menu-item">
+                                            <a title="Data Customer" href="{{ route('admin.customer') }}">Data
+                                                Customer</a>
+                                        </li>
+                                        <li class="menu-item">
                                             <a title="Logout" href="{{ route('admin.dashboard') }}"
                                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Keluar</a>
                                         </li>
@@ -227,6 +231,11 @@
                                     style="background: #ff2832" @endif>
                                     <a href="{{ route('admin.manajemenTransaksi') }}"
                                         class="link-term mercado-item-title">Transaksi</a>
+                                </li>
+                                <li class="menu-item" @if(Request::RouteIs('admin.customer') ||
+                                    Request::RouteIs('admin.ubahcustomer')) style="background: #ff2832" @endif>
+                                    <a href="{{ route('admin.customer') }}"
+                                        class="link-term mercado-item-title">Customer</a>
                                 </li>
                                 @elseif (Auth::user()->utype === 'USR')
                                 <li class="menu-item home-icon" @if(Request::is('/')) style="background: #ff2832" @else
