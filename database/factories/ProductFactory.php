@@ -38,7 +38,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 40000,
                 'SKU' => 'ONDR0002',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'radiator1' . '.jpg',
             ],
             [
@@ -48,7 +48,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 30000,
                 'SKU' => 'ONDR0001',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'radiator2' . '.jpg',
             ],
             [
@@ -58,7 +58,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 35000,
                 'SKU' => 'ONDR0003',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 14,
+                'jumlah_stok' => 54,
                 'image' => 'radiator3' . '.jpg',
             ],
             [
@@ -68,7 +68,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 20000,
                 'SKU' => 'ONDR0004',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 10,
+                'jumlah_stok' => 50,
                 'image' => 'busi1' . '.jpg',
             ],
             [
@@ -78,7 +78,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 20000,
                 'SKU' => 'ONDR0005',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 15,
+                'jumlah_stok' => 55,
                 'image' => 'busi2' . '.jpg',
             ],
             [
@@ -88,7 +88,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 15000,
                 'SKU' => 'ONDR0006',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 12,
+                'jumlah_stok' => 52,
                 'image' => 'busi3' . '.jpg',
             ],
             [
@@ -98,7 +98,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 18000,
                 'SKU' => 'ONDR0007',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 16,
+                'jumlah_stok' => 56,
                 'image' => 'busi4' . '.jpg',
             ],
             [
@@ -108,7 +108,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 20000,
                 'SKU' => 'ONDR0008',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 14,
+                'jumlah_stok' => 54,
                 'image' => 'busi5' . '.jpg',
             ],
             [
@@ -118,7 +118,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 25000,
                 'SKU' => 'ONDR0009',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 18,
+                'jumlah_stok' => 58,
                 'image' => 'busi6' . '.jpg',
             ],
             [
@@ -128,7 +128,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 25000,
                 'SKU' => 'ONDR0010',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 16,
+                'jumlah_stok' => 56,
                 'image' => 'busi7' . '.jpg',
             ],
             [
@@ -138,7 +138,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 65000,
                 'SKU' => 'ONDR0011',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 15,
+                'jumlah_stok' => 55,
                 'image' => 'kampas1' . '.jpg',
             ],
             [
@@ -148,7 +148,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 65000,
                 'SKU' => 'ONDR0012',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 12,
+                'jumlah_stok' => 52,
                 'image' => 'kampas2' . '.jpg',
             ],
             [
@@ -158,7 +158,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 60000,
                 'SKU' => 'ONDR0013',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 16,
+                'jumlah_stok' => 56,
                 'image' => 'kampas3' . '.jpg',
             ],
             [
@@ -168,7 +168,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 60000,
                 'SKU' => 'ONDR0014',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'kampas4' . '.jpg',
             ],
             [
@@ -178,7 +178,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 55000,
                 'SKU' => 'ONDR0015',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'kampas5' . '.jpg',
             ],
             [
@@ -188,7 +188,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 55000,
                 'SKU' => 'ONDR0016',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 14,
+                'jumlah_stok' => 54,
                 'image' => 'kampas6' . '.jpg',
             ],
             [
@@ -198,7 +198,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 45000,
                 'SKU' => 'ONDR0017',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'kampas7' . '.jpg',
             ],
             [
@@ -208,7 +208,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 40000,
                 'SKU' => 'ONDR0018',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 12,
+                'jumlah_stok' => 52,
                 'image' => 'kampas8' . '.jpg',
             ],
             [
@@ -218,7 +218,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 45000,
                 'SKU' => 'ONDR0019',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 14,
+                'jumlah_stok' => 54,
                 'image' => 'kampas9' . '.jpg',
             ],
             [
@@ -228,7 +228,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 65000,
                 'SKU' => 'ONDR0020',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 15,
+                'jumlah_stok' => 55,
                 'image' => 'kampas10' . '.jpg',
             ],
             [
@@ -238,7 +238,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 65000,
                 'SKU' => 'ONDR0021',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'kampas11' . '.jpg',
             ],
             [
@@ -248,7 +248,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 75000,
                 'SKU' => 'ONDR0022',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'spion' . '.jpg',
             ],
             [
@@ -258,7 +258,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 45000,
                 'SKU' => 'ONDR0023',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 14,
+                'jumlah_stok' => 54,
                 'image' => 'kampas13' . '.jpg',
             ],
             [
@@ -268,7 +268,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 45000,
                 'SKU' => 'ONDR0024',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'kampas14' . '.jpg',
             ],
             [
@@ -278,7 +278,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 45000,
                 'SKU' => 'ONDR0025',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'kampas15' . '.jpg',
             ],
             [
@@ -288,7 +288,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 40000,
                 'SKU' => 'ONDR0026',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 12,
+                'jumlah_stok' => 52,
                 'image' => 'kampas16' . '.jpg',
             ],
             [
@@ -298,7 +298,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 40000,
                 'SKU' => 'ONDR0027',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 12,
+                'jumlah_stok' => 52,
                 'image' => 'kampas17' . '.jpg',
             ],
             [
@@ -308,7 +308,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 50000,
                 'SKU' => 'ONDR0028',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'kampas18' . '.jpg',
             ],
             [
@@ -318,7 +318,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 20000,
                 'SKU' => 'ONDR0029',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 20,
+                'jumlah_stok' => 50,
                 'image' => 'klahar1' . '.jpg',
             ],
             [
@@ -328,7 +328,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 20000,
                 'SKU' => 'ONDR0030',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 18,
+                'jumlah_stok' => 58,
                 'image' => 'klahar2' . '.jpg',
             ],
             [
@@ -338,7 +338,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 20000,
                 'SKU' => 'ONDR0031',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 22,
+                'jumlah_stok' => 52,
                 'image' => 'klahar3' . '.jpg',
             ],
             [
@@ -348,7 +348,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 150000,
                 'SKU' => 'ONDR0032',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'lampu1' . '.jpg',
             ],
             [
@@ -358,7 +358,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 12000,
                 'SKU' => 'ONDR0033',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 20,
+                'jumlah_stok' => 50,
                 'image' => 'lampu2' . '.jpg',
             ],
             [
@@ -368,7 +368,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 10000,
                 'SKU' => 'ONDR0034',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 20,
+                'jumlah_stok' => 50,
                 'image' => 'lampu3' . '.jpg',
             ],
             [
@@ -378,7 +378,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 40000,
                 'SKU' => 'ONDR0035',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'lampu4' . '.jpg',
             ],
             [
@@ -388,7 +388,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 20000,
                 'SKU' => 'ONDR0036',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 25,
+                'jumlah_stok' => 55,
                 'image' => 'lampu5' . '.jpg',
             ],
             [
@@ -398,7 +398,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 32000,
                 'SKU' => 'ONDR0037',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'lampu6' . '.jpg',
             ],
             [
@@ -408,7 +408,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 18000,
                 'SKU' => 'ONDR0038',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 20,
+                'jumlah_stok' => 50,
                 'image' => 'lampu7' . '.jpg',
             ],
             [
@@ -418,7 +418,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 35000,
                 'SKU' => 'ONDR0039',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 12,
+                'jumlah_stok' => 52,
                 'image' => 'sein1' . '.jpg',
             ],
             [
@@ -428,7 +428,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 25000,
                 'SKU' => 'ONDR0040',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'sein2' . '.jpg',
             ],
             [
@@ -438,7 +438,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 22000,
                 'SKU' => 'ONDR0041',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 12,
+                'jumlah_stok' => 52,
                 'image' => 'sein3' . '.jpg',
             ],
             [
@@ -448,7 +448,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 25000,
                 'SKU' => 'ONDR0042',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'sein4' . '.jpg',
             ],
             [
@@ -458,7 +458,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 23000,
                 'SKU' => 'ONDR0043',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'sein5' . '.jpg',
             ],
             [
@@ -468,7 +468,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 15000,
                 'SKU' => 'ONDR0044',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'sein6' . '.jpg',
             ],
             [
@@ -478,7 +478,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 15000,
                 'SKU' => 'ONDR0045',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 12,
+                'jumlah_stok' => 52,
                 'image' => 'sein7' . '.jpg',
             ],
             [
@@ -488,7 +488,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 15000,
                 'SKU' => 'ONDR0046',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'sein8' . '.jpg',
             ],
             [
@@ -498,7 +498,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 15000,
                 'SKU' => 'ONDR0047',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'sein9' . '.jpg',
             ],
             [
@@ -508,7 +508,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 12000,
                 'SKU' => 'ONDR0048',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'sein10' . '.jpg',
             ],
             [
@@ -518,7 +518,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 12000,
                 'SKU' => 'ONDR0049',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'sein11' . '.jpg',
             ],
             [
@@ -528,7 +528,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 15000,
                 'SKU' => 'ONDR0050',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'sein12' . '.jpg',
             ],
             [
@@ -538,7 +538,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 12000,
                 'SKU' => 'ONDR0051',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'sein13' . '.jpg',
             ],
             [
@@ -548,7 +548,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 12000,
                 'SKU' => 'ONDR0052',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'sein14' . '.jpg',
             ],
             [
@@ -558,7 +558,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 15000,
                 'SKU' => 'ONDR0053',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'sein15' . '.jpg',
             ],
             [
@@ -568,7 +568,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 12000,
                 'SKU' => 'ONDR0054',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'sein16' . '.jpg',
             ],
             [
@@ -578,7 +578,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 20000,
                 'SKU' => 'ONDR0055',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 15,
+                'jumlah_stok' => 55,
                 'image' => 'gardan1' . '.jpg',
             ],
             [
@@ -588,7 +588,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 20000,
                 'SKU' => 'ONDR0056',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 15,
+                'jumlah_stok' => 55,
                 'image' => 'gardan2' . '.jpg',
             ],
             [
@@ -598,7 +598,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 15000,
                 'SKU' => 'ONDR0057',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 15,
+                'jumlah_stok' => 55,
                 'image' => 'gardan3' . '.jpg',
             ],
             [
@@ -608,7 +608,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 50000,
                 'SKU' => 'ONDR0058',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'panbel1' . '.jpg',
             ],
             [
@@ -618,7 +618,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 75000,
                 'SKU' => 'ONDR0059',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'panbel2' . '.jpg',
             ],
             [
@@ -628,7 +628,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 100000,
                 'SKU' => 'ONDR0060',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'panbel3' . '.jpg',
             ],
             [
@@ -638,7 +638,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 40000,
                 'SKU' => 'ONDR0061',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'panbel4' . '.jpg',
             ],
             [
@@ -648,7 +648,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 25000,
                 'SKU' => 'ONDR0062',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 12,
+                'jumlah_stok' => 52,
                 'image' => 'semir1' . '.jpg',
             ],
             [
@@ -658,7 +658,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 30000,
                 'SKU' => 'ONDR0063',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 12,
+                'jumlah_stok' => 52,
                 'image' => 'semir2' . '.jpg',
             ],
             [
@@ -668,7 +668,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 30000,
                 'SKU' => 'ONDR0064',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 12,
+                'jumlah_stok' => 52,
                 'image' => 'jalu2' . '.jpg',
             ],
             [
@@ -678,7 +678,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 30000,
                 'SKU' => 'ONDR0065',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 12,
+                'jumlah_stok' => 52,
                 'image' => 'jalu' . '.jpg',
             ],
             [
@@ -688,7 +688,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 3000,
                 'SKU' => 'ONDR0066',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 40,
+                'jumlah_stok' => 50,
                 'image' => 'baut' . '.jpg',
             ],
             [
@@ -698,7 +698,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 40000,
                 'SKU' => 'ONDR0067',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'carbucleaner' . '.jpg',
             ],
             [
@@ -708,7 +708,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 15000,
                 'SKU' => 'ONDR0068',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 24,
+                'jumlah_stok' => 54,
                 'image' => 'karetseal' . '.jpg',
             ],
             [
@@ -718,7 +718,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 5000,
                 'SKU' => 'ONDR0069',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 20,
+                'jumlah_stok' => 50,
                 'image' => 'perpak' . '.jpg',
             ],
             [
@@ -728,7 +728,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 20000,
                 'SKU' => 'ONDR0070',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'lemgasket' . '.jpg',
             ],
             [
@@ -738,7 +738,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 25000,
                 'SKU' => 'ONDR0071',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'lemsealer' . '.jpg',
             ],
             [
@@ -748,7 +748,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 30000,
                 'SKU' => 'ONDR0072',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 15,
+                'jumlah_stok' => 55,
                 'image' => 'dalam1' . '.jpg',
             ],
             [
@@ -758,7 +758,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 30000,
                 'SKU' => 'ONDR0073',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 15,
+                'jumlah_stok' => 55,
                 'image' => 'dalam2' . '.jpg',
             ],
             [
@@ -768,7 +768,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 35000,
                 'SKU' => 'ONDR0074',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 14,
+                'jumlah_stok' => 54,
                 'image' => 'dalam4' . '.jpg',
             ],
             [
@@ -778,7 +778,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 35000,
                 'SKU' => 'ONDR0075',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'dalam3' . '.jpg',
             ],
             [
@@ -788,7 +788,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 35000,
                 'SKU' => 'ONDR0076',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 12,
+                'jumlah_stok' => 52,
                 'image' => 'dalam5' . '.jpg',
             ],
             [
@@ -798,7 +798,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 35000,
                 'SKU' => 'ONDR0077',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 14,
+                'jumlah_stok' => 54,
                 'image' => 'dalam6' . '.jpg',
             ],
             [
@@ -808,7 +808,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 35000,
                 'SKU' => 'ONDR0078',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 12,
+                'jumlah_stok' => 52,
                 'image' => 'dalam7' . '.jpg',
             ],
             [
@@ -818,7 +818,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 35000,
                 'SKU' => 'ONDR0079',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 12,
+                'jumlah_stok' => 52,
                 'image' => 'dalam8' . '.jpg',
             ],
             [
@@ -828,7 +828,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 35000,
                 'SKU' => 'ONDR0080',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'dalam9' . '.jpg',
             ],
             [
@@ -838,7 +838,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 35000,
                 'SKU' => 'ONDR0081',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'dalam10' . '.jpg',
             ],
             [
@@ -848,7 +848,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 30000,
                 'SKU' => 'ONDR0082',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 14,
+                'jumlah_stok' => 54,
                 'image' => 'dalam11' . '.jpg',
             ],
             [
@@ -858,7 +858,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 40000,
                 'SKU' => 'ONDR0083',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'dalam12' . '.jpg',
             ],
             [
@@ -868,7 +868,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 40000,
                 'SKU' => 'ONDR0084',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'dalam13' . '.jpg',
             ],
             [
@@ -878,7 +878,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 35000,
                 'SKU' => 'ONDR0085',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'dalam14' . '.jpg',
             ],
             [
@@ -888,7 +888,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 270000,
                 'SKU' => 'ONDR0086',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'luar1' . '.jpg',
             ],
             [
@@ -898,7 +898,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 225000,
                 'SKU' => 'ONDR0087',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'luar2' . '.jpg',
             ],
             [
@@ -908,7 +908,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 240000,
                 'SKU' => 'ONDR0088',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'luar3' . '.jpg',
             ],
             [
@@ -918,7 +918,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 255000,
                 'SKU' => 'ONDR0089',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'luar4' . '.jpg',
             ],
             [
@@ -928,7 +928,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 195000,
                 'SKU' => 'ONDR0090',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'luar5' . '.jpg',
             ],
             [
@@ -938,7 +938,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 220000,
                 'SKU' => 'ONDR0091',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'luar6' . '.jpg',
             ],
             [
@@ -948,7 +948,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 235000,
                 'SKU' => 'ONDR0092',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'luar7' . '.jpg',
             ],
             [
@@ -958,7 +958,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 215000,
                 'SKU' => 'ONDR0093',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'luar8' . '.jpg',
             ],
             [
@@ -968,7 +968,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 255000,
                 'SKU' => 'ONDR0094',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'luar9' . '.jpg',
             ],
             [
@@ -978,7 +978,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 25000,
                 'SKU' => 'ONDR0095',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'breket1' . '.jpg',
             ],
             [
@@ -988,7 +988,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 20000,
                 'SKU' => 'ONDR0096',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'breket2' . '.jpg',
             ],
             [
@@ -998,7 +998,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 35000,
                 'SKU' => 'ONDR0097',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'gantungan1' . '.jpg',
             ],
             [
@@ -1008,7 +1008,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 35000,
                 'SKU' => 'ONDR0098',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'gantungan2' . '.jpg',
             ],
             [
@@ -1018,7 +1018,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 40000,
                 'SKU' => 'ONDR0099',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 10,
+                'jumlah_stok' => 50,
                 'image' => 'grip1' . '.jpg',
             ],
             [
@@ -1028,7 +1028,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 40000,
                 'SKU' => 'ONDR0101',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 10,
+                'jumlah_stok' => 50,
                 'image' => 'grip2' . '.jpg',
             ],
             [
@@ -1038,7 +1038,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 50000,
                 'SKU' => 'ONDR0102',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 12,
+                'jumlah_stok' => 52,
                 'image' => 'handle1' . '.jpg',
             ],
             [
@@ -1048,7 +1048,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 25000,
                 'SKU' => 'ONDR0103',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'handle2' . '.jpg',
             ],
             [
@@ -1058,7 +1058,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 80000,
                 'SKU' => 'ONDR0104',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'kom1' . '.jpg',
             ],
             [
@@ -1068,7 +1068,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 80000,
                 'SKU' => 'ONDR0105',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'kom2' . '.jpg',
             ],
             [
@@ -1078,7 +1078,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 65000,
                 'SKU' => 'ONDR0106',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 10,
+                'jumlah_stok' => 50,
                 'image' => 'lampu1' . '.jpg',
             ],
             [
@@ -1088,7 +1088,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 70000,
                 'SKU' => 'ONDR0107',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 10,
+                'jumlah_stok' => 50,
                 'image' => 'lampu2' . '.jpg',
             ],
             [
@@ -1098,7 +1098,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 60000,
                 'SKU' => 'ONDR0108',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'master1' . '.jpg',
             ],
             [
@@ -1108,7 +1108,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 50000,
                 'SKU' => 'ONDR0109',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 12,
+                'jumlah_stok' => 52,
                 'image' => 'master2' . '.jpg',
             ],
             [
@@ -1118,7 +1118,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 50000,
                 'SKU' => 'ONDR0110',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 12,
+                'jumlah_stok' => 52,
                 'image' => 'master3' . '.jpg',
             ],
             [
@@ -1128,7 +1128,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 55000,
                 'SKU' => 'ONDR0111',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'oli1' . '.jpg',
             ],
             [
@@ -1138,7 +1138,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 50000,
                 'SKU' => 'ONDR0112',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'oli2' . '.jpg',
             ],
             [
@@ -1148,7 +1148,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 52000,
                 'SKU' => 'ONDR0113',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'oli3' . '.jpg',
             ],
             [
@@ -1158,7 +1158,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 54000,
                 'SKU' => 'ONDR0114',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'oli4' . '.jpg',
             ],
             [
@@ -1168,7 +1168,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 47000,
                 'SKU' => 'ONDR0115',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'oli5' . '.jpg',
             ],
             [
@@ -1178,7 +1178,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 48000,
                 'SKU' => 'ONDR0116',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'oli6' . '.jpg',
             ],
             [
@@ -1188,7 +1188,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 45000,
                 'SKU' => 'ONDR0117',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'oli7' . '.jpg',
             ],
             [
@@ -1198,7 +1198,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 52000,
                 'SKU' => 'ONDR0118',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'oli8' . '.jpg',
             ],
             [
@@ -1208,7 +1208,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 74000,
                 'SKU' => 'ONDR0119',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'oli9' . '.jpg',
             ],
             [
@@ -1218,7 +1218,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 45000,
                 'SKU' => 'ONDR0120',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'oli10' . '.jpg',
             ],
             [
@@ -1228,7 +1228,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 38000,
                 'SKU' => 'ONDR0121',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'oli11' . '.jpg',
             ],
             [
@@ -1238,7 +1238,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 31000,
                 'SKU' => 'ONDR0122',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'oli12' . '.jpg',
             ],
             [
@@ -1248,7 +1248,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 57000,
                 'SKU' => 'ONDR0123',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'oli13' . '.jpg',
             ],
             [
@@ -1258,7 +1258,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 40000,
                 'SKU' => 'ONDR0124',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'oli14' . '.jpg',
             ],
             [
@@ -1268,7 +1268,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 53000,
                 'SKU' => 'ONDR0125',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'oli15' . '.jpg',
             ],
             [
@@ -1278,7 +1278,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 50000,
                 'SKU' => 'ONDR0126',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'oli16' . '.jpg',
             ],
             [
@@ -1288,7 +1288,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 37000,
                 'SKU' => 'ONDR0127',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'oli17' . '.jpg',
             ],
             [
@@ -1298,7 +1298,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 33000,
                 'SKU' => 'ONDR0128',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'oli18' . '.jpg',
             ],
             [
@@ -1308,7 +1308,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 38000,
                 'SKU' => 'ONDR0129',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'oli19' . '.jpg',
             ],
             [
@@ -1318,7 +1318,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 47000,
                 'SKU' => 'ONDR0130',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'oli20' . '.jpg',
             ],
             [
@@ -1328,7 +1328,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 48000,
                 'SKU' => 'ONDR0131',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'oli21' . '.jpg',
             ],
             [
@@ -1338,7 +1338,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 36000,
                 'SKU' => 'ONDR0132',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'oli22' . '.jpg',
             ],
             [
@@ -1348,7 +1348,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 57000,
                 'SKU' => 'ONDR0133',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'oli23' . '.jpg',
             ],
             [
@@ -1358,7 +1358,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 35000,
                 'SKU' => 'ONDR0134',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 15,
+                'jumlah_stok' => 55,
                 'image' => 'guard1' . '.jpg',
             ],
             [
@@ -1368,7 +1368,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 50000,
                 'SKU' => 'ONDR0135',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 15,
+                'jumlah_stok' => 55,
                 'image' => 'guard2' . '.jpg',
             ],
             [
@@ -1378,7 +1378,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 45000,
                 'SKU' => 'ONDR0136',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'peninggi1' . '.jpg',
             ],
             [
@@ -1388,7 +1388,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 55000,
                 'SKU' => 'ONDR0137',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'peninggi2' . '.jpg',
             ],
             [
@@ -1398,7 +1398,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 60000,
                 'SKU' => 'ONDR0138',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'roller1' . '.jpg',
             ],
             [
@@ -1408,7 +1408,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 35000,
                 'SKU' => 'ONDR0139',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'roller2' . '.jpg',
             ],
             [
@@ -1418,7 +1418,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 60000,
                 'SKU' => 'ONDR0140',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'roller3' . '.jpg',
             ],
             [
@@ -1428,7 +1428,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 50000,
                 'SKU' => 'ONDR0141',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'roller4' . '.jpg',
             ],
             [
@@ -1438,7 +1438,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 60000,
                 'SKU' => 'ONDR0142',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'roller5' . '.jpg',
             ],
             [
@@ -1448,7 +1448,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 65000,
                 'SKU' => 'ONDR0143',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 12,
+                'jumlah_stok' => 52,
                 'image' => 'sen1' . '.jpg',
             ],
             [
@@ -1458,7 +1458,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 75000,
                 'SKU' => 'ONDR0144',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 12,
+                'jumlah_stok' => 52,
                 'image' => 'sen2' . '.jpg',
             ],
             [
@@ -1468,7 +1468,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 45000,
                 'SKU' => 'ONDR0145',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'step1' . '.jpg',
             ],
             [
@@ -1478,7 +1478,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 30000,
                 'SKU' => 'ONDR0146',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 13,
+                'jumlah_stok' => 53,
                 'image' => 'step2' . '.jpg',
             ],
             [
@@ -1488,7 +1488,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 40000,
                 'SKU' => 'ONDR0147',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 12,
+                'jumlah_stok' => 52,
                 'image' => 'step3' . '.jpg',
             ],
             [
@@ -1498,7 +1498,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 30000,
                 'SKU' => 'ONDR0148',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'step4' . '.jpg',
             ],
             [
@@ -1508,7 +1508,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 70000,
                 'SKU' => 'ONDR0149',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'saklar1' . '.jpg',
             ],
             [
@@ -1518,7 +1518,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 160000,
                 'SKU' => 'ONDR0150',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'kontak1' . '.jpg',
             ],
             [
@@ -1528,7 +1528,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 85000,
                 'SKU' => 'ONDR0151',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'saklar2' . '.jpg',
             ],
             [
@@ -1538,7 +1538,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 185000,
                 'SKU' => 'ONDR0152',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'kontak2' . '.jpg',
             ],
             [
@@ -1548,7 +1548,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 25000,
                 'SKU' => 'ONDR0153',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'saklar3' . '.jpg',
             ],
             [
@@ -1558,7 +1558,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 60000,
                 'SKU' => 'ONDR0154',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 12,
+                'jumlah_stok' => 52,
                 'image' => 'tabung1' . '.jpg',
             ],
             [
@@ -1568,7 +1568,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 70000,
                 'SKU' => 'ONDR0155',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 12,
+                'jumlah_stok' => 52,
                 'image' => 'tabung2' . '.jpg',
             ],
             [
@@ -1578,7 +1578,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 75000,
                 'SKU' => 'ONDR0156',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 12,
+                'jumlah_stok' => 52,
                 'image' => 'tabung3' . '.jpg',
             ],
             [
@@ -1588,7 +1588,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 90000,
                 'SKU' => 'ONDR0157',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'selang1' . '.jpg',
             ],
             [
@@ -1598,7 +1598,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 75000,
                 'SKU' => 'ONDR0158',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'selang2' . '.jpg',
             ],
             [
@@ -1608,7 +1608,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 80000,
                 'SKU' => 'ONDR0159',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'selang3' . '.jpg',
             ],
             [
@@ -1618,7 +1618,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 20000,
                 'SKU' => 'ONDR0160',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 14,
+                'jumlah_stok' => 54,
                 'image' => 'breketminum' . '.jpg',
             ],
             [
@@ -1628,7 +1628,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 15000,
                 'SKU' => 'ONDR0161',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 12,
+                'jumlah_stok' => 52,
                 'image' => 'pitinglampu' . '.jpg',
             ],
             [
@@ -1638,7 +1638,7 @@ class ProductFactory extends Factory
                 'harga_normal' => 20000,
                 'SKU' => 'ONDR0162',
                 'status_stok' => 'Tersedia',
-                'jumlah_stok' => 11,
+                'jumlah_stok' => 51,
                 'image' => 'sarunghandle' . '.jpg',
             ],
         ];

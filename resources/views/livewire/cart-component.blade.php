@@ -38,10 +38,10 @@
                         </div>
                         <div class="quantity">
                             <div class="quantity-input">
-                                <input type="text" name="product-quantity" value="{{ $item->qty }}" data-max="120"
+                                <input type="number" name="product-quantity" value="{{ $item->qty }}" data-max="120"
                                     pattern="[0-9]*">
-                                <a class="btn btn-increase{{ $item->qty >= $item->model->jumlah_stok ? ' disabled' : '' }}"
-                                    href="#" wire:click.prevent="increaseQuantity('{{ $item->rowId }}')"
+                                <a class=" btn btn-increase{{ $item->qty >= $item->model->jumlah_stok ? ' disabled' :
+                                '' }}" href="#" wire:click.prevent="increaseQuantity('{{ $item->rowId }}')"
                                     wire:loading.attr="disabled"></a>
                                 <a class="btn btn-reduce{{ $item->qty <= 1 ? ' disabled' : '' }}" href="#"
                                     wire:click.prevent="decreaseQuantity('{{ $item->rowId }}')"
@@ -71,56 +71,64 @@
             <div class="summary">
                 <div class="order-summary">
                     <h4 class="title-box">Ringkasan Pesanan</h4>
-                    <p class="summary-info"><span class="title">Subtotal</span><b class="index">Rp{{
-                            number_format($subtotal,
-                            0, ',','.')
-                            }}</b></p>
+                    @if (Cart::instance('cart')->subtotal() <= number_format(500000, 0, ',' ,'.')) <div
+                        class="alert alert-info">
+                        <p class="summary-info"><i class="fa fa-info-circle" aria-hidden="true"></i><b
+                                class="index">Gratis Ongkir Min. Belanja
+                                Mulai
+                                500RB</b></p>
+                </div>
+
+                @endif <p class="summary-info"><span class="title">Subtotal</span><b class="index">Rp{{
+                        number_format($subtotal,
+                        0, ',','.')
+                        }}</b></p>
+                @if (Cart::instance('cart')->subtotal() >= number_format(500000,
+                0, ',','.'))
+                <p class="summary-info"><span class="title">Ongkir</span><b class="index">Gratis Ongkir</b></p>
+                @else
+                <p class="summary-info"><span class="title">Ongkir</span><b class="index">Rp{{ number_format(10000,
+                        0, ',','.') }}</b></p>
+                @endif
+                <p class="summary-info total-info "><span class="title">Total</span>
                     @if (Cart::instance('cart')->subtotal() >= number_format(500000,
                     0, ',','.'))
-                    <p class="summary-info"><span class="title">Ongkir</span><b class="index">Gratis Ongkir</b></p>
+                    <b class="index">
+                        Rp{{
+                        Cart::instance('cart')->total()
+                        }}
+                    </b>
                     @else
-                    <p class="summary-info"><span class="title">Ongkir</span><b class="index">Rp{{ number_format(10000,
-                            0, ',','.') }}</b></p>
+                    <b class="index">
+                        Rp{{
+                        number_format($total,
+                        0, ',','.')
+                        }}
+                    </b>
                     @endif
-                    <p class="summary-info total-info "><span class="title">Total</span>
-                        @if (Cart::instance('cart')->subtotal() >= number_format(500000,
-                        0, ',','.'))
-                        <b class="index">
-                            Rp{{
-                            Cart::instance('cart')->total()
-                            }}
-                        </b>
-                        @else
-                        <b class="index">
-                            Rp{{
-                            number_format($total,
-                            0, ',','.')
-                            }}
-                        </b>
-                        @endif
-                    </p>
-                </div>
-                <div class="checkout-info">
-                    <a class="btn btn-checkout title-box" href="#" wire:click.prevent="checkout">
-                        Checkout
-                    </a>
-                    <a class="link-to-shop" href="/toko">Lanjutkan berbelanja<i class="fa fa-arrow-circle-right"
-                            aria-hidden="true"></i></a>
-                </div>
-                <div class="update-clear">
-                    <a class="btn btn-clear" href="#" wire:click.prevent="destroyAll()">Hapus Keranjang Belanja</a>
-                    {{-- <a class="btn btn-update" href="#">Perbarui Keranjang Belanja</a> --}}
-                </div>
+                </p>
             </div>
-            @else
-            <div class="text-center" style="padding: 30px 0;">
-                <h3>Belum ada produk yang ditambahkan ke keranjangmu!</h3>
-                <p class="fw-normal mb-0 text-secondary text-center">Tambahkan produk sekarang</p>
-                <a href="/toko" class="btn btn-success">Belanja Sekarang</a>
+            <div class="checkout-info">
+                <a class="btn btn-checkout title-box" href="#" wire:click.prevent="checkout">
+                    Checkout
+                </a>
+                <a class="link-to-shop" href="/toko">Lanjutkan berbelanja<i class="fa fa-arrow-circle-right"
+                        aria-hidden="true"></i></a>
             </div>
-            @endif
+            <div class="update-clear">
+                <a class="btn btn-clear" href="#" wire:click.prevent="destroyAll()">Hapus Keranjang Belanja</a>
+                {{-- <a class="btn btn-update" href="#">Perbarui Keranjang Belanja</a> --}}
+            </div>
         </div>
-        <!--end main content area-->
+        @else
+        <div class="text-center" style="padding: 30px 0;">
+            <h3>Belum ada produk yang ditambahkan ke keranjangmu!</h3>
+            <p class="fw-normal mb-0 text-secondary text-center">Tambahkan produk sekarang</p>
+            <a href="/toko" class="btn btn-success">Belanja Sekarang</a>
+        </div>
+        @endif
+    </div>
+    <!--end main content area-->
     </div>
     <!--end container-->
 

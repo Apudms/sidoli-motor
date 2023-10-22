@@ -29,10 +29,16 @@ class CategoryComponent extends Component
 
     public function store($product_id, $product_name, $product_price)
     {
-        Cart::add($product_id, $product_name, 1, $product_price)->associate('App\Models\Product');
-        session()->flash('success_message', 'Produk berhasil ditambahkan ke keranjang');
+        $product = Product::find($product_id);
 
-        return redirect()->route('produk.keranjang');
+        if ($product && $product->jumlah_stok > 10) {
+            Cart::instance('cart')->add($product_id, $product_name, 1, $product_price)->associate('App\Models\Product');
+            session()->flash('success_message', 'Produk berhasil ditambahkan ke keranjang!');
+            return redirect()->route('produk.keranjang');
+        } else {
+            session()->flash('error_message', 'Produk tidak tersedia atau stok habis.');
+            return redirect()->back();
+        }
     }
 
     use withPagination;

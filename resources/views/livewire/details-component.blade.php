@@ -30,7 +30,12 @@
                         <div class="wrap-price"><span class="product-price">Rp{{ $product->harga_normal }}</span></div>
                         <div class="stock-info in-stock">
                             <br>
-                            <p class="availability">Stok: <b>{{ $product->jumlah_stok }}</b></p>
+                            <p class="availability">Stok:
+                                @if ($product->jumlah_stok <= 10) <b>Habis</b>
+                                    @else
+                                    <b>{{ $product->jumlah_stok }}</b>
+                                    @endif
+                            </p>
                         </div>
                         <div class="quantity">
                             <span>Jumlah:</span>

@@ -51,17 +51,13 @@
                                             width="60" alt="{{ $product->nama_produk }}">
                                     </td>
                                     <td>{{ $product->nama_produk }}</td>
-                                    @if ($product->status_stok === "Kosong") <td
-                                        style="padding: 2px 4pt 0;color: #ff0000;">
-                                        {{ $product->status_stok }}</td>
-                                    @else
-                                    <td>{{ $product->status_stok }}</td>
-                                    @endif
-                                    @if ($product->jumlah_stok < 1) <td style="padding: 2px 4pt 0;color: #ff0000;">
-                                        {{ $product->jumlah_stok }}</td>
-                                        @elseif ($product->jumlah_stok < 3) <td
-                                            style="padding: 2px 4pt 0;color: #ff0000;">
-                                            {{ $product->jumlah_stok }}</td>
+                                    @if ($product->jumlah_stok <= 10) <td style="padding: 2px 4pt 0;color: #ff0000;">
+                                        Segera Restock</td>
+                                        @else
+                                        <td>{{ $product->status_stok }}</td>
+                                        @endif
+                                        @if ($product->jumlah_stok <= 10) <td
+                                            style="padding: 2px 4pt 0;color: #ff0000;">10</td>
                                             @else
                                             <td>{{ $product->jumlah_stok }}</td>
                                             @endif
@@ -69,8 +65,8 @@
                                             <td>{{ $product->category->nama_kategori }}</td>
                                             <td>{{ $product->created_at }}</td>
                                             <td>
-                                                <a href="{{ route('admin.ubahproduk', ['id' => $product->id]) }}"><i
-                                                        class="fa fa-edit fa-2x"></i>
+                                                <a href="{{ route('admin.ubahproduk', ['id' => $product->id]) }}">
+                                                    <i class="fa fa-edit fa-2x"></i>
                                                 </a>
                                                 <a href="#" style="margin-left:10px; "
                                                     onclick="confirm('Yakin ingin menghapus {{ $product->nama_produk }}?') || event.stopImmediatePropragation()"

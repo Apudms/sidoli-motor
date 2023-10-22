@@ -66,10 +66,19 @@
                                     <a href="{{ route('produk.detail',['slug'=>$product->slug]) }}"
                                         class="product-name"><span>{{ $product->nama_produk
                                             }}</span></a>
+                                    <div class="stock-info">
+                                        <br>
+                                        <p class="availability">Stok:
+                                            @if ($product->jumlah_stok <= 10) <b class="text-danger">Habis</b>
+                                                @else
+                                                <b>{{ $product->jumlah_stok }}</b>
+                                                @endif
+                                        </p>
+                                    </div>
                                     <div class="wrap-price"><span class="product-price">Rp{{ $product->harga_normal
                                             }}</span></div>
                                     <a href="#" class="btn add-to-cart"
-                                        wire:click.prevent="store({{ $product->id }}, '{{ $product->nama_produk }}', {{ $product->harga_normal }})">Masukkan
+                                        wire:click.prevent="store('{{ $product->id }}', '{{ $product->nama_produk }}', {{ $product->harga_normal }})">Masukkan
                                         Keranjang</a>
                                 </div>
                             </div>

@@ -22,7 +22,7 @@ class ShopComponent extends Component
         $this->pageSize = 12;
 
         $this->min_price = 100;
-        $this->max_price = 10000000;
+        $this->max_price = 1000000;
     }
 
     public function store($product_id, $product_name, $product_price)
@@ -33,7 +33,7 @@ class ShopComponent extends Component
         // return redirect()->route('produk.keranjang');
         $product = Product::find($product_id);
 
-        if ($product && $product->jumlah_stok > 0) {
+        if ($product && $product->jumlah_stok > 10) {
             Cart::instance('cart')->add($product_id, $product_name, 1, $product_price)->associate('App\Models\Product');
             session()->flash('success_message', 'Produk berhasil ditambahkan ke keranjang!');
             return redirect()->route('produk.keranjang');
@@ -46,6 +46,9 @@ class ShopComponent extends Component
     use withPagination;
     public function render()
     {
+        $min_price_formatted = 'Rp' . number_format($this->min_price, 0, ',', '.');
+        $max_price_formatted = 'Rp' . number_format($this->max_price, 0, ',', '.');
+
         if ($this->sorting == 'date') {
             $products = Product::whereBetween('harga_normal', [$this->min_price, $this->max_price])->orderBy('created_at', 'DESC')->paginate($this->pageSize);
         } elseif ($this->sorting == 'price') {
@@ -58,6 +61,11 @@ class ShopComponent extends Component
 
         $categories = Category::all();
 
-        return view('livewire.shop-component', ['products' => $products, 'categories' => $categories])->layout('layouts.main');
+        return view('livewire.shop-component', [
+            'products' => $products,
+            'categories' => $categories,
+            'min_price' => $min_price_formatted,
+            'max_price' => $max_price_formatted,
+        ])->layout('layouts.main');
     }
 }

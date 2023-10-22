@@ -67,7 +67,7 @@
                                     <div class="stock-info">
                                         <br>
                                         <p class="availability">Stok:
-                                            @if ($product->jumlah_stok < 1) <b class="text-danger">Habis</b>
+                                            @if ($product->jumlah_stok <= 10) <b class="text-danger">Habis</b>
                                                 @else
                                                 <b>{{ $product->jumlah_stok }}</b>
                                                 @endif
@@ -90,13 +90,6 @@
 
                 <div class="wrap-pagination-info">
                     {{ $products->links() }}
-                    {{-- <ul class="page-numbers">
-                        <li><span class="page-number-item current">1</span></li>
-                        <li><a class="page-number-item" href="#">2</a></li>
-                        <li><a class="page-number-item" href="#">3</a></li>
-                        <li><a class="page-number-item next-link" href="#">Next</a></li>
-                    </ul>
-                    <p class="result-count">Menampilkan 1-9 dari 21 hasil</p> --}}
                 </div>
             </div>
             <!--end main products area-->
@@ -145,8 +138,8 @@
                 <hr>
 
                 <div class="widget mercado-widget filter-widget price-filter">
-                    <h2 class="widget-title">Harga: <span class="text-info">Rp{{ $min_price }} - Rp{{ $max_price
-                            }}</span>
+                    <h2 class="widget-title">Harga: <span class="text-info">Rp{{ number_format($min_price, 0, ',', '.')
+                            }} - Rp{{ number_format($max_price, 0, ',', '.') }}</span>
                     </h2>
                     <div class="widget-content" style="padding: 10px 5px 40px 5px;">
                         <div id="slider" wire:ignore>
@@ -170,11 +163,11 @@
 <script>
     var slider = document.getElementById('slider');
     noUiSlider.create(slider,{
-        start : [100,10000000],
+        start : [100, 1000000],
         connect : true,
         range : {
             'min' : 100,
-            'max' : 10000000,
+            'max' : 1000000,
         },
         pips : {
             mode : 'steps',
