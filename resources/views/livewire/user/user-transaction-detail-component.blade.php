@@ -146,72 +146,38 @@
                                             </div>
                                         </div>
                                         <hr>
-                                        @if ($now >= $transaksi->order->created_at->addDay()->toDateTimeString() &&
-                                        empty($transaksi->order->bukti_transfer))
-                                        <div class="card mt-4">
-                                            <div class="card-content">
-                                                <div class="card-body" style="padding: 20px 0;">
-                                                    <h5 class="text-danger">Pesanan sudah
-                                                        kadaluwarsa!</h5> *Silahkan
-                                                    pesan kembali!
-                                                </div>
+                                        @if ($now <= $transaksi->order->created_at->addDay()->toDateTimeString() &&
+                                            empty($transaksi->order->bukti_transfer))
+                                            <div class="alert alert-info" role="alert">
+                                                Transfer sebelum <b>{{
+                                                    $transaksi->order->created_at->addDay()->toDateTimeString() }}
+                                                    WIB</b>
                                             </div>
-                                        </div>
-                                        @elseif ($transaksi->order->status === 'dibatalkan')
-                                        <div class="card mt-4">
-                                            <div class="card-content">
-                                                <div class="card-body" style="padding: 20px 0;">
-                                                    <h5 class="text-danger">Pesanan ditolak!
-                                                    </h5> *Silahkan
-                                                    pesan kembali!
-                                                </div>
-                                            </div>
-                                        </div>
-                                        @elseif ($transaksi->order->count('bukti_transfer') &&
-                                        $transaksi->order->status !== 'memesan')
-                                        <div class="card mt-4">
-                                            <div class="card-content">
-                                                <div class="card-body">
-                                                    <h4 style="padding: 10px 0;color: rgb(0, 0, 0)"><b>Alamat
-                                                            Pembayaran</b></h4>
-                                                    <div class="form-body mt-4">
-                                                        <div class="row">
-                                                            <div class="col-md-2 form-group">
-                                                                <label>Nama Pemilik</label>
-                                                            </div>
-                                                            <div class="col-md-10 col-xl-2 col-4 form-group">
-                                                                <label>a/n Sidoli Motor</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-2 form-group">
-                                                                <label>Nomor Rekening</label>
-                                                            </div>
-                                                            <div class="col-md-10 col-xl-2 col-4 form-group">
-                                                                <label>Mandiri 1376289523854838</label>
-                                                            </div>
-                                                        </div>
-                                                        <hr>
-                                                    </div>
+                                            @endif
 
-                                                    <div class="col-md-12" style="padding: 10px 0;">
-                                                        <label>Bukti Transfer</label>
+                                            @if ($now >= $transaksi->order->created_at->addDay()->toDateTimeString() &&
+                                            empty($transaksi->order->bukti_transfer))
+                                            <div class="card mt-4">
+                                                <div class="card-content">
+                                                    <div class="card-body" style="padding: 20px 0;">
+                                                        <h5 class="text-danger">Pesanan sudah
+                                                            kadaluwarsa!</h5> *Silahkan
+                                                        pesan kembali!
                                                     </div>
-                                                    <form wire:submit.prevent="updateBuktiTransfer">
-
-                                                        <div class="col-md-12" style="padding: 6px 0;">
-                                                            <div style="max-width: 400px;">
-                                                                <img src="{{ asset('assets/images/bukti_transfer/'. $transaksi->order->bukti_transfer) }}"
-                                                                    alt="{{ $transaksi->order->bukti_transfer }}"
-                                                                    class="img-fluid">
-                                                            </div>
-                                                        </div>
-                                                    </form>
                                                 </div>
                                             </div>
-                                        </div>
-                                        @elseif ($transaksi->order->count('bukti_transfer') ||
-                                        $now <= $transaksi->order->created_at->addDay()->toDateTimeString())
+                                            @elseif ($transaksi->order->status === 'dibatalkan')
+                                            <div class="card mt-4">
+                                                <div class="card-content">
+                                                    <div class="card-body" style="padding: 20px 0;">
+                                                        <h5 class="text-danger">Pesanan ditolak!
+                                                        </h5> *Silahkan
+                                                        pesan kembali!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @elseif ($transaksi->order->count('bukti_transfer') &&
+                                            $transaksi->order->status !== 'memesan')
                                             <div class="card mt-4">
                                                 <div class="card-content">
                                                     <div class="card-body">
@@ -236,44 +202,12 @@
                                                             </div>
                                                             <hr>
                                                         </div>
-                                                        @if (Session::has('success_message'))
-                                                        <div class="alert alert-success" role="alert">
-                                                            {{ Session::get('success_message') }}
-                                                        </div>
-                                                        @endif
 
-                                                        <div class="col-md-12" style="padding: 6px 0;">
-                                                            <label>Upload Bukti Transfer</label>
+                                                        <div class="col-md-12" style="padding: 10px 0;">
+                                                            <label>Bukti Transfer</label>
                                                         </div>
                                                         <form wire:submit.prevent="updateBuktiTransfer">
-                                                            <div class="input-group">
-                                                                <div class="col-md-12" style="padding: 6px 0;">
-                                                                    <input type="file" class="form-control"
-                                                                        id="bukti_transfer"
-                                                                        aria-describedby="bukti_transfer"
-                                                                        aria-label="Upload"
-                                                                        wire:model="new_bukti_transfer">
-                                                                    @error('bukti_transfer')
-                                                                    <span class="error">{{ $message }}</span>
-                                                                    @enderror
-                                                                </div>
-                                                                <div class="col-md-12" style="padding: 6px 0;">
-                                                                    <button class="btn btn-warning" type="submit"
-                                                                        id="bukti_transfer">Upload</button>
-                                                                </div>
-                                                            </div>
-                                                            <div wire:loading wire:target="updateBuktiTransfer">
-                                                                Uploading...
-                                                            </div>
-                                                            @if ($new_bukti_transfer)
-                                                            <div class="col-md-12" style="padding: 6px 0;">
-                                                                <div style="max-width: 400px;">
-                                                                    <img src="{{ $new_bukti_transfer->temporaryUrl() }}"
-                                                                        alt="{{ $new_bukti_transfer->temporaryUrl() }}"
-                                                                        class="img-fluid">
-                                                                </div>
-                                                            </div>
-                                                            @elseif ($transaksi->order->bukti_transfer)
+
                                                             <div class="col-md-12" style="padding: 6px 0;">
                                                                 <div style="max-width: 400px;">
                                                                     <img src="{{ asset('assets/images/bukti_transfer/'. $transaksi->order->bukti_transfer) }}"
@@ -281,53 +215,128 @@
                                                                         class="img-fluid">
                                                                 </div>
                                                             </div>
-                                                            @else
-                                                            <div class="col-md-12">
-                                                                <div style="max-width: 400px;">
-                                                                    <img src="" alt="" class="img-fluid">
-                                                                </div>
-                                                            </div>
-                                                            @endif
                                                         </form>
                                                     </div>
                                                 </div>
                                             </div>
-                                            @else
-                                            <div class="card mt-4">
-                                                <div class="card-content">
-                                                    <div class="card-body">
-                                                        <h4 style="padding: 10px 0;color: rgb(0, 0, 0)"><b>Alamat
-                                                                Pembayaran</b></h4>
-                                                        <div class="form-body mt-4">
-                                                            <div class="row">
-                                                                <div class="col-md-2 form-group">
-                                                                    <label>Nama Pemilik</label>
+                                            @elseif ($transaksi->order->count('bukti_transfer') ||
+                                            $now <= $transaksi->order->created_at->addDay()->toDateTimeString())
+                                                <div class="card mt-4">
+                                                    <div class="card-content">
+                                                        <div class="card-body">
+                                                            <h4 style="padding: 10px 0;color: rgb(0, 0, 0)"><b>Alamat
+                                                                    Pembayaran</b></h4>
+                                                            <div class="form-body mt-4">
+                                                                <div class="row">
+                                                                    <div class="col-md-2 form-group">
+                                                                        <label>Nama Pemilik</label>
+                                                                    </div>
+                                                                    <div class="col-md-10 col-xl-2 col-4 form-group">
+                                                                        <label>a/n Sidoli Motor</label>
+                                                                    </div>
                                                                 </div>
-                                                                <div class="col-md-10 col-xl-2 col-4 form-group">
-                                                                    <label>a/n Sidoli Motor</label>
+                                                                <div class="row">
+                                                                    <div class="col-md-2 form-group">
+                                                                        <label>Nomor Rekening</label>
+                                                                    </div>
+                                                                    <div class="col-md-10 col-xl-2 col-4 form-group">
+                                                                        <label>Mandiri 1376289523854838</label>
+                                                                    </div>
                                                                 </div>
+                                                                <hr>
                                                             </div>
-                                                            <div class="row">
-                                                                <div class="col-md-2 form-group">
-                                                                    <label>Nomor Rekening</label>
-                                                                </div>
-                                                                <div class="col-md-10 col-xl-2 col-4 form-group">
-                                                                    <label>Mandiri 1376289523854838</label>
-                                                                </div>
+                                                            @if (Session::has('success_message'))
+                                                            <div class="alert alert-success" role="alert">
+                                                                {{ Session::get('success_message') }}
                                                             </div>
-                                                            <hr>
+                                                            @endif
+
+                                                            <div class="col-md-12" style="padding: 6px 0;">
+                                                                <label>Upload Bukti Transfer</label>
+                                                            </div>
+                                                            <form wire:submit.prevent="updateBuktiTransfer">
+                                                                <div class="input-group">
+                                                                    <div class="col-md-12" style="padding: 6px 0;">
+                                                                        <input type="file" class="form-control"
+                                                                            id="bukti_transfer"
+                                                                            aria-describedby="bukti_transfer"
+                                                                            aria-label="Upload"
+                                                                            wire:model="new_bukti_transfer">
+                                                                        @error('bukti_transfer')
+                                                                        <span class="error">{{ $message }}</span>
+                                                                        @enderror
+                                                                    </div>
+                                                                    <div class="col-md-12" style="padding: 6px 0;">
+                                                                        <button class="btn btn-warning" type="submit"
+                                                                            id="bukti_transfer">Upload</button>
+                                                                    </div>
+                                                                </div>
+                                                                <div wire:loading wire:target="updateBuktiTransfer">
+                                                                    Uploading...
+                                                                </div>
+                                                                @if ($new_bukti_transfer)
+                                                                <div class="col-md-12" style="padding: 6px 0;">
+                                                                    <div style="max-width: 400px;">
+                                                                        <img src="{{ $new_bukti_transfer->temporaryUrl() }}"
+                                                                            alt="{{ $new_bukti_transfer->temporaryUrl() }}"
+                                                                            class="img-fluid">
+                                                                    </div>
+                                                                </div>
+                                                                @elseif ($transaksi->order->bukti_transfer)
+                                                                <div class="col-md-12" style="padding: 6px 0;">
+                                                                    <div style="max-width: 400px;">
+                                                                        <img src="{{ asset('assets/images/bukti_transfer/'. $transaksi->order->bukti_transfer) }}"
+                                                                            alt="{{ $transaksi->order->bukti_transfer }}"
+                                                                            class="img-fluid">
+                                                                    </div>
+                                                                </div>
+                                                                @else
+                                                                <div class="col-md-12">
+                                                                    <div style="max-width: 400px;">
+                                                                        <img src="" alt="" class="img-fluid">
+                                                                    </div>
+                                                                </div>
+                                                                @endif
+                                                            </form>
                                                         </div>
-                                                        <div class="col-md-8 col-8">
-                                                            <div style="max-width: 400px;">
-                                                                <img src="{{ asset('assets/images/bukti_transfer/'. $transaksi->order->bukti_transfer) }}"
-                                                                    alt="{{ $transaksi->order->bukti_transfer }}"
-                                                                    class="img-fluid">
+                                                    </div>
+                                                </div>
+                                                @else
+                                                <div class="card mt-4">
+                                                    <div class="card-content">
+                                                        <div class="card-body">
+                                                            <h4 style="padding: 10px 0;color: rgb(0, 0, 0)"><b>Alamat
+                                                                    Pembayaran</b></h4>
+                                                            <div class="form-body mt-4">
+                                                                <div class="row">
+                                                                    <div class="col-md-2 form-group">
+                                                                        <label>Nama Pemilik</label>
+                                                                    </div>
+                                                                    <div class="col-md-10 col-xl-2 col-4 form-group">
+                                                                        <label>a/n Sidoli Motor</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-2 form-group">
+                                                                        <label>Nomor Rekening</label>
+                                                                    </div>
+                                                                    <div class="col-md-10 col-xl-2 col-4 form-group">
+                                                                        <label>Mandiri 1376289523854838</label>
+                                                                    </div>
+                                                                </div>
+                                                                <hr>
+                                                            </div>
+                                                            <div class="col-md-8 col-8">
+                                                                <div style="max-width: 400px;">
+                                                                    <img src="{{ asset('assets/images/bukti_transfer/'. $transaksi->order->bukti_transfer) }}"
+                                                                        alt="{{ $transaksi->order->bukti_transfer }}"
+                                                                        class="img-fluid">
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            @endif
+                                                @endif
                                     </div>
                                 </div>
                             </div>
