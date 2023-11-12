@@ -63,7 +63,14 @@
                                             class="fa fa-angle-down" aria-hidden="true"></i></a>
                                     <ul class="submenu curency">
                                         <li class="menu-item">
-                                            <a title="Dashboard" href="{{ route('owner.dashboard') }}">Dashboard</a>
+                                            <a title="Dashboard" href="{{ route('owner.dashboard') }}"
+                                                @if(Request::RouteIs('owner.dashboard')) style="color: red;"
+                                                @endif>Dashboard</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a title="Laporan Penjualan" href="{{ route('owner.report') }}"
+                                                @if(Request::RouteIs('owner.report')) style="color: red;" @endif>Laporan
+                                                Penjualan</a>
                                         </li>
                                         <li class="menu-item">
                                             <a title="Logout" href="{{ route('owner.dashboard') }}"
@@ -222,6 +229,11 @@
                                     Request::RouteIs('owner.detailtransaksi')) style="background: #ff2832" @endif>
                                     <a href="{{ route('owner.transaksi') }}" class="link-term mercado-item-title">Data
                                         Transaksi</a>
+                                </li>
+                                <li class="menu-item" @if(Request::RouteIs('owner.report')) style="background: #ff2832"
+                                    @endif>
+                                    <a href="{{ route('owner.report') }}" class="link-term mercado-item-title">Laporan
+                                        Penjualan</a>
                                 </li>
                                 {{-- <li class="menu-item" @if(Request::routeIs('owner.salesreport'))
                                     style="background: #ff2832" @endif>

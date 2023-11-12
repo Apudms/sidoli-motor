@@ -24,6 +24,7 @@ use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\Owner\OwnerDashboardComponent;
 use App\Http\Livewire\Owner\OwnerProductDataComponent;
 use App\Http\Livewire\Owner\OwnerSalesReportComponent;
+use App\Http\Livewire\Owner\OwnerSalesReportsComponent;
 use App\Http\Livewire\Owner\OwnerTransactionDataComponent;
 use App\Http\Livewire\Owner\OwnerTransactionDetailComponent;
 use App\Http\Livewire\SearchComponent;
@@ -70,6 +71,8 @@ Route::middleware(['auth:sanctum', 'verified', 'check.utype:OWN'])->group(functi
     Route::get('/owner/data-produk', OwnerProductDataComponent::class)->name('owner.produk');
     Route::get('/owner/data-transaksi', OwnerTransactionDataComponent::class)->name('owner.transaksi');
     Route::get('/owner/data-transaksi/id={order_id}', OwnerTransactionDetailComponent::class)->name('owner.detailtransaksi');
+    Route::get('/owner/laporan-penjualan', OwnerSalesReportsComponent::class)->name('owner.report');
+    Route::get('/owner/laporan-penjualan/print/{firstDate}/{lastDate}', [OwnerSalesReportsComponent::class, "print"])->name('owner.print');
 });
 
 //For Admin

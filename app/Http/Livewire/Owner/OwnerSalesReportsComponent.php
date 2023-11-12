@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Admin;
+namespace App\Http\Livewire\Owner;
 
 use App\Models\DetailOrder;
 use Carbon\Carbon;
@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class AdminSalesReportsComponent extends Component
+class OwnerSalesReportsComponent extends Component
 {
     use WithPagination;
 
@@ -67,7 +67,7 @@ class AdminSalesReportsComponent extends Component
             ->latest()
             ->paginate(10);
 
-        return view('livewire.admin.admin-sales-reports-component', [
+        return view('livewire.owner.owner-sales-reports-component', [
             'orders' => $orders,
         ])->layout('layouts.main');
     }
