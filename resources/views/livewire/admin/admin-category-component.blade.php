@@ -35,7 +35,7 @@
                                     <th>ID</th>
                                     <th>Nama Kategori</th>
                                     <th>Slug</th>
-                                    <th>Aksi</th>
+                                    <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -44,7 +44,7 @@
                                     <td>{{ $category->id }}</td>
                                     <td>{{ $category->nama_kategori }}</td>
                                     <td>{{ $category->slug }}</td>
-                                    <td>
+                                    <td class="text-center">
                                         <a href="{{ route('admin.ubahkategori', ['id' => $category->id]) }}"><i
                                                 class="fa fa-edit fa-2x"></i>
                                         </a>

@@ -79,31 +79,47 @@
                                     <a title="{{ Auth::user()->name }}" href="#">{{ Auth::user()->name }}<i
                                             class="fa fa-angle-down" aria-hidden="true"></i></a>
                                     <ul class="submenu curency">
-                                        <li class="menu-item" @if(Request::is('admin.dashboard')) style="color: red;"
-                                            @endif>
-                                            <a title="Dashboard" href="{{ route('admin.dashboard') }}">Dashboard</a>
+                                        <li class="menu-item">
+                                            <a title="Dashboard" href="{{ route('admin.dashboard') }}"
+                                                @if(Request::RouteIs('admin.dashboard')) style="color: red;"
+                                                @endif>Dashboard</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a title="Kategori" href="{{ route('admin.kategori') }}">Data Kategori</a>
+                                            <a title="Kategori" href="{{ route('admin.kategori') }}"
+                                                @if(Request::RouteIs('admin.kategori')) style="color: red;" @endif>Data
+                                                Kategori</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a title="Produk" href="{{ route('admin.produk') }}">Data Produk</a>
+                                            <a title="Produk" href="{{ route('admin.produk') }}"
+                                                @if(Request::RouteIs('admin.produk')) style="color: red;" @endif>Data
+                                                Produk</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a title="Transaksi" href="{{ route('admin.manajemenTransaksi') }}">Data
+                                            <a title="Data Customer" href="{{ route('admin.customer') }}"
+                                                @if(Request::RouteIs('admin.customer')) style="color: red;" @endif>Data
+                                                Customer</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a title="Transaksi" href="{{ route('admin.manajemenTransaksi') }}"
+                                                @if(Request::RouteIs('admin.manajemenTransaksi')) style="color: red;"
+                                                @endif>Data
                                                 Transaksi</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a title="Manajemen Slider" href="{{ route('admin.slider') }}">Manajemen
+                                            <a title="Manajemen Slider" href="{{ route('admin.slider') }}"
+                                                @if(Request::RouteIs('admin.slider')) style="color: red;"
+                                                @endif>Manajemen
                                                 Slider</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a title="Manajemen Kategori"
-                                                href="{{ route('admin.manajemenkategori') }}">Manajemen Kategori</a>
+                                            <a title="Manajemen Kategori" href="{{ route('admin.manajemenkategori') }}"
+                                                @if(Request::RouteIs('admin.manajemenkategori')) style="color: red;"
+                                                @endif>Manajemen Kategori</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a title="Data Customer" href="{{ route('admin.customer') }}">Data
-                                                Customer</a>
+                                            <a title="Laporan Penjualan" href="{{ route('admin.report') }}"
+                                                @if(Request::RouteIs('admin.report')) style="color: red;" @endif>Laporan
+                                                Penjualan</a>
                                         </li>
                                         <li class="menu-item">
                                             <a title="Logout" href="{{ route('admin.dashboard') }}"
@@ -119,9 +135,10 @@
                                     <a title="Akun Saya ({{ Auth::user()->name }})" href="#">Akun Saya ({{
                                         Auth::user()->name }})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                     <ul class="submenu curency">
-                                        <li class="menu-item" @if(Request::is('user.dashboard')) style="color: red;"
-                                            @endif>
-                                            <a title="Dashboard" href="{{ route('user.dashboard') }}">Dashboard</a>
+                                        <li class="menu-item">
+                                            <a title="Dashboard" href="{{ route('user.dashboard') }}"
+                                                @if(Request::is('user.dashboard')) style="color: red;"
+                                                @endif>Dashboard</a>
                                         </li>
                                         <li class="menu-item">
                                             <a title="Logout" href="#"

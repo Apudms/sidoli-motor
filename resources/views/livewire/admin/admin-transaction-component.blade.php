@@ -29,21 +29,19 @@
                         <table class="table-striped table">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>ID Pembeli</th>
+                                    <th>ID Transaksi</th>
                                     <th>Nama Pembeli</th>
                                     <th>Total Harga</th>
                                     <th>Ongkos Kirim</th>
                                     <th class="text-center">Status</th>
                                     <th>Tanggal</th>
-                                    <th class="text-center">Aksi</th>
+                                    <th class="text-center">Detail</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($orders as $order)
                                 <tr>
                                     <td>{{ $order->orderId }}</td>
-                                    <td>{{ $order->user_id }}</td>
                                     <td>{{ $order->nama_depan }} {{ $order->nama_belakang }}</td>
                                     <td>Rp{{ number_format($order->subtotal,
                                         0, ',','.') }}</td>

@@ -13,6 +13,7 @@ use App\Http\Livewire\Admin\AdminEditProductComponent;
 use App\Http\Livewire\Admin\AdminHomeCategoryComponent;
 use App\Http\Livewire\Admin\AdminHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminProductComponent;
+use App\Http\Livewire\Admin\AdminSalesReportsComponent;
 use App\Http\Livewire\Admin\AdminTransactionComponent;
 use App\Http\Livewire\Admin\AdminTransactionDetailComponent;
 use App\Http\Livewire\CartComponent;
@@ -88,6 +89,8 @@ Route::middleware(['auth:sanctum', 'verified', 'check.utype:ADM'])->group(functi
     Route::get('/admin/transaksi/id={order_id}', AdminTransactionDetailComponent::class)->name('admin.manajemenDetailTransaksi');
     Route::get('/admin/customer', AdminCustomerComponent::class)->name('admin.customer');
     Route::get('/admin/customer/ubah/id={id}', AdminEditCustomerComponent::class)->name('admin.ubahcustomer');
+    Route::get('/admin/laporan-penjualan', AdminSalesReportsComponent::class)->name('admin.report');
+    Route::get('/admin/laporan-penjualan/print/{firstDate}/{lastDate}', [AdminSalesReportsComponent::class, "print"])->name('admin.print');
 });
 
 //For User or Customer
